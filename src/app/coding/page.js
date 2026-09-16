@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { store } from '@/lib/store';
 import { getMockCodingResponse } from '@/lib/mock-ai';
+import { runPythonCode } from '@/lib/pyodide-runner';
 
 // ============================================================
 // COMPREHENSIVE 24-TOPIC PYTHON CURRICULUM (1-13 Beginner, 14-24 Intermediate)
@@ -648,344 +649,16 @@ const MINI_PROJECTS = [
 ];
 
 // ============================================================
-// CLIENT-SIDE PYTHON SIMULATOR ENGINE
+// REAL PYTHON EXECUTION (POWERED BY PYODIDE WASM)
 // ============================================================
-function executePythonSimulator(code) {
-  const outputs = [];
-  const env = {};
-  const functions = {};
-  const lines = code.split('\n');
 
-  try {
-    let i = 0;
-    let loopGuard = 0;
-
-    while (i < lines.length) {
-      loopGuard++;
-      if (loopGuard > 1500) {
-        outputs.push('⚠️ Execution stopped: maximum step limit reached (infinite loop guard).');
-        break;
-      }
-
-      let line = lines[i].trim();
-
-      if (!line || line.startsWith('#')) {
-        i++;
-        continue;
-      }
-
-      // def func(a, b):
-      if (line.startsWith('def ')) {
-        const defMatch = line.match(/^def\s+([a-zA-Z_]\w*)\s*\((.*?)\)\s*:/);
-        if (defMatch) {
-          const funcName = defMatch[1];
-          const rawParams = defMatch[2].split(',').map((p) => p.trim()).filter(Boolean);
-          const funcBody = [];
-          i++;
-          while (i < lines.length && (lines[i].startsWith('    ') || lines[i].startsWith('\t') || !lines[i].trim())) {
-            if (lines[i].trim()) funcBody.push(lines[i].trim());
-            i++;
-          }
-          functions[funcName] = { params: rawParams, body: funcBody };
-          continue;
-        }
-      }
-
-      // for var in iterable:
-      if (line.startsWith('for ')) {
-        const forMatch = line.match(/^for\s+([a-zA-Z_]\w*)\s+in\s+(.+?)\s*:/);
-        if (forMatch) {
-          const iterVar = forMatch[1];
-          const iterableExpr = forMatch[2];
-          const loopBody = [];
-          i++;
-          while (i < lines.length && (lines[i].startsWith('    ') || lines[i].startsWith('\t') || !lines[i].trim())) {
-            if (lines[i].trim()) loopBody.push(lines[i].trim());
-            i++;
-          }
-
-          let items = [];
-          if (iterableExpr.startsWith('range(')) {
-            const rangeArgs = iterableExpr
-              .slice(6, -1)
-              .split(',')
-              .map((arg) => evalPythonExpr(arg.trim(), env, functions));
-            if (rangeArgs.length === 1) {
-              items = Array.from({ length: Math.max(0, rangeArgs[0]) }, (_, idx) => idx);
-            } else if (rangeArgs.length === 2) {
-              items = Array.from({ length: Math.max(0, rangeArgs[1] - rangeArgs[0]) }, (_, idx) => rangeArgs[0] + idx);
-            } else if (rangeArgs.length === 3) {
-              const start = rangeArgs[0];
-              const stop = rangeArgs[1];
-              const step = rangeArgs[2];
-              for (let v = start; step > 0 ? v < stop : v > stop; v += step) items.push(v);
-            }
-          } else {
-            const val = evalPythonExpr(iterableExpr, env, functions);
-            if (Array.isArray(val)) items = val;
-            else if (typeof val === 'string') items = val.split('');
-          }
-
-          for (const item of items) {
-            env[iterVar] = item;
-            for (const bLine of loopBody) {
-              execSingleLine(bLine, env, functions, outputs);
-            }
-          }
-          continue;
-        }
-      }
-
-      // if / elif / else
-      if (line.startsWith('if ')) {
-        let conditionMatched = false;
-        let condLine = line;
-
-        while (i < lines.length) {
-          const ifMatch = condLine.match(/^(if|elif)\s+(.+?)\s*:/);
-          const isElse = condLine.match(/^else\s*:/);
-          if (!ifMatch && !isElse) break;
-
-          const blockBody = [];
-          i++;
-          while (i < lines.length && (lines[i].startsWith('    ') || lines[i].startsWith('\t') || !lines[i].trim())) {
-            if (lines[i].trim()) blockBody.push(lines[i].trim());
-            i++;
-          }
-
-          let condResult = false;
-          if (isElse) condResult = !conditionMatched;
-          else if (ifMatch && !conditionMatched) {
-            condResult = Boolean(evalPythonExpr(ifMatch[2], env, functions));
-          }
-
-          if (condResult && !conditionMatched) {
-            conditionMatched = true;
-            for (const bLine of blockBody) {
-              execSingleLine(bLine, env, functions, outputs);
-            }
-          }
-
-          if (i < lines.length) {
-            const nextTrim = lines[i].trim();
-            if (nextTrim.startsWith('elif ') || nextTrim.startsWith('else:')) {
-              condLine = nextTrim;
-              continue;
-            }
-          }
-          break;
-        }
-        continue;
-      }
-
-      // Regular line
-      execSingleLine(line, env, functions, outputs);
-      i++;
-    }
-
-    if (outputs.length === 0) {
-      outputs.push('(Program executed successfully with no output)');
-    }
-  } catch (err) {
-    outputs.push(`❌ Python Error: ${err.message}`);
-  }
-
-  return outputs;
-}
-
-function execSingleLine(line, env, functions, outputs) {
-  // print(...)
-  if (line.startsWith('print(') && line.endsWith(')')) {
-    const inner = line.slice(6, -1);
-    const args = parsePrintArgs(inner);
-    const printedValues = args.map((arg) => {
-      const val = evalPythonExpr(arg, env, functions);
-      if (typeof val === 'object' && val !== null) return JSON.stringify(val);
-      return String(val);
-    });
-    outputs.push(printedValues.join(' '));
-    return;
-  }
-
-  // list.append(val)
-  const appendMatch = line.match(/^([a-zA-Z_]\w*)\.append\((.*?)\)$/);
-  if (appendMatch) {
-    const listName = appendMatch[1];
-    const val = evalPythonExpr(appendMatch[2], env, functions);
-    if (Array.isArray(env[listName])) env[listName].push(val);
-    return;
-  }
-
-  // Augmented assignment +=, -=, *=, /=
-  const augMatch = line.match(/^([a-zA-Z_]\w*)\s*(\+=|-=|\*=|\/=)\s*(.+)$/);
-  if (augMatch) {
-    const varName = augMatch[1];
-    const op = augMatch[2];
-    const val = evalPythonExpr(augMatch[3], env, functions);
-    if (op === '+=') env[varName] = (env[varName] || 0) + val;
-    if (op === '-=') env[varName] = (env[varName] || 0) - val;
-    if (op === '*=') env[varName] = (env[varName] || 0) * val;
-    if (op === '/=') env[varName] = (env[varName] || 0) / val;
-    return;
-  }
-
-  // Variable assignment
-  if (line.includes('=') && !line.includes('==') && !line.startsWith('if ')) {
-    const parts = line.split('=');
-    const left = parts[0].trim();
-    const right = parts.slice(1).join('=').trim();
-
-    if (left.includes(',')) {
-      const lVars = left.split(',').map((v) => v.trim());
-      const rVals = right.split(',').map((v) => evalPythonExpr(v.trim(), env, functions));
-      lVars.forEach((v, idx) => {
-        env[v] = rVals[idx];
-      });
-      return;
-    }
-
-    env[left] = evalPythonExpr(right, env, functions);
-    return;
-  }
-
-  evalPythonExpr(line, env, functions);
-}
-
-function parsePrintArgs(innerStr) {
-  const args = [];
-  let current = '';
-  let inQuote = false;
-  let quoteChar = '';
-  let parenDepth = 0;
-  let bracketDepth = 0;
-
-  for (let i = 0; i < innerStr.length; i++) {
-    const char = innerStr[i];
-    if ((char === '"' || char === "'") && innerStr[i - 1] !== '\\') {
-      if (!inQuote) {
-        inQuote = true;
-        quoteChar = char;
-      } else if (quoteChar === char) inQuote = false;
-    }
-
-    if (!inQuote) {
-      if (char === '(') parenDepth++;
-      if (char === ')') parenDepth--;
-      if (char === '[') bracketDepth++;
-      if (char === ']') bracketDepth--;
-
-      if (char === ',' && parenDepth === 0 && bracketDepth === 0) {
-        args.push(current.trim());
-        current = '';
-        continue;
-      }
-    }
-    current += char;
-  }
-
-  if (current.trim()) args.push(current.trim());
-  return args;
-}
-
-function evalPythonExpr(expr, env, functions = {}) {
-  let e = expr.trim();
-  if (e === 'True') return true;
-  if (e === 'False') return false;
-  if (e === 'None') return null;
-
-  if (/^-?\d+(\.\d+)?$/.test(e)) return Number(e);
-  if ((e.startsWith('"') && e.endsWith('"')) || (e.startsWith("'") && e.endsWith("'"))) {
-    return e.slice(1, -1);
-  }
-
-  // f-strings
-  if (e.startsWith('f"') || e.startsWith("f'")) {
-    const template = e.slice(2, -1);
-    return template.replace(/\{(.*?)\}/g, (_, inner) => {
-      const val = evalPythonExpr(inner.split(':')[0], env, functions);
-      return val !== undefined ? String(val) : '';
-    });
-  }
-
-  // len(), max(), min(), sum()
-  if (e.startsWith('len(') && e.endsWith(')')) {
-    const val = evalPythonExpr(e.slice(4, -1), env, functions);
-    return val?.length ?? 0;
-  }
-  if (e.startsWith('max(') && e.endsWith(')')) {
-    const val = evalPythonExpr(e.slice(4, -1), env, functions);
-    if (Array.isArray(val)) return Math.max(...val);
-    return 0;
-  }
-  if (e.startsWith('sum(') && e.endsWith(')')) {
-    const val = evalPythonExpr(e.slice(4, -1), env, functions);
-    if (Array.isArray(val)) return val.reduce((s, n) => s + (Number(n) || 0), 0);
-    return 0;
-  }
-
-  // Lists [1, 2, 3]
-  if (e.startsWith('[') && e.endsWith(']')) {
-    const inner = e.slice(1, -1);
-    if (!inner.trim()) return [];
-    return parsePrintArgs(inner).map((arg) => evalPythonExpr(arg, env, functions));
-  }
-
-  // Dicts
-  if (e.startsWith('{') && e.endsWith('}')) {
-    return { ...env };
-  }
-
-  // Function calls: func(a, b)
-  const callMatch = e.match(/^([a-zA-Z_]\w*)\s*\((.*?)\)$/);
-  if (callMatch && functions[callMatch[1]]) {
-    const func = functions[callMatch[1]];
-    const rawArgs = parsePrintArgs(callMatch[2]);
-    const localEnv = { ...env };
-    func.params.forEach((param, idx) => {
-      localEnv[param] = rawArgs[idx] ? evalPythonExpr(rawArgs[idx], env, functions) : undefined;
-    });
-
-    for (const bodyLine of func.body) {
-      if (bodyLine.startsWith('return ')) {
-        return evalPythonExpr(bodyLine.replace(/^return\s+/, ''), localEnv, functions);
-      }
-      execSingleLine(bodyLine, localEnv, functions, []);
-    }
-    return null;
-  }
-
-  let jsExpr = e
-    .replace(/\bTrue\b/g, 'true')
-    .replace(/\bFalse\b/g, 'false')
-    .replace(/\band\b/g, '&&')
-    .replace(/\bor\b/g, '||')
-    .replace(/\bnot\s+/g, '!');
-
-  const keys = Object.keys(env).sort((a, b) => b.length - a.length);
-  for (const k of keys) {
-    const regex = new RegExp(`\\b${k}\\b`, 'g');
-    if (regex.test(jsExpr)) {
-      const val = env[k];
-      const rep = typeof val === 'string' ? JSON.stringify(val) : String(val);
-      jsExpr = jsExpr.replace(regex, rep);
-    }
-  }
-
-  try {
-    // eslint-disable-next-line no-new-func
-    const fn = new Function(`"use strict"; return (${jsExpr});`);
-    return fn();
-  } catch {
-    if (env[e] !== undefined) return env[e];
-    return e;
-  }
-}
 
 export default function PythonCodingPage() {
   const [selectedTopic, setSelectedTopic] = useState(PYTHON_CURRICULUM[0]);
   const [code, setCode] = useState(PYTHON_CURRICULUM[0].initialCode);
   const [output, setOutput] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
   const [activeTab, setActiveTab] = useState('editor'); // 'editor' | 'practice' | 'projects' | 'ai'
   const [selectedProject, setSelectedProject] = useState(MINI_PROJECTS[0]);
   const [showHint, setShowHint] = useState(false);
@@ -1055,19 +728,32 @@ export default function PythonCodingPage() {
     setActiveTab('projects');
   };
 
-  const handleRunCode = () => {
+  const handleRunCode = async () => {
     setIsRunning(true);
-    setTimeout(() => {
-      const results = executePythonSimulator(code);
-      setOutput(results);
-      setIsRunning(false);
+    setStatusMessage('Preparing Python runtime...');
+    setOutput(['⏳ Initializing Python 3.12 WebAssembly runtime...']);
 
-      // Award XP and track progress
-      store.addXP(10);
-      store.unlockAchievement('coding_beginner');
-      store.updateSubjectProgress('python', Math.min(25, Math.round((completedTopics.length / 24) * 25)));
-      setUser(store.getUser());
-    }, 180);
+    try {
+      const { outputs, isError } = await runPythonCode(code, (status) => {
+        setStatusMessage(status);
+        setOutput([`⏳ ${status}`]);
+      });
+
+      setOutput(outputs);
+
+      if (!isError) {
+        // Award XP and track progress
+        store.addXP(10);
+        store.unlockAchievement('coding_beginner');
+        store.updateSubjectProgress('python', Math.min(25, Math.round((completedTopics.length / 24) * 25)));
+        setUser(store.getUser());
+      }
+    } catch (err) {
+      setOutput([`❌ Execution Error: ${err.message || String(err)}`]);
+    } finally {
+      setIsRunning(false);
+      setStatusMessage('');
+    }
   };
 
   const handleMarkTopicComplete = () => {
@@ -1575,7 +1261,7 @@ export default function PythonCodingPage() {
                         gap: '6px',
                       }}
                     >
-                      {isRunning ? 'Running...' : '▶ Run Python Code'}
+                      {isRunning ? (statusMessage || 'Running...') : '▶ Run Python Code'}
                     </button>
                   </div>
                 </div>
@@ -1663,7 +1349,7 @@ export default function PythonCodingPage() {
                         borderRadius: '4px',
                       }}
                     >
-                      Python 3.11 (Simulated Sandbox)
+                      Python 3.12 (Pyodide WASM)
                     </span>
                   </div>
 

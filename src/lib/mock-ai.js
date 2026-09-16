@@ -623,6 +623,115 @@ What do you think happens when \`score = 30\`?`;
   }
 
   // ----------------------------------------------------------
+  // PYTHON LIST VS TUPLE
+  // ----------------------------------------------------------
+
+  if (
+    lower.includes('list and tuple') ||
+    lower.includes('list vs tuple') ||
+    lower.includes('difference between a list and a tuple') ||
+    lower.includes('tuple vs list')
+  ) {
+    return `### 🐍 Python: Lists vs Tuples
+
+Both **Lists** and **Tuples** store collections of items, but they have key differences:
+
+| Feature | List \`[]\` | Tuple \`()\` |
+| :--- | :--- | :--- |
+| **Mutability** | **Mutable** (can be changed) | **Immutable** (cannot be changed) |
+| **Syntax** | Square brackets \`[1, 2, 3]\` | Parentheses \`(1, 2, 3)\` |
+| **Performance** | Slightly slower | Faster and memory-efficient |
+| **Use Case** | Data that needs adding/editing | Fixed constants, coordinates |
+
+### Example Comparison:
+
+\`\`\`python
+# List (modifiable)
+fruits = ["apple", "banana"]
+fruits.append("orange") # ✓ Allowed!
+
+# Tuple (fixed)
+point = (10, 20)
+# point[0] = 15 # ❌ TypeError: tuples cannot be modified
+\`\`\`
+
+### Key Takeaway
+Use **Lists** when your data will change during program execution; use **Tuples** for fixed, protected values.`;
+  }
+
+  // ----------------------------------------------------------
+  // PYTHON CODE LINE BY LINE
+  // ----------------------------------------------------------
+
+  if (
+    lower.includes('line by line') ||
+    lower.includes('explain this code') ||
+    lower.includes('breakdown of this code')
+  ) {
+    return `### 🔍 Line-by-Line Python Code Explanation
+
+Here is a structured breakdown of how the program executes:
+
+1. **Initialization**: Variables and data structures are allocated in memory.
+2. **Control Flow / Logic**: Python evaluates expressions and checks conditions from top to bottom.
+3. **Loop Execution**: Any \`for\` or \`while\` blocks repeat their inner indented lines for each item.
+4. **Function Calls**: Code jumps to the defined \`def\` block, processes the arguments, and returns values.
+5. **Output Display**: The \`print()\` function outputs calculated results directly to the terminal.
+
+💡 **Tip:** In Python, proper 4-space indentation defines which lines belong inside a function or loop!`;
+  }
+
+  // ----------------------------------------------------------
+  // PYTHON DEBUGGING & ERRORS
+  // ----------------------------------------------------------
+
+  if (
+    lower.includes('why am i getting this error') ||
+    lower.includes('error') ||
+    lower.includes('why does this code not work') ||
+    lower.includes('fix the bug')
+  ) {
+    return `### 🛠️ Python Error Diagnosis & Fixes
+
+Common Python errors and how to resolve them:
+
+- **SyntaxError**: Missing colon \`:\` at the end of \`if\`, \`for\`, or \`def\` statements.
+- **IndentationError**: Inconsistent spaces or tabs inside code blocks. Always use 4 spaces.
+- **NameError**: Using a variable before assigning it, or a typo in the variable name.
+- **TypeError**: Trying to combine incompatible types (e.g., adding a string to an integer: \`"age: " + 16\`). Use \`f"age: {16}"\` instead.
+- **IndexError**: Trying to access a list item at an index that doesn't exist (e.g., \`list[5]\` when list only has 3 items).
+
+💡 **How to fix:** Check the line number mentioned in the error message, verify spelling, and ensure variables are initialized.`;
+  }
+
+  // ----------------------------------------------------------
+  // PYTHON CODE IMPROVEMENT
+  // ----------------------------------------------------------
+
+  if (
+    lower.includes('improve') ||
+    lower.includes('best practices') ||
+    lower.includes('clean code')
+  ) {
+    return `### ✨ Suggestions for Python Code Improvement
+
+Here are three ways to make your Python code cleaner and more Pythonic:
+
+1. **Use f-strings for formatting**:
+   \`\`\`python
+   # Instead of: print("Hello " + name + ", age " + str(age))
+   print(f"Hello {name}, age {age}")
+   \`\`\`
+
+2. **Use descriptive variable names**:
+   Choose meaningful names like \`total_score\` instead of single letters like \`s\`.
+
+3. **Keep functions small and focused**:
+   Each function should ideally perform one clear task and return a result.`;
+  }
+
+
+  // ----------------------------------------------------------
   // FRACTIONS
   // ----------------------------------------------------------
 

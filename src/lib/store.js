@@ -198,11 +198,17 @@ export const store = {
 
   saveStudyPlan(plan) {
     const plans = this.getStudyPlans();
-    plans.unshift({
-      ...plan,
-      id: Date.now().toString(),
-      createdAt: new Date().toISOString(),
-    });
+    const existingIdx = plans.findIndex(p => p.id === plan.id);
+    if (existingIdx !== -1) {
+      plans[existingIdx] = { ...plans[existingIdx], ...plan, updatedAt: new Date().toISOString() };
+    } else {
+      plans.unshift({
+        ...plan,
+        id: plan.id || Date.now().toString(),
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      });
+    }
     setItem('studyPlans', plans);
     return plans;
   },
@@ -211,10 +217,62 @@ export const store = {
     const plans = this.getStudyPlans();
     const idx = plans.findIndex(p => p.id === planId);
     if (idx !== -1) {
-      plans[idx] = { ...plans[idx], ...updates };
+      plans[idx] = { ...plans[idx], ...updates, updatedAt: new Date().toISOString() };
       setItem('studyPlans', plans);
     }
     return plans;
+  },
+
+  // Get/Save planner tasks from the single 'active_plan' entry
+  getPlanTasks() {
+    const plans = this.getStudyPlans();
+    const active = plans.find(p => p.id === 'active_plan');
+    return active ? (active.tasks || []) : [];
+  },
+
+  savePlanTasks(tasks) {
+    const plans = this.getStudyPlans();
+    const idx = plans.findIndex(p => p.id === 'active_plan');
+    if (idx !== -1) {
+      plans[idx] = { ...plans[idx], tasks, updatedAt: new Date().toISOString() };
+    } else {
+      plans.unshift({
+        id: 'active_plan',
+        title: 'My Study Schedule',
+        tasks,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      });
+    }
+    setItem('studyPlans', plans);
+    return tasks;
+  },
+
+  // Completed practice exercise IDs
+  getCompletedPractice() {
+    return getItem('completedPractice') || [];
+  },
+
+  saveCompletedPractice(ids) {
+    setItem('completedPractice', ids);
+  },
+
+  // Completed Python topic IDs
+  getCompletedPythonTopics() {
+    return getItem('completedPythonTopics') || [];
+  },
+
+  saveCompletedPythonTopics(ids) {
+    setItem('completedPythonTopics', ids);
+  },
+
+  // Completed Python project IDs
+  getCompletedPythonProjects() {
+    return getItem('completedPythonProjects') || [];
+  },
+
+  saveCompletedPythonProjects(ids) {
+    setItem('completedPythonProjects', ids);
   },
 
   // Chat History

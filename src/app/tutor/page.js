@@ -374,7 +374,65 @@ function TutorContent() {
               </div>
             )}
           </div>
+          {/* Quick Learning Actions */}
+          <div
+            style={{
+              display: 'flex',
+              gap: '8px',
+              flexWrap: 'wrap',
+              marginBottom: '14px',
+            }}
+          >
+            {[
+              {
+                label: '💡 Explain Simply',
+                prompt: `Explain ${topic || 'this topic'} in very simple language with an easy example.`,
+              },
+              {
+                label: '📚 Give Example',
+                prompt: `Give me a NEW real-world example of ${topic || 'this topic'}.
 
+Do NOT repeat the normal explanation of the topic.
+Start directly with the example.
+Then explain:
+1. The situation
+2. What happens
+3.   the example demonstrates the concept
+4. One simple takeaway
+
+Make the example different from your previous answer.`,
+              },
+              {
+                label: '🧩 Give Hint',
+                prompt: `Give me a helpful hint for understanding or solving a problem about ${topic || 'this topic'}. Do not give the full answer yet.`,
+              },
+              {
+                label: '🧪 Practice Me',
+                prompt: `Give me one practice question about ${topic || 'this topic'}. Wait for my answer, then check it and explain my mistakes.`,
+              },
+            ].map((action) => (
+              <button
+                key={action.label}
+                type="button"
+                disabled={loading}
+                onClick={() => executePrompt(action.prompt)}
+                style={{
+                  padding: '9px 13px',
+                  borderRadius: '10px',
+                  border: '1px solid var(--border, #d8dce8)',
+                  background: 'var(--bg-secondary, #ffffff)',
+                  color: 'var(--text-primary, #172033)',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  cursor: loading ? 'not-allowed' : 'pointer',
+                  opacity: loading ? 0.6 : 1,
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                {action.label}
+              </button>
+            ))}
+          </div>
           {/* Chat Input Form */}
           <form
             onSubmit={sendMessage}

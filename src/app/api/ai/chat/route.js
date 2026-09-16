@@ -97,7 +97,36 @@ export async function POST(request) {
     }
 
     // Real AI call
-    let systemMessage = type === 'solver' ? solverPrompt : (systemPrompts[mode] || systemPrompts.standard);
+    let systemMessage = type === 'solver'
+      ? solverPrompt
+      : (systemPrompts[mode] || systemPrompts.standard);
+
+    if (type === 'chat') {
+      systemMessage += `
+
+### AI STUDY ACTION RULES
+When the user's message requests a specific study action, follow that action exactly.
+
+- If asked to "Give a NEW real-world example":
+  Give ONLY one new example. Do not repeat a full explanation of the topic.
+  Start directly with the example, then explain the situation, what happens,
+  how it demonstrates the concept, and one simple takeaway.
+
+- If asked to "Give me one practice question":
+  Give ONLY one practice question.
+  Do not solve it and do not explain the topic first.
+  Wait for the student's answer before checking it.
+
+- If asked for a "hint":
+  Give ONLY a helpful hint. Do not reveal the complete solution.
+
+- If asked to "Explain Simply":
+  Give a simple explanation with an easy example.
+
+- If asked for MCQs:
+  Generate the requested multiple-choice questions with four options each.
+`;
+    }
 
     if (syllabusContext) {
       const { stream, streamFullName, year, subject, chapter, topic, action } = syllabusContext;

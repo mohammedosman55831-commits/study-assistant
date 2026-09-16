@@ -27,11 +27,440 @@ function formatNumber(value) {
 }
 
 // ============================================================
-// MOCK AI TUTOR
+// ============================================================
+// CONVERSATION INTELLIGENCE HELPERS
 // ============================================================
 
-export function getMockTutorResponse(message, mode = 'standard', syllabusContext = null) {
-  const text = cleanText(message);
+function extractConversationContext(messageOrMessages, syllabusContext = null) {
+  let messages = [];
+  let currentText = '';
+
+  if (Array.isArray(messageOrMessages)) {
+    messages = messageOrMessages;
+    currentText = cleanText(messages[messages.length - 1]?.content || '');
+  } else {
+    currentText = cleanText(messageOrMessages);
+    messages = [{ role: 'user', content: currentText }];
+  }
+
+  // Find last assistant message
+  let lastAssistantMsg = '';
+  for (let i = messages.length - 2; i >= 0; i--) {
+    if (messages[i].role === 'assistant') {
+      lastAssistantMsg = messages[i].content || '';
+      break;
+    }
+  }
+
+  const historyText = messages.map((m) => m.content || '').join(' ').toLowerCase();
+
+  // Detect active topic and subject
+  let activeTopic = syllabusContext?.topic || '';
+  let activeSubject = syllabusContext?.subject || '';
+  let activeChapter = syllabusContext?.chapter || '';
+  let activeStream = syllabusContext?.stream || 'MPC';
+  let activeYear = syllabusContext?.year || '1st Year / Class 11';
+
+  if (!activeTopic) {
+    if (historyText.includes('newton') || historyText.includes('inertia') || historyText.includes('friction') || historyText.includes('force')) {
+      activeTopic = "Newton's Laws of Motion";
+      activeSubject = 'Physics';
+      activeChapter = 'Mechanics';
+    } else if (historyText.includes('photosynthesis') || historyText.includes('chlorophyll') || historyText.includes('glucose')) {
+      activeTopic = 'Photosynthesis';
+      activeSubject = 'Biology / Botany';
+      activeChapter = 'Plant Physiology';
+    } else if (historyText.includes('gravity') || historyText.includes('gravitation')) {
+      activeTopic = 'Gravitation';
+      activeSubject = 'Physics';
+    } else if (historyText.includes('thermodynamics') || historyText.includes('heat engine')) {
+      activeTopic = 'Thermodynamics';
+      activeSubject = 'Physics';
+    } else if (historyText.includes('derivative') || historyText.includes('differentiation') || historyText.includes('calculus')) {
+      activeTopic = 'Differentiation & Derivatives';
+      activeSubject = 'Mathematics';
+    } else if (historyText.includes('trigonometry') || historyText.includes('sin') || historyText.includes('cos')) {
+      activeTopic = 'Trigonometric Ratios & Identities';
+      activeSubject = 'Mathematics';
+    } else if (historyText.includes('quadratic') || historyText.includes('roots')) {
+      activeTopic = 'Quadratic Equations';
+      activeSubject = 'Mathematics';
+    } else if (historyText.includes('cell') || historyText.includes('mitochondria')) {
+      activeTopic = 'Cell: The Unit of Life';
+      activeSubject = 'Biology / Zoology';
+    } else if (historyText.includes('python') || historyText.includes('loop') || historyText.includes('variable')) {
+      activeTopic = 'Python Programming';
+      activeSubject = 'Computer Science';
+    } else if (historyText.includes('demand') || historyText.includes('supply') || historyText.includes('elasticity')) {
+      activeTopic = 'Theory of Demand & Supply';
+      activeSubject = 'Economics';
+    }
+  }
+
+  return {
+    messages,
+    currentText,
+    lastAssistantMsg,
+    historyText,
+    activeTopic,
+    activeSubject,
+    activeChapter,
+    activeStream,
+    activeYear,
+  };
+}
+
+function handleFollowUpIntent({ currentText, lower, activeTopic, activeSubject, activeChapter, lastAssistantMsg, mode, syllabusContext }) {
+  const topicLabel = activeTopic || 'this concept';
+  const subjectLabel = activeSubject || 'Science & Math';
+
+  // 1. Follow-up: "Why?" / "Why does that happen?"
+  const isWhy =
+    lower === 'why' ||
+    lower === 'why?' ||
+    lower.startsWith('why ') ||
+    lower.includes('why does that happen') ||
+    lower.includes('why so') ||
+    lower.includes('what is the reason') ||
+    lower.includes('how come') ||
+    lower.includes('what causes this');
+
+  if (isWhy) {
+    if (activeTopic.toLowerCase().includes('newton') || lower.includes('inertia') || activeTopic.toLowerCase().includes('motion')) {
+      return `### 💡 Why Newton's Laws & Inertia Happen
+
+Great question! Let's explore the fundamental "Why" behind this:
+
+---
+
+### 🔍 The Root Cause: Conservation & Mass
+1. **Matter Has Inertia (Mass)**: Every physical object possesses mass. Mass is literally the measure of how much an object resists having its state of motion changed.
+2. **Forces Are Interactions, Not Properties**: An object doesn't "possess" force; force is an interaction between *two* bodies. Without an unbalanced external push or pull ($F_{\\text{net}} = 0$), momentum ($\vec{p} = m\vec{v}$) must remain constant.
+3. **Action-Reaction Pairs**: When you push against a wall, the electromagnetic repulsion between your hand's atoms and the wall's atoms pushes back equally on your hand ($F_{12} = -F_{21}$).
+
+---
+
+### 🌟 Simple Everyday Example
+When you stir sugar in a glass of water and stop stirring, the water keeps swirling. Why? Because the liquid particles already have rotational momentum, and friction takes time to slow each water molecule down!
+
+---
+
+### 🧪 Think About This:
+If you were floating in empty space far away from any gravity and threw a ball, when would it stop moving?`;
+    }
+
+    if (activeTopic.toLowerCase().includes('photosynthesis')) {
+      return `### 💡 Why Photosynthesis Occurs in Plants
+
+Here is the biological and chemical "Why" behind photosynthesis:
+
+---
+
+### 🔍 The Core Purpose
+1. **Autotrophic Energy Conversion**: Unlike animals, plants cannot walk around to hunt for food. They must convert radiant light energy (photons from the sun) into stable chemical energy stored in molecular bonds (glucose sugar: $C_6H_{12}O_6$).
+2. **The Role of Chlorophyll**: Green leaves contain chloroplasts packed with **chlorophyll** pigments that absorb blue and red light wavelengths while reflecting green light.
+3. **Electron Excitation & Water Splitting**: Absorbed light energy excites electrons in Photosystem II, which splits water molecules ($2H_2O \rightarrow 4H^+ + 4e^- + O_2$). The released oxygen is what living organisms breathe!
+
+---
+
+### 🔑 Key Takeaway
+Photosynthesis is essentially nature's solar panel and sugar factory combined!
+
+Would you like to explore the Light Reaction or Dark (Calvin) cycle next?`;
+    }
+
+    return `### 💡 The Underlying Reason Behind ${topicLabel}
+**Subject: ${subjectLabel}**
+
+Here is why **${topicLabel}** behaves the way it does:
+
+---
+
+### 1. Fundamental Principle
+In ${subjectLabel}, every observed rule is driven by underlying conservation laws (energy, momentum, mass) and system equilibrium.
+
+### 2. Step-by-Step Cause and Effect:
+1. **Initial Trigger / Condition**: An external change or input is introduced into the system.
+2. **Intermediate Mechanism**: The system responds according to established governing laws.
+3. **Equilibrium State**: The system stabilizes into a predictable, measurable outcome.
+
+---
+
+### 🌟 Intuitive Takeaway
+${mode === 'beginner' ? `Think of it like balancing a scale: whenever one side changes, the system naturally adjusts to restore balance!` : `Understanding the fundamental causal mechanism ensures you can solve unfamiliar variants of this problem in exams.`}
+
+Would you like a step-by-step example or a quick concept check?`;
+  }
+
+  // 2. Follow-up: "Explain step [N] again" / "Clarify step [N]"
+  const stepMatch =
+    lower.match(/(?:explain|clarify|what about|detail|how did you get|break down)\s*(?:the\s*)?step\s*(\d+)/i) ||
+    lower.match(/^step\s*(\d+)\??$/i);
+
+  if (stepMatch) {
+    const stepNum = parseInt(stepMatch[1], 10);
+
+    return `### 🔍 Deep Dive: Clarifying Step ${stepNum}
+**Topic: ${topicLabel} (${subjectLabel})**
+
+Let's break down **Step ${stepNum}** in crystal-clear detail so you can master how and why this calculation/step works!
+
+---
+
+### 📝 What Happens in Step ${stepNum}:
+${
+  stepNum === 1
+    ? `* **Goal**: Identify all known values and establish the correct formula.\n* **Why it matters**: Writing down Given Data ($m, u, t, F$) and verifying SI units (meters, seconds, kg) prevents 80% of typical student exam mistakes!`
+    : stepNum === 2
+    ? `* **Goal**: Isolate the variable and substitute known values.\n* **Why it matters**: Make sure not to mix up initial velocity ($u$) with final velocity ($v$), or mass ($m$) with weight ($W = mg$). Substitute carefully into the isolated formula.`
+    : stepNum === 3
+    ? `* **Goal**: Carry out algebraic simplification step-by-step.\n* **Why it matters**: Perform multiplication and division in order (PEMDAS/BODMAS) to retain maximum precision before rounding the final result.`
+    : `* **Goal**: Evaluate the final answer and attach standard SI units.\n* **Why it matters**: Examiners look for units (e.g. $\\text{m/s}^2$, $\\text{N}$, $\\text{Joules}$, $\\text{grams}$) and box the final result for maximum marks!`
+}
+
+---
+
+### 💡 Pro Tip for Step ${stepNum}
+${mode === 'beginner' ? 'Always double-check your arithmetic with simple numbers first to build confidence.' : 'In board exams, each step carries dedicated step marks even if the final arithmetic has a small slip!'}
+
+Does Step ${stepNum} make total sense now, or would you like to solve a fresh practice problem together?`;
+  }
+
+  // 3. Follow-up: "Give another example" / "New example"
+  const isExample =
+    lower.includes('another example') ||
+    lower.includes('more examples') ||
+    lower.includes('one more example') ||
+    lower.includes('different example') ||
+    lower.includes('new example') ||
+    (lower.includes('give') && lower.includes('example'));
+
+  if (isExample) {
+    if (activeTopic.toLowerCase().includes('newton') || activeTopic.toLowerCase().includes('motion')) {
+      return `### 🚀 Another Real-World Example: Newton's Laws of Motion
+
+Here is a brand-new everyday scenario you can visualize easily!
+
+---
+
+### 🛹 The Scenario: Skateboarding on a Paved Street
+
+1. **First Law (Inertia in Action)**:
+   * When you place a skateboard on the ground, it sits completely still until you kick the ground to push it forward.
+   * If the skateboard hits a sudden pebble on the road, the board stops abruptly, but you fly forward off the board. Why? Your body had inertia and wanted to keep moving at the same speed!
+
+2. **Second Law ($F = ma$)**:
+   * If a child pushes the skateboard, it accelerates gently.
+   * If an adult pushes the skateboard with twice the force ($2F$), it accelerates twice as fast ($2a$).
+
+3. **Third Law (Action & Reaction)**:
+   * To push yourself forward on the skateboard, your foot pushes **backward** against the asphalt (Action).
+   * The ground pushes your foot and skateboard **forward** with equal force (Reaction)!
+
+---
+
+### 🔑 Simple Takeaway
+You cannot push forward without pushing something else backward!`;
+    }
+
+    if (activeTopic.toLowerCase().includes('photosynthesis')) {
+      return `### 🌱 Another Real-World Example: Photosynthesis
+
+Here is a practical experiment you can see in real life!
+
+---
+
+### 🧪 The Scenario: An Aquatic Waterweed (*Hydrilla*) in a Glass Beaker
+
+1. **The Setup**: Place a fresh green water plant in a clear glass of water under a bright desk lamp.
+2. **What Happens**: Within minutes, you will see continuous tiny bubbles rising from the plant stems to the top of the water.
+3. **The Science**: Those bubbles are **pure Oxygen gas ($O_2$)** produced by the plant as it uses light energy from the lamp to convert water and dissolved carbon dioxide into glucose food!
+4. **Takeaway**: More light intensity = more oxygen bubbles per minute!
+
+---
+
+Would you like another example, or should we test this concept with a quick question?`;
+    }
+
+    return `### 🌟 Another Real-World Example: ${topicLabel}
+**Subject: ${subjectLabel}**
+
+Here is a fresh scenario demonstrating **${topicLabel}**:
+
+---
+
+### 1. The Real-Life Situation
+Consider a daily activity where **${topicLabel}** plays a direct, observable role.
+
+### 2. How the Concept Applies:
+* **The Action / Input**: An everyday input or condition occurs.
+* **The Underlying Law**: The rules of **${topicLabel}** govern how the energy, matter, or value moves.
+* **The Visible Result**: You observe the predicted outcome consistently and reliably.
+
+---
+
+### 💡 Why This Example Matters
+Relating classroom theory in ${subjectLabel} to real-life situations makes exam recall effortless!
+
+Would you like to try a practice question on this?`;
+  }
+
+  // 4. Follow-up: "Make that simpler" / "Simpler language"
+  const isSimpler =
+    lower.includes('simpler') ||
+    lower.includes('easier') ||
+    lower.includes('make that simpler') ||
+    lower.includes('simple words') ||
+    lower.includes('too complex') ||
+    lower.includes('too hard') ||
+    lower.includes('eli5') ||
+    lower.includes('for a beginner');
+
+  if (isSimpler) {
+    return `### 🎈 Super Simple Explanation: ${topicLabel}
+
+Let's make this ultra-simple, like explaining it to a friend over coffee! ☕
+
+---
+
+### 🛋️ 3 Ultra-Simple Points:
+
+1. **The Big Idea**:
+   ${topicLabel} is just nature's (or math's) way of saying: *"Rules stay predictable and balanced."*
+
+2. **The Everyday Analogy**:
+   Think of ${topicLabel} like a bicycle. If you pedal forward, you move. If you stop pedaling, friction slows you down. If you want to go twice as fast, you have to pedal with more effort!
+
+3. **What You Need to Remember for Exams**:
+   - **Input**: What you start with.
+   - **Rule**: The core formula or law.
+   - **Output**: The final result.
+
+---
+
+### 🎯 Quick Check:
+Does this simplified picture make it feel easier to understand? Let me know which part you want to practice!`;
+  }
+
+  // 5. Follow-up: "What is the difference?" / "Compare X and Y"
+  const isDifference =
+    lower.includes('difference') ||
+    lower.includes('compare') ||
+    lower.includes('versus') ||
+    lower.includes(' vs ') ||
+    lower.includes('distinguish');
+
+  if (isDifference) {
+    return `### ⚖️ Concept Comparison & Key Differences
+**Topic: ${topicLabel} (${subjectLabel})**
+
+Here is a structured comparison table to help you master distinctions for exams:
+
+---
+
+| Feature / Aspect | Concept A (Primary Rule) | Concept B (Associated Principle) |
+| :--- | :--- | :--- |
+| **Basic Definition** | Describes the primary state or rate of change | Describes the reactive state or conservation law |
+| **Key Formula** | Primary equation (e.g., $F = ma$, $y = f(x)$) | Secondary relationship / boundary condition |
+| **Physical / Academic Meaning** | Direct cause-and-effect relationship | Systemic constraint or conservation |
+| **Typical Exam Mistake** | Forgetting standard SI units | Confusing direction / sign conventions |
+
+---
+
+### 💡 High-Yield Board Exam Tip
+Whenever an exam asks *"Distinguish between A and B"*, always format your answer as a **Table** like above — examiners award full presentation marks for tabular comparisons!
+
+Would you like to test your understanding with a quick MCQ?`;
+  }
+
+  // 6. Follow-up: "Quiz me on this" / "Practice question"
+  const isQuiz =
+    lower.includes('quiz me') ||
+    lower.includes('test me') ||
+    lower.includes('practice question') ||
+    lower.includes('give me a question') ||
+    lower.includes('ask me a question') ||
+    lower.includes('test my understanding');
+
+  if (isQuiz) {
+    if (activeTopic.toLowerCase().includes('newton') || activeTopic.toLowerCase().includes('motion')) {
+      return `### 🧪 Quick Concept Quiz: Newton's Laws
+
+Let's test your understanding! Here is a classic question:
+
+---
+
+**Question**:
+A book is resting completely still on a flat table. What is the net external force ($F_{\\text{net}}$) acting on the book?
+
+- **A)** Equal to the weight of the book ($mg$)
+- **B)** Zero ($0\\text{ N}$)
+- **C)** Equal to the normal reaction force only
+- **D)** Constantly increasing
+
+---
+
+👉 **Reply with your answer (A, B, C, or D)** and I'll tell you if you're right and explain why!`;
+    }
+
+    return `### 🧪 Quick Practice Challenge: ${topicLabel}
+
+Let's see how well you've grasped **${topicLabel}**!
+
+---
+
+**Question**:
+In ${subjectLabel}, when applying the core principle of **${topicLabel}**, which of the following is always true?
+
+- **A)** The total system remains governed by fundamental conservation and balance laws.
+- **B)** Variables change randomly with no predictable relationship.
+- **C)** Initial given conditions do not affect the final outcome.
+- **D)** Units do not need to be consistent across steps.
+
+---
+
+👉 **Type your chosen option (A, B, C, or D)**, and I'll check your answer immediately!`;
+  }
+
+  // 7. Follow-up: Student answering a quiz (A, B, C, D)
+  const isOptionAnswer = lower.match(/^(?:option\s*)?([a-d])(?:[\.\)]|\b)/i) || lower.match(/^([a-d])$/i);
+
+  if (isOptionAnswer) {
+    const chosen = isOptionAnswer[1].toUpperCase();
+    const isCorrect = chosen === 'B' || chosen === 'A';
+
+    return `### ${isCorrect ? '🎉 Correct! Well Done!' : '🤔 Good Try, Let\'s Review!'}
+
+You selected **Option ${chosen}**.
+
+---
+
+### 💡 Why this is the case:
+${
+  isCorrect
+    ? `Excellent intuition! The system is in dynamic or static equilibrium, meaning the opposing forces or balanced terms cancel out ($F_{\\text{net}} = 0$), so the object remains at rest according to Newton's First Law!`
+    : `Not quite! Remember that when an object is at rest, the upward normal reaction force from the surface exactly balances the downward gravitational force ($N - W = 0$), making the **net force equal to 0**.`
+}
+
+---
+
+### 🚀 What's next?
+You've mastered this step! Would you like to:
+1. Try a **harder numerical problem**?
+2. Move on to **another chapter topic**?
+3. Ask any specific doubts?`;
+  }
+
+  return null;
+}
+
+// ============================================================
+// MOCK AI TUTOR MAIN ENTRY POINT
+// ============================================================
+
+export function getMockTutorResponse(messageOrMessages, mode = 'standard', syllabusContext = null) {
+  const context = extractConversationContext(messageOrMessages, syllabusContext);
+  const { currentText: text, activeTopic, activeSubject, activeChapter, lastAssistantMsg } = context;
   const lower = text.toLowerCase();
 
   if (!text) {
@@ -39,7 +468,23 @@ export function getMockTutorResponse(message, mode = 'standard', syllabusContext
 
 Hello! 👋 I am your Intermediate (Class 11 & 12) AI Study Assistant.
 
-Select your **Stream (MPC / BiPC / MEC / CEC)**, **Year**, and **Topic** to get tailored step-by-step guidance, formulas, MCQs, and exam revision!`;
+Select your **Stream (MPC / BiPC / MEC / CEC)**, **Year**, and **Topic** above, or ask any question to get step-by-step guidance, formulas, MCQs, and exam revision!`;
+  }
+
+  // Check for multi-turn follow-up intent first
+  const followUpResponse = handleFollowUpIntent({
+    currentText: text,
+    lower,
+    activeTopic,
+    activeSubject,
+    activeChapter,
+    lastAssistantMsg,
+    mode,
+    syllabusContext,
+  });
+
+  if (followUpResponse) {
+    return followUpResponse;
   }
 
   // ----------------------------------------------------------
@@ -230,11 +675,6 @@ $$\\vec{F} = m\\frac{d\\vec{v}}{dt} = m\\vec{a}$$
 - Recoil velocity of gun: $V = -\\frac{m}{M}v$
 - Apparent weight in a lift moving up with acceleration $a$: $W = m(g + a)$
 - Apparent weight in a lift moving down with acceleration $a$: $W = m(g - a)$`;
-  }
-
-  // Handle generic syllabus context if present
-  if (syllabusContext && (syllabusContext.subject || syllabusContext.chapter || syllabusContext.topic)) {
-    return generateStructuredIntermediateResponse(text, mode, syllabusContext);
   }
 
   // ----------------------------------------------------------
@@ -1508,22 +1948,39 @@ Based on your notes, try these questions:
 ${text}`;
   }
 
-  return `### SUMMARY
+  // If syllabus context is present, use structured curriculum response
+  if (syllabusContext && (syllabusContext.subject || syllabusContext.chapter || syllabusContext.topic)) {
+    return generateStructuredIntermediateResponse(text, mode, syllabusContext);
+  }
 
-Here are some useful study points:
+  // General grounded academic fallback with step-by-step structure
+  const topicTitle = text.length > 50 ? `${text.slice(0, 47)}...` : text;
+  return `### 📖 Study Guide: ${topicTitle}
 
-1. **Main Concept:** Find the central idea.
-2. **Key Details:** Remember important facts and definitions.
-3. **Applications:** Think about how the knowledge can be used.
-4. **Connections:** Connect the topic with things you already know.
+Here is a structured, step-by-step breakdown to help you study this concept:
 
-### YOUR NOTES
+---
 
-${text}
+### 1. 🔍 Conceptual Overview
+When exploring **${topicTitle}**, the goal is to break the core idea down into its foundational components and understand how each part connects.
 
-### STUDY TIP
+---
 
-Try explaining the topic without looking at your notes.`;
+### 2. 📝 Step-by-Step Learning Strategy
+1. **Identify the Core Definition**: State what the phenomenon, formula, or principle is in one clear sentence.
+2. **Examine the Governing Rules**: Look at the mathematical laws, physical constraints, or logical conditions that apply.
+3. **Work Through an Everyday Example**: Test your understanding by connecting the concept to a real-world analog.
+4. **Practice & Verify**: Solve a representative problem or answer a concept check question.
+
+---
+
+### 💡 Suggested Next Actions
+* Click **"💡 Explain Simply"** for an intuitive, beginner-friendly metaphor.
+* Click **"📚 Give Example"** for a real-world application.
+* Click **"🧩 Give Hint"** if you're stuck on a homework or exam problem.
+* Ask any follow-up question (e.g., *"Why?"*, *"Give an example"*, or *"Quiz me on this"*).
+
+> *Note: This is a general conceptual study guide. For state-specific Intermediate board syllabus topics, select your Stream, Year, and Chapter from the Syllabus Drawer above.*`;
 }
 
 // ============================================================

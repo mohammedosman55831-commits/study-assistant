@@ -86,7 +86,7 @@ export async function POST(request) {
       if (type === 'solver') {
         content = getMockSolverResponse(lastMessage);
       } else {
-        content = getMockTutorResponse(lastMessage, mode, syllabusContext);
+        content = getMockTutorResponse(messages, mode, syllabusContext);
       }
 
       return NextResponse.json({

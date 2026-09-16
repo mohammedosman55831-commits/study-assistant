@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // MATH & TRIGONOMETRY SOLVER MODULE
 // ============================================================
 
@@ -41,24 +41,24 @@ const EXACT_DEGREE_VALUES = {
     cos: Math.sqrt(3) / 2,
     tan: 1 / Math.sqrt(3),
     sinExact: '0.5',
-    cosExact: '√3/2 ≈ 0.866',
-    tanExact: '1/√3 ≈ 0.577',
+    cosExact: 'âˆš3/2 â‰ˆ 0.866',
+    tanExact: '1/âˆš3 â‰ˆ 0.577',
   },
   45: {
     sin: Math.SQRT1_2,
     cos: Math.SQRT1_2,
     tan: 1,
-    sinExact: '√2/2 ≈ 0.7071',
-    cosExact: '√2/2 ≈ 0.7071',
+    sinExact: 'âˆš2/2 â‰ˆ 0.7071',
+    cosExact: 'âˆš2/2 â‰ˆ 0.7071',
     tanExact: '1',
   },
   60: {
     sin: Math.sqrt(3) / 2,
     cos: 0.5,
     tan: Math.sqrt(3),
-    sinExact: '√3/2 ≈ 0.866',
+    sinExact: 'âˆš3/2 â‰ˆ 0.866',
     cosExact: '0.5',
-    tanExact: '√3 ≈ 1.732',
+    tanExact: 'âˆš3 â‰ˆ 1.732',
   },
   90: {
     sin: 1,
@@ -72,16 +72,16 @@ const EXACT_DEGREE_VALUES = {
     sin: Math.sqrt(3) / 2,
     cos: -0.5,
     tan: -Math.sqrt(3),
-    sinExact: '√3/2 ≈ 0.866',
+    sinExact: 'âˆš3/2 â‰ˆ 0.866',
     cosExact: '-0.5',
-    tanExact: '-√3 ≈ -1.732',
+    tanExact: '-âˆš3 â‰ˆ -1.732',
   },
   135: {
     sin: Math.SQRT1_2,
     cos: -Math.SQRT1_2,
     tan: -1,
-    sinExact: '√2/2 ≈ 0.7071',
-    cosExact: '-√2/2 ≈ -0.7071',
+    sinExact: 'âˆš2/2 â‰ˆ 0.7071',
+    cosExact: '-âˆš2/2 â‰ˆ -0.7071',
     tanExact: '-1',
   },
   150: {
@@ -89,8 +89,8 @@ const EXACT_DEGREE_VALUES = {
     cos: -Math.sqrt(3) / 2,
     tan: -1 / Math.sqrt(3),
     sinExact: '0.5',
-    cosExact: '-√3/2 ≈ -0.866',
-    tanExact: '-1/√3 ≈ -0.577',
+    cosExact: '-âˆš3/2 â‰ˆ -0.866',
+    tanExact: '-1/âˆš3 â‰ˆ -0.577',
   },
   180: { sin: 0, cos: -1, tan: 0, sinExact: '0', cosExact: '-1', tanExact: '0' },
   210: {
@@ -98,24 +98,24 @@ const EXACT_DEGREE_VALUES = {
     cos: -Math.sqrt(3) / 2,
     tan: 1 / Math.sqrt(3),
     sinExact: '-0.5',
-    cosExact: '-√3/2 ≈ -0.866',
-    tanExact: '1/√3 ≈ 0.577',
+    cosExact: '-âˆš3/2 â‰ˆ -0.866',
+    tanExact: '1/âˆš3 â‰ˆ 0.577',
   },
   225: {
     sin: -Math.SQRT1_2,
     cos: -Math.SQRT1_2,
     tan: 1,
-    sinExact: '-√2/2 ≈ -0.7071',
-    cosExact: '-√2/2 ≈ -0.7071',
+    sinExact: '-âˆš2/2 â‰ˆ -0.7071',
+    cosExact: '-âˆš2/2 â‰ˆ -0.7071',
     tanExact: '1',
   },
   240: {
     sin: -Math.sqrt(3) / 2,
     cos: -0.5,
     tan: Math.sqrt(3),
-    sinExact: '-√3/2 ≈ -0.866',
+    sinExact: '-âˆš3/2 â‰ˆ -0.866',
     cosExact: '-0.5',
-    tanExact: '√3 ≈ 1.732',
+    tanExact: 'âˆš3 â‰ˆ 1.732',
   },
   270: {
     sin: -1,
@@ -129,16 +129,16 @@ const EXACT_DEGREE_VALUES = {
     sin: -Math.sqrt(3) / 2,
     cos: 0.5,
     tan: -Math.sqrt(3),
-    sinExact: '-√3/2 ≈ -0.866',
+    sinExact: '-âˆš3/2 â‰ˆ -0.866',
     cosExact: '0.5',
-    tanExact: '-√3 ≈ -1.732',
+    tanExact: '-âˆš3 â‰ˆ -1.732',
   },
   315: {
     sin: -Math.SQRT1_2,
     cos: Math.SQRT1_2,
     tan: -1,
-    sinExact: '-√2/2 ≈ -0.7071',
-    cosExact: '√2/2 ≈ 0.7071',
+    sinExact: '-âˆš2/2 â‰ˆ -0.7071',
+    cosExact: 'âˆš2/2 â‰ˆ 0.7071',
     tanExact: '-1',
   },
   330: {
@@ -146,15 +146,15 @@ const EXACT_DEGREE_VALUES = {
     cos: Math.sqrt(3) / 2,
     tan: -1 / Math.sqrt(3),
     sinExact: '-0.5',
-    cosExact: '√3/2 ≈ 0.866',
-    tanExact: '-1/√3 ≈ -0.577',
+    cosExact: 'âˆš3/2 â‰ˆ 0.866',
+    tanExact: '-1/âˆš3 â‰ˆ -0.577',
   },
   360: { sin: 0, cos: 1, tan: 0, sinExact: '0', cosExact: '1', tanExact: '0' },
 };
 
 /**
  * Evaluates standard trig function (sin, cos, tan) for an angle.
- * Supports explicit degrees (°), radians (rad/pi), or default degrees for plain numbers.
+ * Supports explicit degrees (Â°), radians (rad/pi), or default degrees for plain numbers.
  */
 export function evaluateTrig(func, rawAngleStr) {
   let angleStr = rawAngleStr.trim().toLowerCase();
@@ -164,14 +164,14 @@ export function evaluateTrig(func, rawAngleStr) {
   if (
     angleStr.includes('rad') ||
     angleStr.includes('pi') ||
-    angleStr.includes('π')
+    angleStr.includes('Ï€')
   ) {
     isRadians = true;
     angleStr = angleStr.replace(/radians?|rads?|rad/g, '').trim();
-    angleStr = angleStr.replace(/π/g, 'pi');
+    angleStr = angleStr.replace(/Ï€/g, 'pi');
   } else {
     // Degree markings
-    angleStr = angleStr.replace(/°|degrees?|degs?|deg/g, '').trim();
+    angleStr = angleStr.replace(/Â°|degrees?|degs?|deg/g, '').trim();
   }
 
   // Parse numeric angle or pi fraction
@@ -224,7 +224,7 @@ export function evaluateTrig(func, rawAngleStr) {
       }
     }
   } else {
-    angleDesc = `${formatNumber(angleValue)}°`;
+    angleDesc = `${formatNumber(angleValue)}Â°`;
     const normDeg = Math.round(((angleValue % 360) + 360) % 360);
 
     if (
@@ -283,7 +283,7 @@ export function evaluateInverseTrig(func, rawArgStr) {
   let normFunc = func
     .toLowerCase()
     .trim()
-    .replace('⁻¹', '')
+    .replace('â»Â¹', '')
     .replace('^-1', '')
     .replace(/^inv/, '');
 
@@ -305,16 +305,16 @@ export function evaluateInverseTrig(func, rawArgStr) {
   if (normFunc === 'arcsin') {
     if (x < -1 || x > 1) {
       return {
-        error: `Domain error: arcsin(x) is only defined for -1 ≤ x ≤ 1. (Received x = ${x})`,
+        error: `Domain error: arcsin(x) is only defined for -1 â‰¤ x â‰¤ 1. (Received x = ${x})`,
       };
     }
     const rad = Math.asin(x);
     const deg = (rad * 180) / Math.PI;
     let piFraction = '';
-    if (Math.abs(x - 0.5) < 1e-6) piFraction = 'π/6 rad ≈ ';
-    else if (Math.abs(x - Math.SQRT1_2) < 1e-6) piFraction = 'π/4 rad ≈ ';
-    else if (Math.abs(x - Math.sqrt(3) / 2) < 1e-6) piFraction = 'π/3 rad ≈ ';
-    else if (Math.abs(x - 1) < 1e-6) piFraction = 'π/2 rad ≈ ';
+    if (Math.abs(x - 0.5) < 1e-6) piFraction = 'Ï€/6 rad â‰ˆ ';
+    else if (Math.abs(x - Math.SQRT1_2) < 1e-6) piFraction = 'Ï€/4 rad â‰ˆ ';
+    else if (Math.abs(x - Math.sqrt(3) / 2) < 1e-6) piFraction = 'Ï€/3 rad â‰ˆ ';
+    else if (Math.abs(x - 1) < 1e-6) piFraction = 'Ï€/2 rad â‰ˆ ';
     else if (Math.abs(x) < 1e-6) piFraction = '0 rad';
 
     return {
@@ -330,18 +330,18 @@ export function evaluateInverseTrig(func, rawArgStr) {
   if (normFunc === 'arccos') {
     if (x < -1 || x > 1) {
       return {
-        error: `Domain error: arccos(x) is only defined for -1 ≤ x ≤ 1. (Received x = ${x})`,
+        error: `Domain error: arccos(x) is only defined for -1 â‰¤ x â‰¤ 1. (Received x = ${x})`,
       };
     }
     const rad = Math.acos(x);
     const deg = (rad * 180) / Math.PI;
     let piFraction = '';
     if (Math.abs(x - 1) < 1e-6) piFraction = '0 rad';
-    else if (Math.abs(x - Math.sqrt(3) / 2) < 1e-6) piFraction = 'π/6 rad ≈ ';
-    else if (Math.abs(x - Math.SQRT1_2) < 1e-6) piFraction = 'π/4 rad ≈ ';
-    else if (Math.abs(x - 0.5) < 1e-6) piFraction = 'π/3 rad ≈ ';
-    else if (Math.abs(x) < 1e-6) piFraction = 'π/2 rad ≈ ';
-    else if (Math.abs(x + 1) < 1e-6) piFraction = 'π rad ≈ ';
+    else if (Math.abs(x - Math.sqrt(3) / 2) < 1e-6) piFraction = 'Ï€/6 rad â‰ˆ ';
+    else if (Math.abs(x - Math.SQRT1_2) < 1e-6) piFraction = 'Ï€/4 rad â‰ˆ ';
+    else if (Math.abs(x - 0.5) < 1e-6) piFraction = 'Ï€/3 rad â‰ˆ ';
+    else if (Math.abs(x) < 1e-6) piFraction = 'Ï€/2 rad â‰ˆ ';
+    else if (Math.abs(x + 1) < 1e-6) piFraction = 'Ï€ rad â‰ˆ ';
 
     return {
       func: 'arccos',
@@ -358,9 +358,9 @@ export function evaluateInverseTrig(func, rawArgStr) {
     const deg = (rad * 180) / Math.PI;
     let piFraction = '';
     if (Math.abs(x) < 1e-6) piFraction = '0 rad';
-    else if (Math.abs(x - 1 / Math.sqrt(3)) < 1e-6) piFraction = 'π/6 rad ≈ ';
-    else if (Math.abs(x - 1) < 1e-6) piFraction = 'π/4 rad ≈ ';
-    else if (Math.abs(x - Math.sqrt(3)) < 1e-6) piFraction = 'π/3 rad ≈ ';
+    else if (Math.abs(x - 1 / Math.sqrt(3)) < 1e-6) piFraction = 'Ï€/6 rad â‰ˆ ';
+    else if (Math.abs(x - 1) < 1e-6) piFraction = 'Ï€/4 rad â‰ˆ ';
+    else if (Math.abs(x - Math.sqrt(3)) < 1e-6) piFraction = 'Ï€/3 rad â‰ˆ ';
 
     return {
       func: 'arctan',
@@ -384,8 +384,8 @@ export function safeEvaluateArithmetic(expr) {
 
   let sanitized = expr
     .trim()
-    .replace(/×/g, '*')
-    .replace(/÷/g, '/')
+    .replace(/Ã—/g, '*')
+    .replace(/Ã·/g, '/')
     .replace(/\s+/g, '');
 
   if (!sanitized) return null;
@@ -506,7 +506,7 @@ export function classifyProblem(question) {
 
   // Inverse trig check
   if (
-    /sin(?:⁻¹|\^-1)|cos(?:⁻¹|\^-1)|tan(?:⁻¹|\^-1)|arcsin|arccos|arctan|asin|acos|atan/i.test(
+    /sin(?:â»Â¹|\^-1)|cos(?:â»Â¹|\^-1)|tan(?:â»Â¹|\^-1)|arcsin|arccos|arctan|asin|acos|atan/i.test(
       lower
     )
   ) {
@@ -531,11 +531,11 @@ export function classifyProblem(question) {
     return 'algebra';
   }
 
-  // Pure arithmetic check (numbers, operators +, -, *, /, ÷, ×, ^)
+  // Pure arithmetic check (numbers, operators +, -, *, /, Ã·, Ã—, ^)
   if (
-    /^[\s\d\.\+\-\*\/\(\)\^\÷\×xX]+$/.test(q) &&
+    /^[\s\d\.\+\-\*\/\(\)\^\Ã·\Ã—xX]+$/.test(q) &&
     /[\d]/.test(q) &&
-    /[\+\-\*\/\÷\×^]/.test(q)
+    /[\+\-\*\/\Ã·\Ã—^]/.test(q)
   ) {
     return 'arithmetic';
   }
@@ -593,9 +593,9 @@ export function classifyProblem(question) {
 export function solveTrigonometry(question) {
   const q = question.trim();
 
-  // Check for single inverse trig function first (e.g., arcsin(0.5), sin⁻¹(0.5), tan⁻¹(1))
+  // Check for single inverse trig function first (e.g., arcsin(0.5), sinâ»Â¹(0.5), tanâ»Â¹(1))
   const invMatch = q.match(
-    /^(?:what\s+is\s+)?(sin(?:⁻¹|\^-1)|cos(?:⁻¹|\^-1)|tan(?:⁻¹|\^-1)|arcsin|arccos|arctan|asin|acos|atan)\s*\(?\s*(-?[\d.]+)\s*\)?$/i
+    /^(?:what\s+is\s+)?(sin(?:â»Â¹|\^-1)|cos(?:â»Â¹|\^-1)|tan(?:â»Â¹|\^-1)|arcsin|arccos|arctan|asin|acos|atan)\s*\(?\s*(-?[\d.]+)\s*\)?$/i
   );
 
   if (invMatch) {
@@ -604,61 +604,61 @@ export function solveTrigonometry(question) {
     const invRes = evaluateInverseTrig(funcName, argStr);
 
     if (invRes.error) {
-      return `### 🏷️ PROBLEM TYPE: Trigonometry (Inverse Function)
+      return `### ðŸ·ï¸ PROBLEM TYPE: Trigonometry (Inverse Function)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### ⚠️ ERROR
+### âš ï¸ ERROR
 ${invRes.error}
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 The trigonometric functions sine and cosine have outputs strictly in the range [-1, 1]. Therefore, their inverse functions can only accept inputs between -1 and 1.`;
     }
 
-    return `### 🏷️ PROBLEM TYPE: Trigonometry (Inverse Function)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Trigonometry (Inverse Function)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 🎯 WHAT WE NEED TO FIND
+### ðŸŽ¯ WHAT WE NEED TO FIND
 Find the angle whose ${invRes.func.replace('arc', '')} value is **${invRes.arg}**.
 
-### 📖 CONCEPT
+### ðŸ“– CONCEPT
 - **Inverse Trigonometric Function**: Returns the angle $\\theta$ such that $\\text{${invRes.func.replace('arc', '')}}(\\theta) = ${invRes.arg}$.
 - **Standard Domain**:
   - arcsin / arccos: input in $[-1, 1]$
   - arctan: input in $(-\\infty, \\infty)$
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 **Step 1:** Set up the equation:
 $$\\text{${invRes.func.replace('arc', '')}}(\\theta) = ${invRes.arg}$$
 
 **Step 2:** Find the principal angle $\\theta$:
-- In degrees: **${invRes.deg}°**
+- In degrees: **${invRes.deg}Â°**
 - In radians: **${invRes.rad} rad**
 
-### ✅ FINAL ANSWER
-**${invRes.deg}°**  *(or ${invRes.rad} rad)*
+### âœ… FINAL ANSWER
+**${invRes.deg}Â°**  *(or ${invRes.rad} rad)*
 
-### 💡 WHY THIS METHOD WORKS
+### ðŸ’¡ WHY THIS METHOD WORKS
 The inverse function reverses the trigonometric operation to retrieve the original angle in its principal range.
 
-### 🧪 TRY IT YOURSELF
-What is **arcsin(0.5)** or **tan⁻¹(1)**?`;
+### ðŸ§ª TRY IT YOURSELF
+What is **arcsin(0.5)** or **tanâ»Â¹(1)**?`;
   }
 
   // ----------------------------------------------------------
-  // COMPOUND TRIG EXPRESSIONS (e.g. cos(90°) + sin(90°), 2sin(30°) + cos(60°))
+  // COMPOUND TRIG EXPRESSIONS (e.g. cos(90Â°) + sin(90Â°), 2sin(30Â°) + cos(60Â°))
   // ----------------------------------------------------------
 
   // Pre-normalize expression:
   let normalized = q
-    .replace(/×/g, '*')
-    .replace(/÷/g, '/')
-    .replace(/sin⁻¹|sin\^-1/gi, 'arcsin')
-    .replace(/cos⁻¹|cos\^-1/gi, 'arccos')
-    .replace(/tan⁻¹|tan\^-1/gi, 'arctan');
+    .replace(/Ã—/g, '*')
+    .replace(/Ã·/g, '/')
+    .replace(/sinâ»Â¹|sin\^-1/gi, 'arcsin')
+    .replace(/cosâ»Â¹|cos\^-1/gi, 'arccos')
+    .replace(/tanâ»Â¹|tan\^-1/gi, 'arctan');
 
   // Insert multiplication between numbers and trig functions: e.g. "2sin" -> "2 * sin"
   normalized = normalized.replace(
@@ -666,20 +666,20 @@ What is **arcsin(0.5)** or **tan⁻¹(1)**?`;
     '$1 * $2'
   );
 
-  // Normalize function calls with bare numbers: "cos90" -> "cos(90°)", "cos 90°" -> "cos(90°)", "cos(90)" -> "cos(90°)"
+  // Normalize function calls with bare numbers: "cos90" -> "cos(90Â°)", "cos 90Â°" -> "cos(90Â°)", "cos(90)" -> "cos(90Â°)"
   normalized = normalized.replace(
-    /\b(sin|cos|tan)\s*\(?(\d+(?:\.\d+)?\s*(?:°|deg|degrees|rad|radians|pi|π)?)\)?/gi,
+    /\b(sin|cos|tan)\s*\(?(\d+(?:\.\d+)?\s*(?:Â°|deg|degrees|rad|radians|pi|Ï€)?)\)?/gi,
     (match, func, arg) => {
       let cleanArg = arg.trim();
       // If no unit, assume degrees
       if (
-        !cleanArg.includes('°') &&
+        !cleanArg.includes('Â°') &&
         !cleanArg.includes('deg') &&
         !cleanArg.includes('rad') &&
         !cleanArg.includes('pi') &&
-        !cleanArg.includes('π')
+        !cleanArg.includes('Ï€')
       ) {
-        cleanArg = `${cleanArg}°`;
+        cleanArg = `${cleanArg}Â°`;
       }
       return `${func.toLowerCase()}(${cleanArg})`;
     }
@@ -691,14 +691,14 @@ What is **arcsin(0.5)** or **tan⁻¹(1)**?`;
     (match, func, innerArg) => {
       let cleanArg = innerArg.trim();
       if (
-        !cleanArg.includes('°') &&
+        !cleanArg.includes('Â°') &&
         !cleanArg.includes('deg') &&
         !cleanArg.includes('rad') &&
         !cleanArg.includes('pi') &&
-        !cleanArg.includes('π') &&
+        !cleanArg.includes('Ï€') &&
         /^[\d.]+$/.test(cleanArg)
       ) {
-        cleanArg = `${cleanArg}°`;
+        cleanArg = `${cleanArg}Â°`;
       }
       return `${func.toLowerCase()}(${cleanArg})`;
     }
@@ -732,21 +732,21 @@ What is **arcsin(0.5)** or **tan⁻¹(1)**?`;
       const res = evaluateTrig(call.func, call.arg);
 
       if (res.isUndefined) {
-        return `### 🏷️ PROBLEM TYPE: Trigonometry
+        return `### ðŸ·ï¸ PROBLEM TYPE: Trigonometry
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### ⚠️ ERROR
+### âš ï¸ ERROR
 **${call.func}(${call.arg}) is undefined.**
 
-### 💡 WHY?
-At odd multiples of 90° (such as 90°, 270°), the cosine is 0. Since $\\tan(\\theta) = \\frac{\\sin(\\theta)}{\\cos(\\theta)}$, division by zero occurs, making the tangent undefined (vertical asymptote).`;
+### ðŸ’¡ WHY?
+At odd multiples of 90Â° (such as 90Â°, 270Â°), the cosine is 0. Since $\\tan(\\theta) = \\frac{\\sin(\\theta)}{\\cos(\\theta)}$, division by zero occurs, making the tangent undefined (vertical asymptote).`;
       }
 
       evalResults.push(res);
       steps.push(
-        `- **${call.fullMatch}**: Angle is ${res.angleDesc} → **${call.func}(${res.angleDesc}) = ${res.exactDesc}**`
+        `- **${call.fullMatch}**: Angle is ${res.angleDesc} â†’ **${call.func}(${res.angleDesc}) = ${res.exactDesc}**`
       );
 
       // Substitute into expression
@@ -755,12 +755,12 @@ At odd multiples of 90° (such as 90°, 270°), the cosine is 0. Since $\\tan(\\
         `(${res.value})`
       );
     } catch (err) {
-      return `### 🏷️ PROBLEM TYPE: Trigonometry
+      return `### ðŸ·ï¸ PROBLEM TYPE: Trigonometry
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### ⚠️ ERROR
+### âš ï¸ ERROR
 Could not evaluate **${call.fullMatch}**: ${err.message}`;
     }
   }
@@ -769,33 +769,33 @@ Could not evaluate **${call.fullMatch}**: ${err.message}`;
   const finalNumericValue = safeEvaluateArithmetic(substitutedExpr);
 
   if (finalNumericValue === null || Number.isNaN(finalNumericValue)) {
-    return `### 🏷️ PROBLEM TYPE: Trigonometry
+    return `### ðŸ·ï¸ PROBLEM TYPE: Trigonometry
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### ⚠️ ERROR
+### âš ï¸ ERROR
 Could not compute the final arithmetic for expression: \`${substitutedExpr}\`. Please check the expression syntax.`;
   }
 
   const formattedAnswer = formatNumber(finalNumericValue);
 
-  return `### 🏷️ PROBLEM TYPE: Trigonometry
+  return `### ðŸ·ï¸ PROBLEM TYPE: Trigonometry
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 🎯 WHAT WE NEED TO FIND
+### ðŸŽ¯ WHAT WE NEED TO FIND
 Evaluate the trigonometric expression: **${q}**
 
-### 📖 CONCEPT & FORMULAS
-- **Angle Convention**: Angles without units or with **°** are treated as **Degrees**. Angles written with **rad** or containing **π** are in **Radians**.
+### ðŸ“– CONCEPT & FORMULAS
+- **Angle Convention**: Angles without units or with **Â°** are treated as **Degrees**. Angles written with **rad** or containing **Ï€** are in **Radians**.
 - **Standard Trigonometric Values**:
   - $\\sin(0^\\circ) = 0$, $\\sin(30^\\circ) = 0.5$, $\\sin(90^\\circ) = 1$
   - $\\cos(0^\\circ) = 1$, $\\cos(60^\\circ) = 0.5$, $\\cos(90^\\circ) = 0$
   - $\\tan(45^\\circ) = 1$
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 **Step 1:** Evaluate each trigonometric function:
 ${steps.join('\n')}
 
@@ -805,14 +805,14 @@ $$${substitutedExpr}$$
 **Step 3:** Perform arithmetic operations:
 $$= ${formattedAnswer}$$
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 **${formattedAnswer}**
 
-### 💡 WHY THIS METHOD WORKS
+### ðŸ’¡ WHY THIS METHOD WORKS
 Trigonometric expressions are evaluated by first calculating each function at its respective angle, then applying algebraic order of operations.
 
-### 🧪 TRY IT YOURSELF
-Try calculating: **2sin(30°) + cos(60°)** or **tan(45°) + cos(0°)**!`;
+### ðŸ§ª TRY IT YOURSELF
+Try calculating: **2sin(30Â°) + cos(60Â°)** or **tan(45Â°) + cos(0Â°)**!`;
 }
 
 // ------------------------------------------------------------
@@ -829,12 +829,12 @@ export function solveArithmetic(question) {
     const b = Number(add[2]);
     const answer = a + b;
 
-    return `### 🏷️ PROBLEM TYPE: Arithmetic (Addition)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Arithmetic (Addition)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** Identify the two numbers: ${a} and ${b}.
 
@@ -842,15 +842,15 @@ ${q}
 
 **${a} + ${b} = ${formatNumber(answer)}**
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **${formatNumber(answer)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 Addition combines quantities to find their total.
 
-### 🧪 TRY IT YOURSELF
+### ðŸ§ª TRY IT YOURSELF
 
 What is **12 + 8**?`;
   }
@@ -862,12 +862,12 @@ What is **12 + 8**?`;
     const b = Number(subtract[2]);
     const answer = a - b;
 
-    return `### 🏷️ PROBLEM TYPE: Arithmetic (Subtraction)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Arithmetic (Subtraction)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** Start with ${a}.
 
@@ -875,87 +875,87 @@ ${q}
 
 **${a} - ${b} = ${formatNumber(answer)}**
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **${formatNumber(answer)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 Subtraction finds the difference between quantities.
 
-### 🧪 TRY IT YOURSELF
+### ðŸ§ª TRY IT YOURSELF
 
 What is **20 - 7**?`;
   }
 
   // 3. MULTIPLICATION (preserved exact format)
   const multiply = q.match(
-    /^(-?\d+(?:\.\d+)?)\s*(?:\*|x|X|×)\s*(-?\d+(?:\.\d+)?)$/
+    /^(-?\d+(?:\.\d+)?)\s*(?:\*|x|X|Ã—)\s*(-?\d+(?:\.\d+)?)$/
   );
   if (multiply) {
     const a = Number(multiply[1]);
     const b = Number(multiply[2]);
     const answer = a * b;
 
-    return `### 🏷️ PROBLEM TYPE: Arithmetic (Multiplication)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Arithmetic (Multiplication)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** Identify the numbers: ${a} and ${b}.
 
 **Step 2:** Multiply them:
 
-**${a} × ${b} = ${formatNumber(answer)}**
+**${a} Ã— ${b} = ${formatNumber(answer)}**
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **${formatNumber(answer)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 Multiplication represents equal groups.
 
-For example, ${a} × ${b} means ${b} groups of ${a}.
+For example, ${a} Ã— ${b} means ${b} groups of ${a}.
 
-### 🧪 TRY IT YOURSELF
+### ðŸ§ª TRY IT YOURSELF
 
-What is **6 × 7**?`;
+What is **6 Ã— 7**?`;
   }
 
   // 4. DIVISION (preserved exact format)
   const divide = q.match(
-    /^(-?\d+(?:\.\d+)?)\s*(?:\/|÷)\s*(-?\d+(?:\.\d+)?)$/
+    /^(-?\d+(?:\.\d+)?)\s*(?:\/|Ã·)\s*(-?\d+(?:\.\d+)?)$/
   );
   if (divide) {
     const a = Number(divide[1]);
     const b = Number(divide[2]);
 
     if (b === 0) {
-      return `### 🏷️ PROBLEM TYPE: Arithmetic (Division)
+      return `### ðŸ·ï¸ PROBLEM TYPE: Arithmetic (Division)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 Division by zero is not defined.
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 A number cannot be divided into zero equal groups.`;
     }
 
     const answer = a / b;
 
-    return `### 🏷️ PROBLEM TYPE: Arithmetic (Division)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Arithmetic (Division)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** Identify the dividend: ${a}.
 
@@ -963,19 +963,19 @@ ${q}
 
 **Step 3:** Divide:
 
-**${a} ÷ ${b} = ${formatNumber(answer)}**
+**${a} Ã· ${b} = ${formatNumber(answer)}**
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **${formatNumber(answer)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 Division separates a quantity into equal groups.
 
-### 🧪 TRY IT YOURSELF
+### ðŸ§ª TRY IT YOURSELF
 
-What is **24 ÷ 6**?`;
+What is **24 Ã· 6**?`;
   }
 
   // 5. PERCENTAGE (preserved exact format)
@@ -987,30 +987,30 @@ What is **24 ÷ 6**?`;
     const number = Number(percentage[2]);
     const answer = (percent / 100) * number;
 
-    return `### 🏷️ PROBLEM TYPE: Arithmetic (Percentage)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Arithmetic (Percentage)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** Convert ${percent}% to a decimal:
 
-${percent}% = ${percent} ÷ 100 = ${percent / 100}
+${percent}% = ${percent} Ã· 100 = ${percent / 100}
 
 **Step 2:** Multiply by ${number}:
 
-${percent / 100} × ${number} = ${formatNumber(answer)}
+${percent / 100} Ã— ${number} = ${formatNumber(answer)}
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **${formatNumber(answer)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 A percentage means a part out of 100.
 
-### 🧪 TRY IT YOURSELF
+### ðŸ§ª TRY IT YOURSELF
 
 What is **25% of 80**?`;
   }
@@ -1018,12 +1018,12 @@ What is **25% of 80**?`;
   // 6. GENERAL ARITHMETIC EXPRESSION (e.g. (10 + 5) * 2 - 4)
   const generalResult = safeEvaluateArithmetic(q);
   if (generalResult !== null && !Number.isNaN(generalResult)) {
-    return `### 🏷️ PROBLEM TYPE: Arithmetic
+    return `### ðŸ·ï¸ PROBLEM TYPE: Arithmetic
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** Parse the arithmetic expression following standard order of operations (BODMAS / PEMDAS).
 
@@ -1031,11 +1031,11 @@ ${q}
 
 **${q} = ${formatNumber(generalResult)}**
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **${formatNumber(generalResult)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 Order of operations ensures that mathematical expressions are evaluated consistently.`;
   }
@@ -1059,12 +1059,12 @@ export function solveAlgebra(question) {
     const total = Number(eqAdd[2]);
     const answer = total - amount;
 
-    return `### 🏷️ PROBLEM TYPE: Algebra (Linear Equation)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Algebra (Linear Equation)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** We have:
 
@@ -1078,11 +1078,11 @@ ${q}
 
 **x = ${formatNumber(answer)}**
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **x = ${formatNumber(answer)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 We use the opposite operation to isolate x.`;
   }
@@ -1096,12 +1096,12 @@ We use the opposite operation to isolate x.`;
     const total = Number(eqSub[2]);
     const answer = total + amount;
 
-    return `### 🏷️ PROBLEM TYPE: Algebra (Linear Equation)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Algebra (Linear Equation)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** We have:
 
@@ -1115,11 +1115,11 @@ ${q}
 
 **x = ${formatNumber(answer)}**
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **x = ${formatNumber(answer)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 We add ${amount} to both sides to cancel out subtraction and isolate x.`;
   }
@@ -1140,23 +1140,23 @@ We add ${amount} to both sides to cancel out subtraction and isolate x.`;
     const c = Number(eqLinear[4]);
 
     if (a === 0) {
-      return `### 🏷️ PROBLEM TYPE: Algebra
+      return `### ðŸ·ï¸ PROBLEM TYPE: Algebra
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### ⚠️ ERROR
+### âš ï¸ ERROR
 Invalid equation: Coefficient of x cannot be 0.`;
     }
 
     const answer = (c - b) / a;
 
-    return `### 🏷️ PROBLEM TYPE: Algebra (Linear Equation)
+    return `### ðŸ·ï¸ PROBLEM TYPE: Algebra (Linear Equation)
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 
 **Step 1:** Equation: **${a !== 1 ? a : ''}x ${b >= 0 ? '+ ' + b : '- ' + Math.abs(b)} = ${c}**
 
@@ -1165,11 +1165,11 @@ ${q}
 
 ${a !== 1 ? `**Step 3:** Divide both sides by ${a}:\n**x = ${c - b} / ${a} = ${formatNumber(answer)}**` : ''}
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 
 **x = ${formatNumber(answer)}**
 
-### 💡 WHY?
+### ðŸ’¡ WHY?
 
 Linear equations are solved by isolating the variable using inverse operations.`;
   }
@@ -1182,51 +1182,51 @@ Linear equations are solved by isolating the variable using inverse operations.`
 // ------------------------------------------------------------
 
 export function getUnsupportedMathHelpMessage(question) {
-  return `### 🏷️ QUESTION SOLVER ASSISTANT
+  return `### ðŸ·ï¸ QUESTION SOLVER ASSISTANT
 
-### ❓ QUESTION
+### â“ QUESTION
 ${question}
 
-### 💡 SUPPORTED PROBLEM TYPES & FORMATS
+### ðŸ’¡ SUPPORTED PROBLEM TYPES & FORMATS
 
 I didn't recognize that exact mathematical expression. Here are the formats and features I support with step-by-step solutions:
 
 ---
 
-### 📐 1. Trigonometry (Degrees & Radians)
+### ðŸ“ 1. Trigonometry (Degrees & Radians)
 - **Standard functions**:
-  - \`cos(90°) + sin(90°)\` or \`cos90 + sin90\`
-  - \`sin(30°)\` or \`sin30\`
-  - \`cos(60°)\` or \`cos60\`
-  - \`tan(45°)\` or \`tan45\`
-  - \`2sin(30°) + cos(60°)\`
+  - \`cos(90Â°) + sin(90Â°)\` or \`cos90 + sin90\`
+  - \`sin(30Â°)\` or \`sin30\`
+  - \`cos(60Â°)\` or \`cos60\`
+  - \`tan(45Â°)\` or \`tan45\`
+  - \`2sin(30Â°) + cos(60Â°)\`
 - **Inverse functions**:
-  - \`sin⁻¹(0.5)\` or \`arcsin(0.5)\`
-  - \`cos⁻¹(0.5)\` or \`arccos(0.5)\`
-  - \`tan⁻¹(1)\` or \`arctan(1)\`
+  - \`sinâ»Â¹(0.5)\` or \`arcsin(0.5)\`
+  - \`cosâ»Â¹(0.5)\` or \`arccos(0.5)\`
+  - \`tanâ»Â¹(1)\` or \`arctan(1)\`
 - **Radian inputs**:
   - \`sin(pi / 2 rad)\` or \`cos(pi)\`
 
 ---
 
-### 🔢 2. Arithmetic & Percentages
+### ðŸ”¢ 2. Arithmetic & Percentages
 - **Basic operations**: \`25 + 4\`, \`20 - 7\`, \`6 * 7\`, \`24 / 6\`
 - **Percentages**: \`25% of 80\`, \`15% of 250\`
 - **Compound expressions**: \`(15 + 5) * 3 - 10 / 2\`
 
 ---
 
-### 🧮 3. Algebra & Equations
+### ðŸ§® 3. Algebra & Equations
 - **Linear equations**: \`x + 5 = 12\`, \`x - 4 = 15\`, \`2x + 6 = 18\`
 
 ---
 
-### 🤖 4. Conceptual Questions & Word Problems
+### ðŸ¤– 4. Conceptual Questions & Word Problems
 - Ask any concept, e.g.:
   - *"Explain Newton's second law"*
   - *"What is photosynthesis?"*
   - *"Solve quadratic equation 2x^2 + 5x - 3 = 0"*
-  The **AI Tutor** will provide a comprehensive, structured explanation!`;
+  The **Furqan NovaAI** will provide a comprehensive, structured explanation!`;
 }
 
 // ------------------------------------------------------------
@@ -1239,7 +1239,7 @@ export function solveMathProblem(question) {
   if (!q) {
     return {
       type: 'empty',
-      content: `### ❓ QUESTION\n\nNo question was entered.\n\n### 📝 SOLUTION\n\nPlease enter a question and I'll solve it step by step.`,
+      content: `### â“ QUESTION\n\nNo question was entered.\n\n### ðŸ“ SOLUTION\n\nPlease enter a question and I'll solve it step by step.`,
     };
   }
 
@@ -1287,7 +1287,7 @@ export function solveMathProblem(question) {
     return { type: 'algebra', content: algebraFallback };
   }
 
-  // 4. Conceptual question (Delegate to AI tutor fallback)
+  // 4. Conceptual question (Delegate to Furqan NovaAI fallback)
   if (problemType === 'concept_question') {
     return { type: 'concept_question', content: null };
   }
@@ -1298,3 +1298,4 @@ export function solveMathProblem(question) {
     content: getUnsupportedMathHelpMessage(q),
   };
 }
+

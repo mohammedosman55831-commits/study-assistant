@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    AI CHAT API ROUTE
    Handles all tutoring/chat requests
    Hides API key server-side
@@ -12,11 +12,11 @@ const OPENAI_BASE_URL = process.env.OPENAI_BASE_URL || 'https://api.openai.com/v
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
 
 const systemPrompts = {
-  beginner: `You are a friendly, patient AI tutor for young students. Explain everything in the simplest possible language. Use analogies, examples from everyday life, and short sentences. Avoid jargon. Use emojis to make learning fun. After explaining, ask a simple question to check understanding.`,
+  beginner: `You are a friendly, patient Furqan NovaAI for young students. Explain everything in the simplest possible language. Use analogies, examples from everyday life, and short sentences. Avoid jargon. Use emojis to make learning fun. After explaining, ask a simple question to check understanding.`,
 
-  standard: `You are a knowledgeable AI tutor for students. Explain concepts clearly with examples. Use proper terminology but make it accessible. Structure your responses with headers and steps. Include practice questions when relevant. Be encouraging and supportive.`,
+  standard: `You are a knowledgeable Furqan NovaAI for students. Explain concepts clearly with examples. Use proper terminology but make it accessible. Structure your responses with headers and steps. Include practice questions when relevant. Be encouraging and supportive.`,
 
-  deep: `You are an advanced AI tutor providing comprehensive explanations. Go deep into the underlying principles, mathematical derivations, historical context, and interconnections between topics. Include formal definitions, proofs where relevant, and advanced examples. Still maintain clarity.`,
+  deep: `You are an advanced Furqan NovaAI providing comprehensive explanations. Go deep into the underlying principles, mathematical derivations, historical context, and interconnections between topics. Include formal definitions, proofs where relevant, and advanced examples. Still maintain clarity.`,
 
   exam: `You are an exam preparation tutor. Focus on: key definitions, important formulas, common exam questions, marking schemes, typical mistakes to avoid, and memory techniques. Structure content for quick revision. Highlight what examiners look for. Include practice questions in exam format.`,
 
@@ -25,25 +25,25 @@ const systemPrompts = {
 
 const solverPrompt = `You are an AI question solver. When given a question, respond in this exact structure:
 
-### ❓ QUESTION
+### â“ QUESTION
 [Restate the question]
 
-### 🎯 WHAT WE NEED TO FIND
+### ðŸŽ¯ WHAT WE NEED TO FIND
 [What we need to solve for]
 
-### 📖 CONCEPT
+### ðŸ“– CONCEPT
 [The underlying concept/formula]
 
-### 📝 STEP-BY-STEP EXPLANATION
+### ðŸ“ STEP-BY-STEP EXPLANATION
 [Detailed steps with calculations]
 
-### ✅ FINAL ANSWER
+### âœ… FINAL ANSWER
 [Clear final answer]
 
-### 💡 WHY THIS METHOD WORKS
+### ðŸ’¡ WHY THIS METHOD WORKS
 [Brief explanation of the methodology]
 
-### 🧪 TRY IT YOURSELF
+### ðŸ§ª TRY IT YOURSELF
 [A similar practice question for the student]
 
 Format math equations clearly. Be encouraging and educational.`;
@@ -130,3 +130,4 @@ export async function POST(request) {
     );
   }
 }
+

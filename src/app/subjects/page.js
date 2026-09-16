@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -64,13 +64,13 @@ export default function SubjectsPage() {
       {/* Page Header */}
       <div style={{ marginBottom: '28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-          <span style={{ fontSize: '2rem' }}>📚</span>
+          <span style={{ fontSize: '2rem' }}>ðŸ“š</span>
           <div>
             <h1 className="page-title" style={{ margin: 0, fontSize: '28px', fontWeight: 800 }}>
               Subjects
             </h1>
             <p className="page-subtitle" style={{ margin: 0, color: 'var(--text-secondary, #5a5f7a)' }}>
-              Browse all subjects, chapters, and topics. Click any topic to start learning with the AI Tutor.
+              Browse all subjects, chapters, and topics. Click any topic to start learning with the Furqan NovaAI.
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function SubjectsPage() {
         }}
       >
         <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-tertiary, #8a8fa6)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px' }}>
-          📎 Education Level
+          ðŸ“Ž Education Level
         </div>
         <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
           <button
@@ -109,7 +109,7 @@ export default function SubjectsPage() {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>🏫 SSC (Class 6–10)</span>
+              <span>ðŸ« SSC (Class 6â€“10)</span>
               <span style={{
                 background: level === 'ssc' ? '#6366f1' : 'var(--bg-tertiary, #f0f2f8)',
                 color: level === 'ssc' ? '#fff' : 'var(--text-secondary)',
@@ -138,7 +138,7 @@ export default function SubjectsPage() {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>🎓 Intermediate (Class 11–12)</span>
+              <span>ðŸŽ“ Intermediate (Class 11â€“12)</span>
               <span style={{
                 background: level === 'intermediate' ? '#8b5cf6' : 'var(--bg-tertiary, #f0f2f8)',
                 color: level === 'intermediate' ? '#fff' : 'var(--text-secondary)',
@@ -155,7 +155,7 @@ export default function SubjectsPage() {
         {level === 'ssc' && (
           <div>
             <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-tertiary, #8a8fa6)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '10px' }}>
-              📅 Select Class
+              ðŸ“… Select Class
             </div>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               {SSC_CLASSES.map((cls) => {
@@ -189,7 +189,7 @@ export default function SubjectsPage() {
         {level === 'intermediate' && (
           <div>
             <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-tertiary, #8a8fa6)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '10px' }}>
-              📅 Year & Stream
+              ðŸ“… Year & Stream
             </div>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '14px' }}>
               {SYLLABUS_YEARS.map((y) => {
@@ -262,13 +262,13 @@ export default function SubjectsPage() {
       }}>
         <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-primary, #1a1d2e)' }}>
           {level === 'ssc'
-            ? `📚 ${SSC_CLASSES.find(c => c.id === selectedClass)?.label} Subjects`
-            : `🎓 ${SYLLABUS_STREAMS.find(s => s.id === selectedStream)?.name} — ${SYLLABUS_YEARS.find(y => y.id === selectedYear)?.shortLabel}`
+            ? `ðŸ“š ${SSC_CLASSES.find(c => c.id === selectedClass)?.label} Subjects`
+            : `ðŸŽ“ ${SYLLABUS_STREAMS.find(s => s.id === selectedStream)?.name} â€” ${SYLLABUS_YEARS.find(y => y.id === selectedYear)?.shortLabel}`
           }
         </div>
         <input
           type="text"
-          placeholder="🔍 Search subjects, chapters, or topics..."
+          placeholder="ðŸ” Search subjects, chapters, or topics..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           aria-label="Search subjects"
@@ -338,7 +338,7 @@ export default function SubjectsPage() {
                       {subject.name}
                     </div>
                     <div style={{ fontSize: '12px', color: 'var(--text-secondary, #5a5f7a)' }}>
-                      {subject.chapters.length} Chapters • {subject.chapters.reduce((acc, c) => acc + c.topics.length, 0)} Topics
+                      {subject.chapters.length} Chapters â€¢ {subject.chapters.reduce((acc, c) => acc + c.topics.length, 0)} Topics
                     </div>
                   </div>
                 </div>
@@ -356,7 +356,7 @@ export default function SubjectsPage() {
                     {subject.chapters.length} Chapters
                   </span>
                   <span style={{ fontSize: '14px', color: 'var(--text-tertiary, #8a8fa6)' }}>
-                    {isExpanded ? '▲' : '▼'}
+                    {isExpanded ? 'â–²' : 'â–¼'}
                   </span>
                 </div>
               </div>
@@ -382,7 +382,7 @@ export default function SubjectsPage() {
                         >
                           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                             <span style={{ fontWeight: 700, fontSize: '14px', color: 'var(--text-primary, #1a1d2e)' }}>
-                              📖 {chapter.name}
+                              ðŸ“– {chapter.name}
                             </span>
                             <span style={{
                               background: 'var(--bg-tertiary, #f0f2f8)',
@@ -426,7 +426,7 @@ export default function SubjectsPage() {
                                   e.currentTarget.style.color = 'var(--text-primary, #1a1d2e)';
                                 }}
                               >
-                                📌 {topicName}
+                                ðŸ“Œ {topicName}
                               </button>
                             ))}
                           </div>
@@ -443,3 +443,4 @@ export default function SubjectsPage() {
     </div>
   );
 }
+

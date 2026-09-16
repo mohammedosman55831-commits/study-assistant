@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // MOCK AI - STUDY ASSISTANT
 // ============================================================
 
@@ -407,52 +407,52 @@ function handleFollowUpIntent({
 
   if (isWhy) {
     if (activeTopicKey === 'OPTICS_REFLECTION' || lower.includes('reflect') || lower.includes('mirror') || lower.includes('light')) {
-      return `### 💡 Why Light Reflects & Why $\\angle i = \\angle r$
+      return `### ðŸ’¡ Why Light Reflects & Why $\\angle i = \\angle r$
 **Topic: Reflection of Light (Ray & Wave Optics)**
 
 Great question! Let's understand the deep physics behind why light reflects the way it does:
 
 ---
 
-### 🔍 1. Fermat's Principle of Least Time
+### ðŸ” 1. Fermat's Principle of Least Time
 Light always takes the **path of least time** to travel between two points. When light travels from source $A$ to reflecting surface and bounces to observer $B$, the only path that minimizes the total travel time is the one where the **angle of incidence strictly equals the angle of reflection** ($\angle i = \angle r$).
 
-### 🔍 2. Wave Theory (Huygens' Principle)
+### ðŸ” 2. Wave Theory (Huygens' Principle)
 When a planar light wavefront strikes a boundary:
 1. Each point on the reflective surface acts as a secondary source of spherical wavelets.
 2. The wavelets expand back into the same medium at speed $c$.
 3. The common tangent envelope to all these wavelets forms the reflected wavefront, geometrically proving that $\sin i = \sin r \implies \angle i = \angle r$.
 
-### 🔍 3. Electromagnetic Interaction at Atoms
+### ðŸ” 3. Electromagnetic Interaction at Atoms
 When light (an oscillating electromagnetic wave) hits a polished mirror:
 - The free electrons in the metallic silver coating oscillate in response to the light's electric field.
 - These oscillating electrons immediately re-radiate an identical wave backwards with a $180^\\circ$ phase shift, preventing light from entering and sending it bouncing away cleanly!
 
 ---
 
-### 🌟 Simple Everyday Example
+### ðŸŒŸ Simple Everyday Example
 Think of light like rolling a marble against a straight wooden wall. If you roll it straight at $90^\\circ$, it bounces straight back. If you roll it at a $45^\\circ$ angle, it ricochets away at an exact $45^\\circ$ angle!
 
 ---
 
-### 🧪 Think About This:
+### ðŸ§ª Think About This:
 Why do you see a clear image in a polished plane mirror, but you cannot see your face when looking at a white wall, even though both reflect light?`;
     }
 
     if (activeTopicKey === 'THERMODYNAMICS' || lower.includes('thermodynamic') || lower.includes('heat') || lower.includes('internal energy')) {
-      return `### 💡 Why Thermodynamics & Conservation of Energy Work
+      return `### ðŸ’¡ Why Thermodynamics & Conservation of Energy Work
 **Topic: Zeroth and First Law of Thermodynamics**
 
 Here is the fundamental physical "Why" behind heat, temperature, and internal energy:
 
 ---
 
-### 🔍 1. Why Thermal Equilibrium Happens (Zeroth Law)
+### ðŸ” 1. Why Thermal Equilibrium Happens (Zeroth Law)
 - At the microscopic level, temperature is the average kinetic energy of vibrating molecules.
 - When two bodies are in thermal contact, fast-moving (hot) molecules collide with slower (cold) molecules, transferring kinetic energy until their average energies equalize.
 - If System $A$ and System $B$ both match the molecular kinetic energy of System $C$, then $A$ and $B$ must have the exact same molecular kinetic energy ($T_A = T_B$).
 
-### 🔍 2. Why $\\Delta Q = \\Delta U + \\Delta W$ (First Law)
+### ðŸ” 2. Why $\\Delta Q = \\Delta U + \\Delta W$ (First Law)
 - **Energy cannot be created or destroyed**. 
 - When you pump heat energy ($\\Delta Q$) into a gas container:
   1. Part of the energy makes the gas molecules jiggle and bounce faster $\\rightarrow$ this is **Internal Energy ($\\Delta U = n C_v \\Delta T$)**.
@@ -461,61 +461,61 @@ Here is the fundamental physical "Why" behind heat, temperature, and internal en
 
 ---
 
-### 🌟 Simple Everyday Example
+### ðŸŒŸ Simple Everyday Example
 When you vigorously pump air into a bicycle tire, the bottom of the pump gets warm. Why? Because you are performing mechanical work on the gas molecules ($\Delta W$), compressing them and increasing their internal kinetic energy ($\Delta U$), which registers directly as a temperature rise!
 
 ---
 
-### 🧪 Quick Thought Check:
+### ðŸ§ª Quick Thought Check:
 In an adiabatic process where no heat enters or leaves ($\Delta Q = 0$), if a gas expands and does $100\\text{ J}$ of work ($\Delta W = +100\\text{ J}$), what happens to its internal energy and temperature?`;
     }
 
     if (activeTopicKey === 'NEWTON_LAWS' || lower.includes('inertia') || lower.includes('motion')) {
-      return `### 💡 Why Newton's Laws & Inertia Happen
+      return `### ðŸ’¡ Why Newton's Laws & Inertia Happen
 **Topic: Newton's Laws of Motion & Classical Mechanics**
 
 Great question! Let's explore the fundamental "Why" behind mechanics:
 
 ---
 
-### 🔍 The Root Cause: Conservation & Mass
+### ðŸ” The Root Cause: Conservation & Mass
 1. **Matter Has Inertia (Mass)**: Every physical object possesses mass. Mass is literally the quantitative measure of how much an object resists having its state of motion changed.
 2. **Forces Are Interactions, Not Properties**: An object doesn't "possess" force; force is an interaction between *two* bodies. Without an unbalanced external push or pull ($F_{\\text{net}} = 0$), momentum ($\vec{p} = m\vec{v}$) must remain constant.
 3. **Action-Reaction Pairs**: When you push against a wall, the electromagnetic repulsion between your hand's atoms and the wall's atoms pushes back equally on your hand ($F_{12} = -F_{21}$).
 
 ---
 
-### 🌟 Simple Everyday Example
+### ðŸŒŸ Simple Everyday Example
 When you stir sugar in a glass of water and stop stirring, the water keeps swirling. Why? Because the liquid particles already have rotational momentum, and friction takes time to slow each water molecule down!
 
 ---
 
-### 🧪 Think About This:
+### ðŸ§ª Think About This:
 If you were floating in empty space far away from any gravity and threw a ball, when would it stop moving?`;
     }
 
     if (activeTopicKey === 'PHOTOSYNTHESIS') {
-      return `### 💡 Why Photosynthesis Occurs in Plants
-**Topic: Plant Physiology — Photosynthesis**
+      return `### ðŸ’¡ Why Photosynthesis Occurs in Plants
+**Topic: Plant Physiology â€” Photosynthesis**
 
 Here is the biological and chemical "Why" behind photosynthesis:
 
 ---
 
-### 🔍 The Core Purpose
+### ðŸ” The Core Purpose
 1. **Autotrophic Energy Conversion**: Unlike animals, plants cannot walk around to hunt for food. They must convert radiant light energy (photons from the sun) into stable chemical energy stored in molecular bonds (glucose sugar: $C_6H_{12}O_6$).
 2. **The Role of Chlorophyll**: Green leaves contain chloroplasts packed with **chlorophyll** pigments that absorb blue and red light wavelengths while reflecting green light.
 3. **Electron Excitation & Water Splitting**: Absorbed light energy excites electrons in Photosystem II, which splits water molecules ($2H_2O \\rightarrow 4H^+ + 4e^- + O_2$). The released oxygen is what living organisms breathe!
 
 ---
 
-### 🔑 Key Takeaway
+### ðŸ”‘ Key Takeaway
 Photosynthesis is essentially nature's solar panel and sugar factory combined!
 
 Would you like to explore the Light Reaction or Dark (Calvin) cycle next?`;
     }
 
-    return `### 💡 The Underlying Reason Behind ${topicLabel}
+    return `### ðŸ’¡ The Underlying Reason Behind ${topicLabel}
 **Subject: ${subjectLabel}**
 
 Here is why **${topicLabel}** behaves the way it does:
@@ -532,7 +532,7 @@ In ${subjectLabel}, every observed rule is driven by underlying conservation law
 
 ---
 
-### 🌟 Intuitive Takeaway
+### ðŸŒŸ Intuitive Takeaway
 ${mode === 'beginner' ? `Think of it like balancing a scale: whenever one side changes, the system naturally adjusts to restore balance!` : `Understanding the fundamental causal mechanism ensures you can solve unfamiliar variants of this problem in exams.`}
 
 Would you like a step-by-step example or a quick concept check?`;
@@ -546,14 +546,14 @@ Would you like a step-by-step example or a quick concept check?`;
   if (stepMatch) {
     const stepNum = parseInt(stepMatch[1], 10);
 
-    return `### 🔍 Deep Dive: Clarifying Step ${stepNum}
+    return `### ðŸ” Deep Dive: Clarifying Step ${stepNum}
 **Topic: ${topicLabel} (${subjectLabel})**
 
 Let's break down **Step ${stepNum}** in crystal-clear detail so you can master how and why this calculation/step works!
 
 ---
 
-### 📝 What Happens in Step ${stepNum}:
+### ðŸ“ What Happens in Step ${stepNum}:
 ${
   stepNum === 1
     ? `* **Goal**: Identify all given quantities with correct signs and state the primary governing formula.\n* **Why it matters**: Writing down Given Data ($u, v, f, m, \\Delta Q, W$) and verifying SI units (meters, Joules, seconds, kg) prevents 80% of typical student exam mistakes!`
@@ -566,7 +566,7 @@ ${
 
 ---
 
-### 💡 Pro Tip for Step ${stepNum}
+### ðŸ’¡ Pro Tip for Step ${stepNum}
 ${mode === 'beginner' ? 'Always double-check your arithmetic with simple numbers first to build confidence.' : 'In board exams, each step carries dedicated step marks even if the final arithmetic has a small slip!'}
 
 Does Step ${stepNum} make total sense now, or would you like to solve a fresh practice problem together?`;
@@ -583,66 +583,66 @@ Does Step ${stepNum} make total sense now, or would you like to solve a fresh pr
 
   if (isExample) {
     if (activeTopicKey === 'OPTICS_REFLECTION' || lower.includes('reflect') || lower.includes('mirror') || lower.includes('light')) {
-      return `### 🌟 Another Real-World Example: Reflection of Light & Mirrors
+      return `### ðŸŒŸ Another Real-World Example: Reflection of Light & Mirrors
 
 Here are three fresh, practical applications of reflection of light in everyday technology:
 
 ---
 
-### 1. 🤿 Submarine Periscope (Plane Mirrors)
+### 1. ðŸ¤¿ Submarine Periscope (Plane Mirrors)
 - **The Setup**: A periscope uses two plane mirrors mounted parallel to each other at a $45^\\circ$ angle inside a tube.
 - **The Physics**: Light from the surface enters the top, reflects by $90^\\circ$ downwards ($\angle i = \angle r = 45^\\circ$), travels down the tube, and reflects by another $90^\\circ$ into the observer's eyes!
 
-### 2. 🦷 Dentist's Examination Mirror (Concave Mirror)
+### 2. ðŸ¦· Dentist's Examination Mirror (Concave Mirror)
 - **The Setup**: When a dentist looks at a cavity in your molar, they place a small concave mirror very close to the tooth ($u < f$).
 - **The Physics**: When an object is within the focal length of a concave mirror, it forms a **virtual, erect, and highly magnified image** ($m > +1$), making tiny tooth defects clearly visible!
 
-### 3. 🚗 Side Wing Mirror in Automobiles (Convex Mirror)
+### 3. ðŸš— Side Wing Mirror in Automobiles (Convex Mirror)
 - **The Setup**: Marked with *"Objects in mirror are closer than they appear"*.
 - **The Physics**: Convex mirrors always form **virtual, erect, and diminished images** ($m < +1$), which allows the driver to see a wide, panoramic field of view of trailing traffic!
 
 ---
 
-### 🔑 Key Takeaway
+### ðŸ”‘ Key Takeaway
 Plane mirrors keep image size equal ($m=+1$), concave mirrors magnify close objects ($m>+1$), and convex mirrors shrink images to give wider views ($m<+1$)!`;
     }
 
     if (activeTopicKey === 'THERMODYNAMICS' || lower.includes('thermodynamic') || lower.includes('heat') || lower.includes('energy')) {
-      return `### 🌟 Another Real-World Example: Thermodynamics in Action
+      return `### ðŸŒŸ Another Real-World Example: Thermodynamics in Action
 
 Here are three real-world examples demonstrating the Zeroth and First Laws of Thermodynamics:
 
 ---
 
-### 1. 🌡️ Metal Spoon in Hot Soup (Zeroth Law)
+### 1. ðŸŒ¡ï¸ Metal Spoon in Hot Soup (Zeroth Law)
 - When you leave a stainless-steel spoon in a bowl of hot soup ($85^\\circ\\text{C}$):
 - Heat flows from the soup to the spoon until both reach the exact same temperature ($T_{\\text{soup}} = T_{\\text{spoon}}$).
 - Once in **thermal equilibrium**, net heat transfer stops ($\Delta Q = 0$).
 
-### 2. 💨 Spraying an Aerosol Can / Deodorant (First Law & Adiabatic Expansion)
+### 2. ðŸ’¨ Spraying an Aerosol Can / Deodorant (First Law & Adiabatic Expansion)
 - When you hold down the nozzle of a spray can, pressurized gas expands very rapidly into the room.
 - Because the expansion is so fast, there is no time for heat to enter from outside ($\Delta Q \\approx 0$).
 - By the First Law: $\\Delta Q = \\Delta U + \\Delta W \\implies \\Delta U = -\\Delta W$.
 - The gas performs positive work ($\Delta W > 0$) by pushing against atmospheric air, so its internal energy drops sharply ($\Delta U < 0$), making the nozzle and can feel **freezing cold**!
 
-### 3. 🍲 Pressure Cooker (Isochoric Heating)
+### 3. ðŸ² Pressure Cooker (Isochoric Heating)
 - In a sealed pressure cooker with fixed volume ($\Delta V = 0$), the gas does zero work ($\Delta W = 0$).
 - Therefore, all heat supplied from the stove directly boosts the water steam's internal energy ($\Delta Q = \Delta U = n C_v \Delta T$), skyrocketing the temperature and pressure to cook food 3x faster!
 
 ---
 
-### 🔑 Key Takeaway
+### ðŸ”‘ Key Takeaway
 Whenever gas expands quickly, it cools down; whenever gas is compressed quickly, it heats up!`;
     }
 
     if (activeTopicKey === 'NEWTON_LAWS' || lower.includes('motion')) {
-      return `### 🚀 Another Real-World Example: Newton's Laws of Motion
+      return `### ðŸš€ Another Real-World Example: Newton's Laws of Motion
 
 Here is a brand-new everyday scenario you can visualize easily!
 
 ---
 
-### 🛹 The Scenario: Skateboarding on a Paved Street
+### ðŸ›¹ The Scenario: Skateboarding on a Paved Street
 
 1. **First Law (Inertia in Action)**:
    * When you place a skateboard on the ground, it sits completely still until you kick the ground to push it forward.
@@ -658,18 +658,18 @@ Here is a brand-new everyday scenario you can visualize easily!
 
 ---
 
-### 🔑 Simple Takeaway
+### ðŸ”‘ Simple Takeaway
 You cannot push forward without pushing something else backward!`;
     }
 
     if (activeTopicKey === 'PHOTOSYNTHESIS') {
-      return `### 🌱 Another Real-World Example: Photosynthesis
+      return `### ðŸŒ± Another Real-World Example: Photosynthesis
 
 Here is a practical experiment you can see in real life!
 
 ---
 
-### 🧪 The Scenario: An Aquatic Waterweed (*Hydrilla*) in a Glass Beaker
+### ðŸ§ª The Scenario: An Aquatic Waterweed (*Hydrilla*) in a Glass Beaker
 
 1. **The Setup**: Place a fresh green water plant in a clear glass of water under a bright desk lamp.
 2. **What Happens**: Within minutes, you will see continuous tiny bubbles rising from the plant stems to the top of the water.
@@ -681,7 +681,7 @@ Here is a practical experiment you can see in real life!
 Would you like another example, or should we test this concept with a quick question?`;
     }
 
-    return `### 🌟 Another Real-World Example: ${topicLabel}
+    return `### ðŸŒŸ Another Real-World Example: ${topicLabel}
 **Subject: ${subjectLabel}**
 
 Here is a fresh scenario demonstrating **${topicLabel}**:
@@ -698,7 +698,7 @@ Consider a daily activity where **${topicLabel}** plays a direct, observable rol
 
 ---
 
-### 💡 Why This Example Matters
+### ðŸ’¡ Why This Example Matters
 Relating classroom theory in ${subjectLabel} to real-life situations makes exam recall effortless!
 
 Would you like to try a practice question on this?`;
@@ -718,13 +718,13 @@ Would you like to try a practice question on this?`;
 
   if (isSimpler) {
     if (activeTopicKey === 'OPTICS_REFLECTION') {
-      return `### 🎈 Super Simple Explanation: Reflection of Light
+      return `### ðŸŽˆ Super Simple Explanation: Reflection of Light
 
-Let's make Reflection of Light as simple as bouncing a rubber ball! 🎾
+Let's make Reflection of Light as simple as bouncing a rubber ball! ðŸŽ¾
 
 ---
 
-### 🪞 3 Ultra-Simple Points:
+### ðŸªž 3 Ultra-Simple Points:
 
 1. **What is it?**
    When light hits a smooth, shiny surface (like a mirror), it can't go through, so it **bounces right back into the room**. That bounce is called **reflection**.
@@ -741,18 +741,18 @@ Let's make Reflection of Light as simple as bouncing a rubber ball! 🎾
 
 ---
 
-### 🎯 Quick Question:
+### ðŸŽ¯ Quick Question:
 If a ray of light hits a flat mirror at an angle of $40^\\circ$ to the normal line, what will the reflected angle be?`;
     }
 
     if (activeTopicKey === 'THERMODYNAMICS') {
-      return `### 🎈 Super Simple Explanation: Thermodynamics & First Law
+      return `### ðŸŽˆ Super Simple Explanation: Thermodynamics & First Law
 
-Let's understand Thermodynamics using the **Bank Account Analogy**! 💰
+Let's understand Thermodynamics using the **Bank Account Analogy**! ðŸ’°
 
 ---
 
-### 🏦 3 Ultra-Simple Points:
+### ðŸ¦ 3 Ultra-Simple Points:
 
 1. **Zeroth Law (Equal Temperature)**:
    If Friend A has the same money as Friend C, and Friend B has the same money as Friend C, then Friend A and Friend B have the exact same money! ($T_A = T_B$). In physics, this means they reach the same temperature.
@@ -768,17 +768,17 @@ Let's understand Thermodynamics using the **Bank Account Analogy**! 💰
 
 ---
 
-### 🎯 Quick Question:
+### ðŸŽ¯ Quick Question:
 If you put $500\\text{ J}$ of heat into a gas, and it does $200\\text{ J}$ of work, how much heat was saved as internal energy? (Hint: $500 - 200 = ?$ )`;
     }
 
-    return `### 🎈 Super Simple Explanation: ${topicLabel}
+    return `### ðŸŽˆ Super Simple Explanation: ${topicLabel}
 
-Let's make this ultra-simple, like explaining it to a friend over coffee! ☕
+Let's make this ultra-simple, like explaining it to a friend over coffee! â˜•
 
 ---
 
-### 🛋️ 3 Ultra-Simple Points:
+### ðŸ›‹ï¸ 3 Ultra-Simple Points:
 
 1. **The Big Idea**:
    ${topicLabel} is just nature's (or math's) way of saying: *"Rules stay predictable, balanced, and conserved."*
@@ -793,7 +793,7 @@ Let's make this ultra-simple, like explaining it to a friend over coffee! ☕
 
 ---
 
-### 🎯 Quick Check:
+### ðŸŽ¯ Quick Check:
 Does this simplified picture make it feel easier to understand? Let me know which part you want to practice!`;
   }
 
@@ -807,10 +807,10 @@ Does this simplified picture make it feel easier to understand? Let me know whic
 
   if (isDifference) {
     if (activeTopicKey === 'OPTICS_REFLECTION') {
-      return `### ⚖️ Comparison: Concave Mirror vs Convex Mirror
+      return `### âš–ï¸ Comparison: Concave Mirror vs Convex Mirror
 **Topic: Ray Optics & Spherical Mirrors**
 
-| Feature | Concave Mirror (Converging) 🕳️ | Convex Mirror (Diverging) 🥄 |
+| Feature | Concave Mirror (Converging) ðŸ•³ï¸ | Convex Mirror (Diverging) ðŸ¥„ |
 | :--- | :--- | :--- |
 | **Shape** | Curved inwards towards center of curvature | Curved outwards away from center of curvature |
 | **Focal Length ($f$)** | **Negative ($f < 0$)** | **Positive ($f > 0$)** |
@@ -821,15 +821,15 @@ Does this simplified picture make it feel easier to understand? Let me know whic
 
 ---
 
-### 💡 High-Yield Exam Tip
+### ðŸ’¡ High-Yield Exam Tip
 In numerical calculations, always assign $f = -\\text{value}$ for concave mirrors and $f = +\\text{value}$ for convex mirrors!`;
     }
 
     if (activeTopicKey === 'THERMODYNAMICS') {
-      return `### ⚖️ Comparison: Isothermal vs Adiabatic Process
+      return `### âš–ï¸ Comparison: Isothermal vs Adiabatic Process
 **Topic: Thermodynamics Processes**
 
-| Feature | Isothermal Process 🌡️ | Adiabatic Process ⚡ |
+| Feature | Isothermal Process ðŸŒ¡ï¸ | Adiabatic Process âš¡ |
 | :--- | :--- | :--- |
 | **Condition** | **Temperature constant ($\Delta T = 0$)** | **Zero heat exchange ($\Delta Q = 0$)** |
 | **Governing Equation** | $PV = \\text{constant}$ (Boyle's Law) | $PV^\\gamma = \\text{constant}$ ($\\gamma = C_p/C_v$) |
@@ -840,7 +840,7 @@ In numerical calculations, always assign $f = -\\text{value}$ for concave mirror
 | **Real Example** | Slow melting of ice at $0^\\circ\\text{C}$ | Bursting of bicycle tube, rapid spray expansion |`;
     }
 
-    return `### ⚖️ Concept Comparison & Key Differences
+    return `### âš–ï¸ Concept Comparison & Key Differences
 **Topic: ${topicLabel} (${subjectLabel})**
 
 Here is a structured comparison table to help you master distinctions for exams:
@@ -856,8 +856,8 @@ Here is a structured comparison table to help you master distinctions for exams:
 
 ---
 
-### 💡 High-Yield Board Exam Tip
-Whenever an exam asks *"Distinguish between A and B"*, always format your answer as a **Table** like above — examiners award full presentation marks for tabular comparisons!`;
+### ðŸ’¡ High-Yield Board Exam Tip
+Whenever an exam asks *"Distinguish between A and B"*, always format your answer as a **Table** like above â€” examiners award full presentation marks for tabular comparisons!`;
   }
 
   // 6. Follow-up: "Quiz me on this" / "Practice question"
@@ -871,7 +871,7 @@ Whenever an exam asks *"Distinguish between A and B"*, always format your answer
 
   if (isQuiz) {
     if (activeTopicKey === 'OPTICS_REFLECTION') {
-      return `### 🧪 Quick Concept Quiz: Reflection of Light
+      return `### ðŸ§ª Quick Concept Quiz: Reflection of Light
 
 Let's test your optics knowledge! Here is an important board-exam question:
 
@@ -887,11 +887,11 @@ An object is placed at a distance of $20\\text{ cm}$ in front of a flat plane mi
 
 ---
 
-👉 **Reply with your answer (A, B, C, or D)** and I'll explain the step-by-step reasoning!`;
+ðŸ‘‰ **Reply with your answer (A, B, C, or D)** and I'll explain the step-by-step reasoning!`;
     }
 
     if (activeTopicKey === 'THERMODYNAMICS') {
-      return `### 🧪 Quick Concept Quiz: Thermodynamics & First Law
+      return `### ðŸ§ª Quick Concept Quiz: Thermodynamics & First Law
 
 Let's test your understanding of the First Law!
 
@@ -907,11 +907,11 @@ In an **adiabatic compression** of an ideal gas, no heat enters or leaves the sy
 
 ---
 
-👉 **Reply with your answer (A, B, C, or D)** and I'll check your answer immediately!`;
+ðŸ‘‰ **Reply with your answer (A, B, C, or D)** and I'll check your answer immediately!`;
     }
 
     if (activeTopicKey === 'NEWTON_LAWS') {
-      return `### 🧪 Quick Concept Quiz: Newton's Laws
+      return `### ðŸ§ª Quick Concept Quiz: Newton's Laws
 
 Let's test your mechanics understanding!
 
@@ -927,10 +927,10 @@ A book is resting completely still on a flat table. What is the net external for
 
 ---
 
-👉 **Reply with your answer (A, B, C, or D)** and I'll tell you if you're right and explain why!`;
+ðŸ‘‰ **Reply with your answer (A, B, C, or D)** and I'll tell you if you're right and explain why!`;
     }
 
-    return `### 🧪 Quick Practice Challenge: ${topicLabel}
+    return `### ðŸ§ª Quick Practice Challenge: ${topicLabel}
 
 Let's see how well you've grasped **${topicLabel}**!
 
@@ -946,7 +946,7 @@ In ${subjectLabel}, when applying the core principle of **${topicLabel}**, which
 
 ---
 
-👉 **Type your chosen option (A, B, C, or D)**, and I'll check your answer immediately!`;
+ðŸ‘‰ **Type your chosen option (A, B, C, or D)**, and I'll check your answer immediately!`;
   }
 
   // 7. Follow-up: Student answering a quiz (A, B, C, D)
@@ -956,13 +956,13 @@ In ${subjectLabel}, when applying the core principle of **${topicLabel}**, which
     const chosen = isOptionAnswer[1].toUpperCase();
     const isCorrect = chosen === 'B' || chosen === 'A';
 
-    return `### ${isCorrect ? '🎉 Correct! Well Done!' : '🤔 Good Try, Let\'s Review!'}
+    return `### ${isCorrect ? 'ðŸŽ‰ Correct! Well Done!' : 'ðŸ¤” Good Try, Let\'s Review!'}
 
 You selected **Option ${chosen}**.
 
 ---
 
-### 💡 Step-by-Step Reason:
+### ðŸ’¡ Step-by-Step Reason:
 ${
   isCorrect
     ? `Excellent intuition! The system is governed by fundamental physical conservation and geometric laws. In plane mirrors, the image distance behind the mirror equals object distance in front ($v = -u = 20\\text{ cm}$, total separation $= 20 + 20 = 40\\text{ cm}$). In thermodynamics, adiabatic compression work done on the gas directly increases its internal energy ($\Delta U = -W > 0$), raising temperature!`
@@ -971,7 +971,7 @@ ${
 
 ---
 
-### 🚀 What's next?
+### ðŸš€ What's next?
 You've mastered this concept! Would you like to:
 1. Try a **numerical problem calculation**?
 2. Explore **another topic**?
@@ -988,39 +988,39 @@ You've mastered this concept! Would you like to:
 // 1. REFLECTION OF LIGHT & RAY OPTICS
 function getReflectionOfLightResponse({ mode, isComprehensive, action, lower, text }) {
   if (lower.includes('simple') || mode === 'beginner' || action === 'Simple Explanation') {
-    return `### 🪞 Reflection of Light (Simple Explanation)
-**Class 10 & Intermediate Physics — Ray Optics**
+    return `### ðŸªž Reflection of Light (Simple Explanation)
+**Class 10 & Intermediate Physics â€” Ray Optics**
 
-Reflection of light is how we see the world around us! Here is the concept explained in simple, crystal-clear terms. 🌟
+Reflection of light is how we see the world around us! Here is the concept explained in simple, crystal-clear terms. ðŸŒŸ
 
 ---
 
-### 1️⃣ What is Reflection of Light?
+### 1ï¸âƒ£ What is Reflection of Light?
 When a beam of light traveling through air strikes a polished surface (like a glass mirror or shiny metal) and **bounces back into the same medium**, this phenomenon is called **reflection of light**.
 
 ---
 
-### 2️⃣ The Two Golden Laws of Reflection
+### 2ï¸âƒ£ The Two Golden Laws of Reflection
 1. **First Law**: The incident ray, the reflected ray, and the normal line (perpendicular to the mirror at the point where light hits) all lie in the **exact same plane**.
 2. **Second Law**: The angle of incidence ($\angle i$) is strictly equal to the angle of reflection ($\angle r$):
    $$\\angle i = \\angle r$$
 
 ---
 
-### 3️⃣ Types of Mirrors & How They Work
+### 3ï¸âƒ£ Types of Mirrors & How They Work
 * **Plane (Flat) Mirror**:
   - Image is **virtual, erect**, and identical in size ($m = +1$).
   - The image is **laterally inverted** (your left hand appears as the right hand).
-* **Concave Mirror (Curved In like a cave 🕳️)**:
+* **Concave Mirror (Curved In like a cave ðŸ•³ï¸)**:
   - Can focus parallel light rays to a point (converging).
   - Used in headlights, shaving mirrors, and dentist tools.
-* **Convex Mirror (Curved Out like a spoon back 🥄)**:
+* **Convex Mirror (Curved Out like a spoon back ðŸ¥„)**:
   - Diverges light and gives a wide field of view.
   - Used as rear-view mirrors in cars (*"Objects in mirror are closer than they appear"*).
 
 ---
 
-### 💡 Quick Summary Formula Card
+### ðŸ’¡ Quick Summary Formula Card
 | Mirror | Focal Length ($f$) | Image Type | Real-Life Application |
 | :--- | :--- | :--- | :--- |
 | **Plane Mirror** | $\\infty$ (Infinity) | Virtual, Erect, Same size ($m=+1$) | Dressing mirrors |
@@ -1029,12 +1029,12 @@ When a beam of light traveling through air strikes a polished surface (like a gl
 
 ---
 
-### 🧪 Check Your Understanding
+### ðŸ§ª Check Your Understanding
 If a ray of light strikes a plane mirror at an angle of $35^\\circ$ to the normal, what is the angle between the incident ray and the reflected ray? (Hint: $\\angle i + \\angle r = ?$ )`;
   }
 
   if (lower.includes('mcq') || action === 'Generate MCQs') {
-    return `### 🔘 MCQs: Reflection of Light & Ray Optics (Board Level)
+    return `### ðŸ”˜ MCQs: Reflection of Light & Ray Optics (Board Level)
 
 **Q1. A ray of light is incident on a plane mirror at an angle of $30^\\circ$ with the mirror surface. The angle of reflection is:**
 - A) $30^\\circ$
@@ -1073,9 +1073,9 @@ If a ray of light strikes a plane mirror at an angle of $35^\\circ$ to the norma
   }
 
   if (lower.includes('solve') || action === 'Solve Problems') {
-    return `### 🧩 Step-by-Step Problem Solver: Mirror Formula & Optics
+    return `### ðŸ§© Step-by-Step Problem Solver: Mirror Formula & Optics
 
-### ❓ PROBLEM
+### â“ PROBLEM
 An object of height $h_o = 4\\text{ cm}$ is placed at a distance of $u = 30\\text{ cm}$ in front of a **concave mirror** of focal length $f = 20\\text{ cm}$.
 Find:
 1. The position (distance $v$) of the image.
@@ -1084,14 +1084,14 @@ Find:
 
 ---
 
-### 🎯 GIVEN DATA & SIGN CONVENTION
+### ðŸŽ¯ GIVEN DATA & SIGN CONVENTION
 - Object height: $h_o = +4\\text{ cm}$
 - Object distance: $u = -30\\text{ cm}$ (measured opposite to incident light)
 - Focal length of concave mirror: $f = -20\\text{ cm}$ (focus lies in front)
 
 ---
 
-### 📝 STEP-BY-STEP SOLUTION
+### ðŸ“ STEP-BY-STEP SOLUTION
 
 **Step 1: State the Mirror Formula**
 $$\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}$$
@@ -1114,15 +1114,15 @@ $$v = -60\\text{ cm}$$
 
 ---
 
-### ✅ FINAL ANSWERS
+### âœ… FINAL ANSWERS
 1. **Image Distance ($v$)**: $60\\text{ cm}$ in front of the mirror ($v = -60\\text{ cm}$).
 2. **Nature**: **Real and Inverted**, 2 times magnified.
 3. **Image Height ($h_i$)**: $8\\text{ cm}$ downwards ($h_i = -8\\text{ cm}$).`;
   }
 
   // Comprehensive / Detailed Explanation (8-Part Structure)
-  return `### 🪞 Reflection of Light & Ray Optics (Comprehensive Guide)
-**Class 10 & Intermediate Physics — Optics**
+  return `### ðŸªž Reflection of Light & Ray Optics (Comprehensive Guide)
+**Class 10 & Intermediate Physics â€” Optics**
 
 Welcome to the comprehensive study module on **Reflection of Light**! Below is the complete curriculum breakdown with definitions, mathematical derivations, sign conventions, real-world applications, and practice problems.
 
@@ -1182,9 +1182,9 @@ To construct ray diagrams and locate images accurately:
 ---
 
 ### 6. Common Mistakes to Avoid in Exams
-- ⚠️ **Measuring angles from the mirror surface**: Always measure $\angle i$ and $\angle r$ from the **Normal line** perpendicular to the surface.
-- ⚠️ **Forgetting sign conventions in formulas**: Always substitute $u, v, f$ with their respective algebraic signs ($+$ or $-$).
-- ⚠️ **Confusing Mirror formula with Lens formula**:
+- âš ï¸ **Measuring angles from the mirror surface**: Always measure $\angle i$ and $\angle r$ from the **Normal line** perpendicular to the surface.
+- âš ï¸ **Forgetting sign conventions in formulas**: Always substitute $u, v, f$ with their respective algebraic signs ($+$ or $-$).
+- âš ï¸ **Confusing Mirror formula with Lens formula**:
   - Mirror: $\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}$ and $m = -\\frac{v}{u}$.
   - Lens: $\\frac{1}{f} = \\frac{1}{v} - \\frac{1}{u}$ and $m = +\\frac{v}{u}$.
 
@@ -1208,14 +1208,14 @@ To construct ray diagrams and locate images accurately:
 // 2. THERMODYNAMICS (ZEROTH AND FIRST LAW)
 function getThermodynamicsResponse({ mode, isComprehensive, action, lower, text }) {
   if (lower.includes('simple') || mode === 'beginner' || action === 'Simple Explanation') {
-    return `### 🔥 Thermodynamics: Zeroth and First Law (Simple Explanation)
-**Class 11 & Intermediate 1st Year Physics — Thermal Physics**
+    return `### ðŸ”¥ Thermodynamics: Zeroth and First Law (Simple Explanation)
+**Class 11 & Intermediate 1st Year Physics â€” Thermal Physics**
 
-Thermodynamics is the study of heat, energy, and work. Let's break it down into easy, intuitive ideas with daily life examples! 🚀
+Thermodynamics is the study of heat, energy, and work. Let's break it down into easy, intuitive ideas with daily life examples! ðŸš€
 
 ---
 
-### 1️⃣ Zeroth Law: The Concept of Temperature 🌡️
+### 1ï¸âƒ£ Zeroth Law: The Concept of Temperature ðŸŒ¡ï¸
 > *"If Body A is in thermal equilibrium with Body C, and Body B is in thermal equilibrium with Body C, then Body A and Body B are in thermal equilibrium with each other."*
 
 * **Simple Idea**: **Thermal equilibrium** means two things have the exact same temperature, so no heat flows between them.
@@ -1223,7 +1223,7 @@ Thermodynamics is the study of heat, energy, and work. Let's break it down into 
 
 ---
 
-### 2️⃣ First Law: The Conservation of Energy Law ⚡
+### 2ï¸âƒ£ First Law: The Conservation of Energy Law âš¡
 > *"Energy cannot be created or destroyed; it only changes form. When you add heat to a gas, that heat is split between raising the gas temperature and making the gas do mechanical work."*
 
 $$\\Delta Q = \\Delta U + \\Delta W$$
@@ -1234,7 +1234,7 @@ $$\\Delta Q = \\Delta U + \\Delta W$$
 
 ---
 
-### 💡 The 4 Classic Thermodynamic Processes Made Easy
+### ðŸ’¡ The 4 Classic Thermodynamic Processes Made Easy
 1. **Isothermal (Constant Temperature, $\\Delta T = 0$)**: All heat added turns directly into work ($\\Delta Q = \\Delta W$).
 2. **Adiabatic (Zero Heat Transfer, $\\Delta Q = 0$)**: Gas expands by spending its own internal energy, so it cools down ($\\Delta W = -\\Delta U$).
 3. **Isobaric (Constant Pressure, $\\Delta P = 0$)**: Heating a gas under a freely moving piston (both temperature and volume increase).
@@ -1242,12 +1242,12 @@ $$\\Delta Q = \\Delta U + \\Delta W$$
 
 ---
 
-### 🧪 Quick Check Your Understanding
+### ðŸ§ª Quick Check Your Understanding
 If you supply $300\\text{ J}$ of heat to a gas and it does $100\\text{ J}$ of work pushing a piston, how much did its internal energy increase?`;
   }
 
   if (lower.includes('mcq') || action === 'Generate MCQs') {
-    return `### 🔘 MCQs: Zeroth and First Law of Thermodynamics (Intermediate Level)
+    return `### ðŸ”˜ MCQs: Zeroth and First Law of Thermodynamics (Intermediate Level)
 
 **Q1. The Zeroth Law of Thermodynamics leads directly to the concept of:**
 - A) Internal Energy
@@ -1286,9 +1286,9 @@ If you supply $300\\text{ J}$ of heat to a gas and it does $100\\text{ J}$ of wo
   }
 
   if (lower.includes('solve') || action === 'Solve Problems') {
-    return `### 🧩 Step-by-Step Problem Solver: First Law of Thermodynamics
+    return `### ðŸ§© Step-by-Step Problem Solver: First Law of Thermodynamics
 
-### ❓ PROBLEM
+### â“ PROBLEM
 A cylinder fitted with a frictionless piston contains $2\\text{ moles}$ of an ideal gas at a pressure of $P = 1.5 \\times 10^5\\text{ Pa}$. The gas absorbs $Q = 1200\\text{ J}$ of heat and expands isobarically from an initial volume $V_1 = 0.004\\text{ m}^3$ to a final volume $V_2 = 0.008\\text{ m}^3$.
 Find:
 1. The work done by the gas ($\\Delta W$).
@@ -1297,7 +1297,7 @@ Find:
 
 ---
 
-### 🎯 GIVEN DATA
+### ðŸŽ¯ GIVEN DATA
 - Pressure: $P = 1.5 \\times 10^5\\text{ Pa}$ (constant, isobaric)
 - Initial volume: $V_1 = 0.004\\text{ m}^3$
 - Final volume: $V_2 = 0.008\\text{ m}^3$
@@ -1305,7 +1305,7 @@ Find:
 
 ---
 
-### 📝 STEP-BY-STEP SOLUTION
+### ðŸ“ STEP-BY-STEP SOLUTION
 
 **Step 1: Calculate Work Done by the Gas ($\\Delta W$)**
 For a constant-pressure (isobaric) process:
@@ -1325,15 +1325,15 @@ Since $\\Delta U = n C_v \\Delta T = +600\\text{ J} > 0$, the change in temperat
 
 ---
 
-### ✅ FINAL ANSWERS
+### âœ… FINAL ANSWERS
 1. **Work Done by Gas ($\\Delta W$)**: $+600\\text{ J}$
 2. **Change in Internal Energy ($\\Delta U$)**: $+600\\text{ J}$
 3. **Temperature Behavior**: Temperature increases as internal energy rises.`;
   }
 
   // Comprehensive / Detailed Explanation (8-Part Structure)
-  return `### 🔥 Zeroth and First Law of Thermodynamics (Comprehensive Guide)
-**Class 11 / Intermediate 1st Year Physics — Thermal Properties & Thermodynamics**
+  return `### ðŸ”¥ Zeroth and First Law of Thermodynamics (Comprehensive Guide)
+**Class 11 / Intermediate 1st Year Physics â€” Thermal Properties & Thermodynamics**
 
 Welcome to the comprehensive study module on **Zeroth and First Law of Thermodynamics**! Below is the complete curriculum breakdown including fundamental definitions, energy conservation equations, process derivations, sign conventions, real-world examples, and exam problem solving.
 
@@ -1349,12 +1349,12 @@ Welcome to the comprehensive study module on **Zeroth and First Law of Thermodyn
 
 ### 2. Main Principles & Governing Laws
 
-#### 1️⃣ Zeroth Law of Thermodynamics (Thermal Equilibrium & Temperature)
+#### 1ï¸âƒ£ Zeroth Law of Thermodynamics (Thermal Equilibrium & Temperature)
 > *"If two thermodynamic systems $A$ and $B$ are each in thermal equilibrium with a third system $C$, then $A$ and $B$ are also in thermal equilibrium with each other."*
 - **Mathematical Form**: If $T_A = T_C$ and $T_B = T_C$, then $T_A = T_B$.
 - **Significance**: The Zeroth Law validates the concept of **Temperature** as a universal scalar state property and provides the physical basis for all **Thermometry**.
 
-#### 2️⃣ First Law of Thermodynamics (Conservation of Energy)
+#### 2ï¸âƒ£ First Law of Thermodynamics (Conservation of Energy)
 > *"Energy cannot be created or destroyed. When a quantity of heat $\\Delta Q$ is supplied to a closed system, it is consumed partly in increasing the internal energy $\\Delta U$ of the system and partly in doing external work $\\Delta W$ against surroundings."*
 - **Mathematical Form**:
   $$\\Delta Q = \\Delta U + \\Delta W \\quad \\text{or} \\quad dQ = dU + dW$$
@@ -1399,9 +1399,9 @@ Welcome to the comprehensive study module on **Zeroth and First Law of Thermodyn
 ---
 
 ### 6. Common Mistakes to Avoid in Exams
-- ⚠️ **Confusing State Functions vs Path Functions**: Internal energy ($U$) is a **state function** (depends only on initial and final states: $\\Delta U = U_f - U_i$), while Heat ($Q$) and Work ($W$) are **path functions**.
-- ⚠️ **Work sign inversion**: In physics, expansion work is positive ($\Delta W = +P\Delta V$), whereas in chemistry it is often defined as work on system ($W = -P\Delta V$). Stick to the physics convention $\Delta Q = \Delta U + \Delta W$.
-- ⚠️ **Assuming $\\Delta U = 0$ in adiabatic processes**: $\\Delta U = 0$ applies only to **isothermal** processes of ideal gases, NOT adiabatic processes!
+- âš ï¸ **Confusing State Functions vs Path Functions**: Internal energy ($U$) is a **state function** (depends only on initial and final states: $\\Delta U = U_f - U_i$), while Heat ($Q$) and Work ($W$) are **path functions**.
+- âš ï¸ **Work sign inversion**: In physics, expansion work is positive ($\Delta W = +P\Delta V$), whereas in chemistry it is often defined as work on system ($W = -P\Delta V$). Stick to the physics convention $\Delta Q = \Delta U + \Delta W$.
+- âš ï¸ **Assuming $\\Delta U = 0$ in adiabatic processes**: $\\Delta U = 0$ applies only to **isothermal** processes of ideal gases, NOT adiabatic processes!
 
 ---
 
@@ -1423,14 +1423,14 @@ Welcome to the comprehensive study module on **Zeroth and First Law of Thermodyn
 // 3. NEWTON'S LAWS OF MOTION
 function getNewtonLawsResponse({ mode, isComprehensive, action, lower, text }) {
   if (lower.includes('simple') || mode === 'beginner' || action === 'Simple Explanation') {
-    return `### ⚛️ Newton's Laws of Motion (Simple Explanation)
-**Class 11 / Intermediate 1st Year Physics — Mechanics**
+    return `### âš›ï¸ Newton's Laws of Motion (Simple Explanation)
+**Class 11 / Intermediate 1st Year Physics â€” Mechanics**
 
-Here are Newton's Three Laws of Motion explained in the simplest, most intuitive terms with everyday examples! 🚀
+Here are Newton's Three Laws of Motion explained in the simplest, most intuitive terms with everyday examples! ðŸš€
 
 ---
 
-### 1️⃣ First Law: The Law of Inertia (Lazy Law 🛋️)
+### 1ï¸âƒ£ First Law: The Law of Inertia (Lazy Law ðŸ›‹ï¸)
 > *"An object will stay at rest or keep moving at the same speed in a straight line unless pushed or pulled by an external force."*
 
 * **Simple Idea**: Things like to keep doing what they are already doing. Objects are "lazy" to change their state on their own!
@@ -1438,8 +1438,8 @@ Here are Newton's Three Laws of Motion explained in the simplest, most intuitive
 
 ---
 
-### 2️⃣ Second Law: The Law of Force & Acceleration ($F = ma$ 🏎️)
-> *"The acceleration of an object depends on how hard you push it and how heavy it is. More formally: Force = mass × acceleration ($F = ma$)."*
+### 2ï¸âƒ£ Second Law: The Law of Force & Acceleration ($F = ma$ ðŸŽï¸)
+> *"The acceleration of an object depends on how hard you push it and how heavy it is. More formally: Force = mass Ã— acceleration ($F = ma$)."*
 
 * **Simple Idea**: 
   - Push harder $\\rightarrow$ moves faster.
@@ -1448,7 +1448,7 @@ Here are Newton's Three Laws of Motion explained in the simplest, most intuitive
 
 ---
 
-### 3️⃣ Third Law: Action and Reaction ($F_{AB} = -F_{BA}$ 🚀)
+### 3ï¸âƒ£ Third Law: Action and Reaction ($F_{AB} = -F_{BA}$ ðŸš€)
 > *"For every action, there is an equal and opposite reaction."*
 
 * **Simple Idea**: Forces always come in pairs! You cannot push something without it pushing back on you with equal force.
@@ -1456,7 +1456,7 @@ Here are Newton's Three Laws of Motion explained in the simplest, most intuitive
 
 ---
 
-### 💡 Quick Summary Formula Card
+### ðŸ’¡ Quick Summary Formula Card
 | Law | Concept | Key Formula / Rule | Everyday Analog |
 | :--- | :--- | :--- | :--- |
 | **1st Law** | Inertia & Equilibrium | $\\Sigma F = 0 \\implies v = \\text{constant}$ | Seatbelts in cars |
@@ -1465,12 +1465,12 @@ Here are Newton's Three Laws of Motion explained in the simplest, most intuitive
 
 ---
 
-### 🧪 Check Your Understanding
+### ðŸ§ª Check Your Understanding
 When a swimmer pushes the water backwards with their hands, why do they move forwards? Which law explains this?`;
   }
 
   if (lower.includes('mcq') || action === 'Generate MCQs') {
-    return `### 🔘 MCQs: Newton's Laws of Motion (Intermediate Level)
+    return `### ðŸ”˜ MCQs: Newton's Laws of Motion (Intermediate Level)
 
 **Q1. When a carpet is beaten with a stick, dust particles come out. This phenomenon is an illustration of:**
 - A) Newton's Third Law
@@ -1509,9 +1509,9 @@ When a swimmer pushes the water backwards with their hands, why do they move for
   }
 
   if (lower.includes('solve') || action === 'Solve Problems') {
-    return `### 🧩 Step-by-Step Problem Solver: Newton's Laws
+    return `### ðŸ§© Step-by-Step Problem Solver: Newton's Laws
 
-### ❓ PROBLEM
+### â“ PROBLEM
 A block of mass $m = 5\\text{ kg}$ is pulled along a rough horizontal surface by a constant horizontal force $F = 30\\text{ N}$. The coefficient of kinetic friction between the block and the surface is $\\mu_k = 0.2$. (Take $g = 9.8\\text{ m/s}^2$).
 Find:
 1. The frictional force acting on the block.
@@ -1520,7 +1520,7 @@ Find:
 
 ---
 
-### 🎯 GIVEN DATA
+### ðŸŽ¯ GIVEN DATA
 - Mass $m = 5\\text{ kg}$
 - Applied Force $F = 30\\text{ N}$
 - Coefficient of kinetic friction $\\mu_k = 0.2$
@@ -1530,7 +1530,7 @@ Find:
 
 ---
 
-### 📝 STEP-BY-STEP SOLUTION
+### ðŸ“ STEP-BY-STEP SOLUTION
 
 **Step 1: Calculate the Normal Reaction ($N$)**
 In the vertical direction, the block is in equilibrium:
@@ -1549,15 +1549,15 @@ $$s = ut + \\frac{1}{2}at^2 = 0(4) + \\frac{1}{2}(4.04)(4^2) = \\frac{1}{2} \\ti
 
 ---
 
-### ✅ FINAL ANSWERS
+### âœ… FINAL ANSWERS
 1. **Frictional force**: $f_k = 9.8\\text{ N}$ (opposing motion)
 2. **Acceleration**: $a = 4.04\\text{ m/s}^2$
 3. **Distance in $4\\text{ s}$**: $s = 32.32\\text{ m}$`;
   }
 
   // Comprehensive / Detailed Explanation (8-Part Structure)
-  return `### ⚛️ Newton's Laws of Motion & Momentum (Comprehensive Guide)
-**Intermediate 1st Year / Class 11 — Physics (Mechanics)**
+  return `### âš›ï¸ Newton's Laws of Motion & Momentum (Comprehensive Guide)
+**Intermediate 1st Year / Class 11 â€” Physics (Mechanics)**
 
 Newton's laws of motion form the foundation of classical mechanics, describing how bodies interact and move under forces.
 
@@ -1570,16 +1570,16 @@ Mechanics is the study of motion and its causes. Newton's laws quantitatively fo
 
 ### 2. Main Principles & Laws of Motion
 
-#### 1️⃣ First Law of Motion (Law of Inertia)
+#### 1ï¸âƒ£ First Law of Motion (Law of Inertia)
 > *"Every body continues in its state of rest or of uniform motion in a straight line unless compelled to change that state by an external unbalanced force."*
 * **Inertia**: The inherent property of matter to resist any change in velocity. Quantitatively measured by **mass ($m$)**.
 * Types of Inertia: Inertia of Rest, Inertia of Motion, Inertia of Direction.
 
-#### 2️⃣ Second Law of Motion ($F = \\frac{dp}{dt}$)
+#### 2ï¸âƒ£ Second Law of Motion ($F = \\frac{dp}{dt}$)
 > *"The rate of change of linear momentum of a body is directly proportional to the applied external force and takes place in the direction of the force."*
 $$\\vec{F} = \\frac{d\\vec{p}}{dt} = \\frac{d(m\\vec{v})}{dt} = m\\vec{a}$$
 
-#### 3️⃣ Third Law of Motion ($F_{AB} = -F_{BA}$)
+#### 3ï¸âƒ£ Third Law of Motion ($F_{AB} = -F_{BA}$)
 > *"To every action, there is always an equal and opposite reaction."*
 * Action and reaction forces act **simultaneously** on **two different bodies**, hence they never cancel each other out.
 
@@ -1610,9 +1610,9 @@ $$\\vec{F} = \\frac{d\\vec{p}}{dt} = \\frac{d(m\\vec{v})}{dt} = m\\vec{a}$$
 ---
 
 ### 6. Common Mistakes to Avoid in Exams
-- ⚠️ Treating Action-Reaction forces as acting on the same body (they act on *different* bodies).
-- ⚠️ Forgetting normal force changes on inclined planes ($N = mg \\cos\\theta$, not $mg$).
-- ⚠️ Confusing mass (scalar in $\\text{kg}$) with weight (force vector $W = mg$ in $\\text{Newtons}$).
+- âš ï¸ Treating Action-Reaction forces as acting on the same body (they act on *different* bodies).
+- âš ï¸ Forgetting normal force changes on inclined planes ($N = mg \\cos\\theta$, not $mg$).
+- âš ï¸ Confusing mass (scalar in $\\text{kg}$) with weight (force vector $W = mg$ in $\\text{Newtons}$).
 
 ---
 
@@ -1630,37 +1630,37 @@ $$\\vec{F} = \\frac{d\\vec{p}}{dt} = \\frac{d(m\\vec{v})}{dt} = m\\vec{a}$$
 // 4. PHOTOSYNTHESIS
 function getPhotosynthesisResponse({ mode, isComprehensive, action, lower, text }) {
   if (mode === 'beginner' || action === 'Simple Explanation') {
-    return `### 🌱 Photosynthesis (Simple Explanation)
-**Class 11 / Intermediate BiPC — Botany (Plant Physiology)**
+    return `### ðŸŒ± Photosynthesis (Simple Explanation)
+**Class 11 / Intermediate BiPC â€” Botany (Plant Physiology)**
 
-Photosynthesis is how **green plants make their own food** using sunlight! ☀️
-
----
-
-### 🌿 What Does a Plant Need?
-1. ☀️ **Sunlight** — Provides radiant energy.
-2. 💧 **Water ($H_2O$)** — Absorbed by roots from the soil.
-3. 🌬️ **Carbon Dioxide ($CO_2$)** — Absorbed through stomata in the leaves.
+Photosynthesis is how **green plants make their own food** using sunlight! â˜€ï¸
 
 ---
 
-### 🧪 The Master Formula
+### ðŸŒ¿ What Does a Plant Need?
+1. â˜€ï¸ **Sunlight** â€” Provides radiant energy.
+2. ðŸ’§ **Water ($H_2O$)** â€” Absorbed by roots from the soil.
+3. ðŸŒ¬ï¸ **Carbon Dioxide ($CO_2$)** â€” Absorbed through stomata in the leaves.
+
+---
+
+### ðŸ§ª The Master Formula
 $$6CO_2 + 6H_2O + \\text{Light} \\xrightarrow{\\text{Chlorophyll}} C_6H_{12}O_6 \\text{ (Glucose)} + 6O_2 \\text{ (Oxygen)}$$
 
 ---
 
-### 💡 Two Main Stages:
+### ðŸ’¡ Two Main Stages:
 1. **Light Reactions (in Thylakoid membranes)**: Light splits water molecules into Hydrogen and Oxygen ($O_2$ is released into the air).
 2. **Dark Reactions / Calvin Cycle (in Stroma)**: Uses ATP and NADPH to turn $CO_2$ into glucose sugar.
 
 ---
 
-### 🧪 Quick Question:
+### ðŸ§ª Quick Question:
 What green pigment in chloroplasts is responsible for trapping solar energy?`;
   }
 
-  return `### 🌱 Photosynthesis (Comprehensive Guide)
-**Class 11 / Intermediate Botany — Plant Physiology**
+  return `### ðŸŒ± Photosynthesis (Comprehensive Guide)
+**Class 11 / Intermediate Botany â€” Plant Physiology**
 
 Photosynthesis is the fundamental biological process by which autotrophic green plants and algae convert light energy into stable chemical energy stored in carbohydrates.
 
@@ -1708,7 +1708,7 @@ $$6CO_2 + 12H_2O \\xrightarrow[\\text{Chloroplast}]{\\text{Light Energy}} C_6H_{
 // 5. UNCURATED TOPIC COMPREHENSIVE FALLBACK GENERATOR
 function getTopicComprehensiveFallback(topicName, originalText, mode) {
   const cleanTitle = topicName || originalText;
-  return `### 📖 ${cleanTitle} (Structured Study Guide)
+  return `### ðŸ“– ${cleanTitle} (Structured Study Guide)
 *Note: This is a general structured explanation based on your specific study request.*
 
 ---
@@ -1735,10 +1735,10 @@ function getTopicComprehensiveFallback(topicName, originalText, mode) {
 ---
 
 ### 4. Step-by-Step Learning Guide
-1. **Step 1 — Understand Prerequisites**: Identify the baseline definitions and initial conditions.
-2. **Step 2 — Apply the Principle**: Trace each step from given inputs to governing equations.
-3. **Step 3 — Compute / Synthesize**: Solve step-by-step maintaining consistent units and rigorous logic.
-4. **Step 4 — Verify & Evaluate**: Cross-check the final result against real-world physical and logical expectations.
+1. **Step 1 â€” Understand Prerequisites**: Identify the baseline definitions and initial conditions.
+2. **Step 2 â€” Apply the Principle**: Trace each step from given inputs to governing equations.
+3. **Step 3 â€” Compute / Synthesize**: Solve step-by-step maintaining consistent units and rigorous logic.
+4. **Step 4 â€” Verify & Evaluate**: Cross-check the final result against real-world physical and logical expectations.
 
 ---
 
@@ -1749,9 +1749,9 @@ function getTopicComprehensiveFallback(topicName, originalText, mode) {
 ---
 
 ### 6. Common Mistakes to Avoid in Exams
-- ⚠️ Forgetting to check standard units and dimensional consistency.
-- ⚠️ Confusing cause with effect or omitting necessary initial assumptions.
-- ⚠️ Skipping step-by-step working when deriving formulas or answering structured questions.
+- âš ï¸ Forgetting to check standard units and dimensional consistency.
+- âš ï¸ Confusing cause with effect or omitting necessary initial assumptions.
+- âš ï¸ Skipping step-by-step working when deriving formulas or answering structured questions.
 
 ---
 
@@ -1784,9 +1784,9 @@ export function getMockTutorResponse(messageOrMessages, mode = 'standard', sylla
   const isComprehensive = isComprehensiveQuery(text, syllabusContext?.action, mode);
 
   if (!text) {
-    return `### 🎓 Intermediate AI Tutor
+    return `### ðŸŽ“ Furqan NovaAI
 
-Hello! 👋 I am your Intermediate (Class 11 & 12) AI Study Assistant.
+Hello! ðŸ‘‹ I am your Intermediate (Class 11 & 12) AI Study Assistant.
 
 Select your **Stream (MPC / BiPC / MEC / CEC)**, **Year**, and **Topic** above, or ask any question directly to get step-by-step explanations, formulas, MCQs, and exam revision!`;
   }
@@ -1869,8 +1869,8 @@ Select your **Stream (MPC / BiPC / MEC / CEC)**, **Year**, and **Topic** above, 
 
   // GRAVITY
   if (lower.includes('gravity') || lower.includes('gravitation')) {
-    return `### 🌍 Gravity & Gravitation
-**Physics — Mechanics**
+    return `### ðŸŒ Gravity & Gravitation
+**Physics â€” Mechanics**
 
 **Gravity** is the universal attractive force between any two masses in the universe.
 
@@ -1888,15 +1888,15 @@ What would happen to your weight if you moved to the Moon, where gravity is $1/6
 
   // WATER CYCLE
   if (lower.includes('water cycle') || lower.includes('watercycle')) {
-    return `### 💧 The Water Cycle
+    return `### ðŸ’§ The Water Cycle
 
 The water cycle describes how water continuously circulates through Earth's hydrosphere, atmosphere, and lithosphere.
 
 ### Main Stages:
-1. ☀️ **Evaporation**: Solar heat converts liquid water into water vapor.
-2. ☁️ **Condensation**: Water vapor cools in upper atmosphere forming clouds.
-3. 🌧️ **Precipitation**: Condensed water falls as rain, snow, sleet, or hail.
-4. 🌊 **Collection / Runoff**: Water collects in rivers, lakes, oceans, and groundwater.
+1. â˜€ï¸ **Evaporation**: Solar heat converts liquid water into water vapor.
+2. â˜ï¸ **Condensation**: Water vapor cools in upper atmosphere forming clouds.
+3. ðŸŒ§ï¸ **Precipitation**: Condensed water falls as rain, snow, sleet, or hail.
+4. ðŸŒŠ **Collection / Runoff**: Water collects in rivers, lakes, oceans, and groundwater.
 
 ### Quick question:
 What is the primary energy source driving the water cycle?`;
@@ -1904,8 +1904,8 @@ What is the primary energy source driving the water cycle?`;
 
   // CELL
   if (lower.includes('what is a cell') || lower.includes('explain cell') || lower.includes('cells')) {
-    return `### 🔬 What is a Cell?
-**Biology — Cell Biology**
+    return `### ðŸ”¬ What is a Cell?
+**Biology â€” Cell Biology**
 
 A **cell** is the structural, functional, and biological unit of all known living organisms.
 
@@ -1921,7 +1921,7 @@ Why are mitochondria known as the powerhouse of the cell?`;
 
   // ATOM
   if (lower.includes('what is an atom') || lower.includes('explain atom') || lower === 'atom') {
-    return `### ⚛️ What is an Atom?
+    return `### âš›ï¸ What is an Atom?
 **Chemistry & Physics**
 
 An **atom** is the smallest constituent unit of ordinary matter that has the properties of a chemical element.
@@ -1937,7 +1937,7 @@ What subatomic particles determine the atomic number ($Z$) of an element?`;
 
   // PYTHON VARIABLES
   if (lower.includes('what is a variable') || lower.includes('variables') || lower.includes('python variable')) {
-    return `### 🐍 Python Variables
+    return `### ðŸ Python Variables
 
 A **variable** in Python is a named reference stored in memory that holds a value.
 
@@ -1955,7 +1955,7 @@ What happens if you reassign \`age = "sixteen"\` in Python?`;
 
   // PYTHON FUNCTIONS
   if (lower.includes('python function') || lower.includes('what is a function') || lower === 'function') {
-    return `### 🐍 Python Functions
+    return `### ðŸ Python Functions
 
 A **function** is a reusable block of code defined with the \`def\` keyword:
 
@@ -1975,7 +1975,7 @@ print(message)
 
   // PYTHON LOOPS
   if (lower.includes('python loop') || lower.includes('what is a loop') || lower === 'loop') {
-    return `### 🔁 Python Loops
+    return `### ðŸ” Python Loops
 
 Python provides two main loop structures:
 
@@ -1999,7 +1999,7 @@ while count < 3:
     lower.includes('difference between a list and a tuple') ||
     lower.includes('tuple vs list')
   ) {
-    return `### 🐍 Python: Lists vs Tuples
+    return `### ðŸ Python: Lists vs Tuples
 
 | Feature | List \`[]\` | Tuple \`()\` |
 | :--- | :--- | :--- |
@@ -2011,7 +2011,7 @@ while count < 3:
 
   // FRACTIONS
   if (lower.includes('fraction')) {
-    return `### ➗ Fractions
+    return `### âž— Fractions
 **Mathematics**
 
 A **fraction** represents part of a whole: $\\frac{a}{b}$ where $a$ is the numerator and $b$ is the denominator ($b \\ne 0$).
@@ -2024,7 +2024,7 @@ A **fraction** represents part of a whole: $\\frac{a}{b}$ where $a$ is the numer
 
   // ALGEBRA
   if (lower.includes('algebra') || lower.includes('solve for x')) {
-    return `### ➕ Linear Algebra & Equation Solving
+    return `### âž• Linear Algebra & Equation Solving
 
 To solve linear equations like $ax + b = c$:
 1. Subtract $b$ from both sides: $ax = c - b$
@@ -2047,7 +2047,7 @@ $$3x + 5 = 20 \\implies 3x = 15 \\implies x = 5$$`;
 function getGeneralTutorResponse(text, mode) {
   const cleanQuery = cleanText(text);
 
-  return `### 📚 AI Study Assistant: Conceptual Guide
+  return `### ðŸ“š AI Study Assistant: Conceptual Guide
 *Note: This is a general educational explanation for **"${cleanQuery}"**.*
 
 ---
@@ -2071,7 +2071,7 @@ When studying **${cleanQuery}**, the goal is to understand the fundamental mecha
 
 ---
 
-### 💡 Study Suggestion
+### ðŸ’¡ Study Suggestion
 You can ask me to:
 - *"Explain in simpler terms"*
 - *"Give another real-world example"*
@@ -2087,11 +2087,11 @@ export function getMockSolverResponse(question) {
   const q = cleanText(question);
 
   if (!q) {
-    return `### ❓ QUESTION
+    return `### â“ QUESTION
 
 No question was entered.
 
-### 📝 SOLUTION
+### ðŸ“ SOLUTION
 
 Please enter a question and I'll solve it step by step.`;
   }
@@ -2102,12 +2102,12 @@ Please enter a question and I'll solve it step by step.`;
   const result = solveMathProblem(q);
 
   // If detected as a concept question, word problem, or syllabus inquiry,
-  // invoke the AI Tutor fallback to provide a comprehensive step-by-step solution
+  // invoke the Furqan NovaAI fallback to provide a comprehensive step-by-step solution
   if (result.type === 'concept_question') {
     const tutorResponse = getMockTutorResponse(q, 'standard');
-    return `### 🏷️ PROBLEM TYPE: AI Tutor Solution & Conceptual Explanation
+    return `### ðŸ·ï¸ PROBLEM TYPE: Furqan NovaAI Solution & Conceptual Explanation
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
 ---
@@ -2116,19 +2116,19 @@ ${tutorResponse}
 
 ---
 
-### 💡 NOTE
-This question was solved using the **AI Tutor**. You can also enter math calculations such as \`cos(90°) + sin(90°)\`, \`2sin(30°) + cos(60°)\`, \`tan(45°)\`, \`25% of 80\`, or \`x + 5 = 12\` for instant step-by-step calculations.`;
+### ðŸ’¡ NOTE
+This question was solved using the **Furqan NovaAI**. You can also enter math calculations such as \`cos(90Â°) + sin(90Â°)\`, \`2sin(30Â°) + cos(60Â°)\`, \`tan(45Â°)\`, \`25% of 80\`, or \`x + 5 = 12\` for instant step-by-step calculations.`;
   }
 
   if (result.content) {
     return result.content;
   }
 
-  // Fallback to AI Tutor for anything else
+  // Fallback to Furqan NovaAI for anything else
   const fallback = getMockTutorResponse(q, 'standard');
-  return `### 🏷️ PROBLEM TYPE: AI Tutor Solution
+  return `### ðŸ·ï¸ PROBLEM TYPE: Furqan NovaAI Solution
 
-### ❓ QUESTION
+### â“ QUESTION
 ${q}
 
 ---
@@ -2143,10 +2143,10 @@ ${fallback}`;
 const quizTemplates = {
   math: [
     {
-      question: 'What is 7 × 8?',
+      question: 'What is 7 Ã— 8?',
       options: ['54', '56', '64', '48'],
       correct: 1,
-      explanation: '7 × 8 = 56.'
+      explanation: '7 Ã— 8 = 56.'
     },
     {
       question: 'What is 25 + 15?',
@@ -2155,10 +2155,10 @@ const quizTemplates = {
       explanation: '25 + 15 = 40.'
     },
     {
-      question: 'What is 100 ÷ 4?',
+      question: 'What is 100 Ã· 4?',
       options: ['20', '25', '30', '40'],
       correct: 1,
-      explanation: '100 ÷ 4 = 25.'
+      explanation: '100 Ã· 4 = 25.'
     },
     {
       question: 'What is 50 - 18?',
@@ -2363,7 +2363,7 @@ const flashcardTemplates = {
     },
     {
       front: 'What is the water cycle?',
-      back: 'The water cycle describes the continuous movement of water through Earth’s environment.'
+      back: 'The water cycle describes the continuous movement of water through Earthâ€™s environment.'
     },
     {
       front: 'What is an atom?',
@@ -2636,18 +2636,18 @@ ${text}`;
 
   // General grounded academic fallback with step-by-step structure
   const topicTitle = text.length > 50 ? `${text.slice(0, 47)}...` : text;
-  return `### 📖 Study Guide: ${topicTitle}
+  return `### ðŸ“– Study Guide: ${topicTitle}
 
 Here is a structured, step-by-step breakdown to help you study this concept:
 
 ---
 
-### 1. 🔍 Conceptual Overview
+### 1. ðŸ” Conceptual Overview
 When exploring **${topicTitle}**, the goal is to break the core idea down into its foundational components and understand how each part connects.
 
 ---
 
-### 2. 📝 Step-by-Step Learning Strategy
+### 2. ðŸ“ Step-by-Step Learning Strategy
 1. **Identify the Core Definition**: State what the phenomenon, formula, or principle is in one clear sentence.
 2. **Examine the Governing Rules**: Look at the mathematical laws, physical constraints, or logical conditions that apply.
 3. **Work Through an Everyday Example**: Test your understanding by connecting the concept to a real-world analog.
@@ -2655,10 +2655,10 @@ When exploring **${topicTitle}**, the goal is to break the core idea down into i
 
 ---
 
-### 💡 Suggested Next Actions
-* Click **"💡 Explain Simply"** for an intuitive, beginner-friendly metaphor.
-* Click **"📚 Give Example"** for a real-world application.
-* Click **"🧩 Give Hint"** if you're stuck on a homework or exam problem.
+### ðŸ’¡ Suggested Next Actions
+* Click **"ðŸ’¡ Explain Simply"** for an intuitive, beginner-friendly metaphor.
+* Click **"ðŸ“š Give Example"** for a real-world application.
+* Click **"ðŸ§© Give Hint"** if you're stuck on a homework or exam problem.
 * Ask any follow-up question (e.g., *"Why?"*, *"Give an example"*, or *"Quiz me on this"*).
 
 > *Note: This is a general conceptual study guide. For state-specific Intermediate board syllabus topics, select your Stream, Year, and Chapter from the Syllabus Drawer above.*`;
@@ -2693,7 +2693,7 @@ print("Hello, World!")`,
     };
   }
 
-  return `### 🐍 Python: ${cleanTopic}
+  return `### ðŸ Python: ${cleanTopic}
 
 Let's learn **${cleanTopic}** step by step.
 
@@ -2737,41 +2737,41 @@ export function generateStructuredIntermediateResponse(text, mode, context = {})
 
   // Action: Simple Explanation
   if (action === 'Simple Explanation' || mode === 'beginner' || lower.includes('simple')) {
-    return `### 💡 ${topic} — Simple Explanation
-**Stream: ${stream} | ${year} | ${subject} → ${chapter}**
+    return `### ðŸ’¡ ${topic} â€” Simple Explanation
+**Stream: ${stream} | ${year} | ${subject} â†’ ${chapter}**
 
 Let's break down **${topic}** in simple, intuitive terms with clear everyday examples!
 
 ---
 
-### 🌟 The Core Concept
+### ðŸŒŸ The Core Concept
 * **What is it?** ${topic} is an essential concept in **${subject}** that explains how systems behave in the real world.
 * **Analogy**: Think of ${topic} like a set of building blocks. Once you understand the fundamental rule, everything else clicks into place easily.
 
 ---
 
-### 🔑 3 Key Takeaways
+### ðŸ”‘ 3 Key Takeaways
 1. **Rule 1**: Master the basic definition and fundamental equation/principle of ${topic}.
 2. **Rule 2**: Identify how changing one variable influences the rest of the system.
 3. **Rule 3**: Relate theoretical concepts to daily observations.
 
 ---
 
-### 🎯 Example in Action
+### ðŸŽ¯ Example in Action
 When studying **${topic}** for ${year} exams:
 - Break complex problems down into given values, required targets, and the relevant principle.
 - Write each step clearly with correct units and terminology.
 
 ---
 
-### 🧪 Quick Practice Question
+### ðŸ§ª Quick Practice Question
 How would you explain the importance of **${topic}** in ${subject} in one sentence?`;
   }
 
   // Action: Detailed Explanation
   if (action === 'Detailed Explanation' || mode === 'deep' || lower.includes('detailed') || lower.includes('derivation')) {
-    return `### 🧠 ${topic} — Comprehensive Deep Dive
-**Stream: ${stream} | ${year} | ${subject} → ${chapter}**
+    return `### ðŸ§  ${topic} â€” Comprehensive Deep Dive
+**Stream: ${stream} | ${year} | ${subject} â†’ ${chapter}**
 
 ---
 
@@ -2800,32 +2800,32 @@ How would you explain the importance of **${topic}** in ${subject} in one senten
 
 ---
 
-### 📌 Summary Card
+### ðŸ“Œ Summary Card
 - **Primary Formula/Principle**: Core formula and dimensional analysis for ${topic}.
 - **SI Units & Constants**: Standard notations used in Intermediate ${subject}.`;
   }
 
   // Action: Solve Problems / Step-by-Step Solutions
   if (action === 'Solve Problems' || action === 'Step-by-Step Solutions' || lower.includes('solve') || lower.includes('step')) {
-    return `### 🧩 Step-by-Step Problem Solver: ${topic}
-**Intermediate Syllabus — ${stream} | ${year} | ${subject}**
+    return `### ðŸ§© Step-by-Step Problem Solver: ${topic}
+**Intermediate Syllabus â€” ${stream} | ${year} | ${subject}**
 
 ---
 
-### ❓ PROBLEM
+### â“ PROBLEM
 A standard Intermediate board exam question on **${topic}** (${chapter}):
 Calculate the primary required value given standard conditions and parameters.
 
 ---
 
-### 🎯 GIVEN DATA & CONCEPT
-- **Subject / Chapter**: ${subject} — ${chapter}
+### ðŸŽ¯ GIVEN DATA & CONCEPT
+- **Subject / Chapter**: ${subject} â€” ${chapter}
 - **Governing Concept**: ${topic}
 - **Required**: Determine final numerical / analytical result with full intermediate steps.
 
 ---
 
-### 📝 STEP-BY-STEP SOLUTION
+### ðŸ“ STEP-BY-STEP SOLUTION
 
 **Step 1: State the fundamental formula / law**
 Write down the primary formula for ${topic} and define each variable.
@@ -2841,14 +2841,14 @@ Highlight the final answer clearly for maximum marks in examiner evaluation.
 
 ---
 
-### ✅ FINAL VERIFICATION
+### âœ… FINAL VERIFICATION
 - Double-check dimensional consistency and physical/economic sense.
 - Try varying the initial parameters to test your problem-solving speed!`;
   }
 
   // Action: Generate MCQs
   if (action === 'Generate MCQs' || lower.includes('mcq')) {
-    return `### 🔘 High-Yield MCQs: ${topic}
+    return `### ðŸ”˜ High-Yield MCQs: ${topic}
 **Stream: ${stream} | ${year} | ${subject} (${chapter})**
 
 **Q1. What is the fundamental principle behind ${topic}?**
@@ -2870,7 +2870,7 @@ Highlight the final answer clearly for maximum marks in examiner evaluation.
 - B) Standard core curriculum topic with direct numerical and analytical relevance *(Correct)*
 - C) Deprecated historical concept
 - D) Applicable only in micro-systems
-*Explanation: ${topic} is a high-frequency topic in Class 11–12 / Intermediate board exams.*
+*Explanation: ${topic} is a high-frequency topic in Class 11â€“12 / Intermediate board exams.*
 
 **Q4. What is the standard SI unit / representation associated with ${topic}?**
 - A) Dimensionless ratio or standard derived SI unit *(Correct)*
@@ -2889,41 +2889,41 @@ Highlight the final answer clearly for maximum marks in examiner evaluation.
 
   // Action: Summarize Chapter / Revision Mode / Exam Prep
   if (action === 'Summarize Chapter' || action === 'Revision Mode' || action === 'Exam Preparation' || lower.includes('summar') || lower.includes('revis') || lower.includes('exam')) {
-    return `### 🏆 Rapid Revision & Exam Blueprint: ${topic}
-**Stream: ${stream} | ${year} | ${subject} → ${chapter}**
+    return `### ðŸ† Rapid Revision & Exam Blueprint: ${topic}
+**Stream: ${stream} | ${year} | ${subject} â†’ ${chapter}**
 
 ---
 
-### 📋 High-Yield Summary & Core Definitions
+### ðŸ“‹ High-Yield Summary & Core Definitions
 * **Core Topic**: ${topic}
 * **Chapter Significance**: Essential for ${year} ${subject} board exams and entrance tests.
 * **Key Concept**: Understand definitions, standard diagram/graphical representations, and mathematical models.
 
 ---
 
-### ⚡ Essential Formulas & High-Probability Points
+### âš¡ Essential Formulas & High-Probability Points
 - **Primary Equation / Law**: State the fundamental law governing ${topic}.
 - **Diagrams / Graphs**: Practice standard labeling (crucial for 4-mark and 8-mark questions).
 - **Key Relationships**: Be prepared to explain direct and inverse dependencies between parameters.
 
 ---
 
-### ⚠️ Common Mistakes to Avoid
+### âš ï¸ Common Mistakes to Avoid
 1. Forgetting to write units in final calculations.
 2. Missing definitions or assumptions when stating laws/theorems.
 3. Incomplete diagrams without proper axis labels or annotations.
 
 ---
 
-### 🎯 Top 3 Board Exam Practice Questions
+### ðŸŽ¯ Top 3 Board Exam Practice Questions
 1. **Short Answer (2 Marks)**: Define ${topic} and give its SI unit or main characteristic.
 2. **Medium Answer (4 Marks)**: Explain the principle/mechanism of ${topic} with a suitable example/diagram.
 3. **Long Answer (8 Marks)**: State and derive the complete formula/theorem for ${topic} and solve a numerical problem.`;
   }
 
   // Default: Comprehensive Explain Topic
-  return `### 📖 ${topic}
-**Stream: ${stream} | ${year} | ${subject} → ${chapter}**
+  return `### ðŸ“– ${topic}
+**Stream: ${stream} | ${year} | ${subject} â†’ ${chapter}**
 
 Welcome to your study module on **${topic}**! Here is a structured overview designed for the **Intermediate ${year} (${stream})** curriculum.
 
@@ -2948,7 +2948,7 @@ Welcome to your study module on **${topic}**! Here is a structured overview desi
 
 ---
 
-### 💡 Suggested Next Actions
+### ðŸ’¡ Suggested Next Actions
 Use the quick action buttons above:
 - Click **"Simple Explanation"** for intuitive analogies.
 - Click **"Solve Problems"** for step-by-step numerical/theoretical walkthroughs.

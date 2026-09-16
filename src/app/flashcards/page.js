@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ const DEFAULT_DECKS = [
     id: 'python_core',
     title: 'Python Core Essentials',
     subject: 'programming',
-    icon: '🐍',
+    icon: 'ðŸ',
     badgeColor: '#f59e0b',
     description: 'Master core Python terms: variables, lists, tuples, dictionaries, loops, and functions.',
     cards: [
@@ -29,52 +29,52 @@ const DEFAULT_DECKS = [
     id: 'math_algebra',
     title: 'Algebra & Trigonometry',
     subject: 'math',
-    icon: '📐',
+    icon: 'ðŸ“',
     badgeColor: '#6366f1',
     description: 'Essential formulas for quadratic equations, trigonometric values, and logarithms.',
     cards: [
-      { front: 'What is the Quadratic Formula?', back: 'x = (-b ± √(b² - 4ac)) / (2a) for ax² + bx + c = 0.' },
-      { front: 'What is the value of sin(30°) and cos(60°)?', back: 'Both sin(30°) and cos(60°) are equal to 1/2 (0.5).' },
-      { front: 'What is the fundamental Pythagorean trigonometric identity?', back: 'sin²(θ) + cos²(θ) = 1 for any angle θ.' },
+      { front: 'What is the Quadratic Formula?', back: 'x = (-b Â± âˆš(bÂ² - 4ac)) / (2a) for axÂ² + bx + c = 0.' },
+      { front: 'What is the value of sin(30Â°) and cos(60Â°)?', back: 'Both sin(30Â°) and cos(60Â°) are equal to 1/2 (0.5).' },
+      { front: 'What is the fundamental Pythagorean trigonometric identity?', back: 'sinÂ²(Î¸) + cosÂ²(Î¸) = 1 for any angle Î¸.' },
       { front: 'What is the slope-intercept equation of a line?', back: 'y = mx + c, where m is the slope and c is the y-intercept.' },
-      { front: 'What is log(a × b) equivalent to?', back: 'log(a) + log(b) by the product rule of logarithms.' },
+      { front: 'What is log(a Ã— b) equivalent to?', back: 'log(a) + log(b) by the product rule of logarithms.' },
     ],
   },
   {
     id: 'physics_mechanics',
     title: 'Physics: Laws & Energy',
     subject: 'physics',
-    icon: '⚛️',
+    icon: 'âš›ï¸',
     badgeColor: '#3b82f6',
-    description: 'Newton’s laws, kinetic & potential energy, gravity, and momentum.',
+    description: 'Newtonâ€™s laws, kinetic & potential energy, gravity, and momentum.',
     cards: [
-      { front: 'State Newton’s First Law of Motion', back: 'An object remains at rest or in uniform motion unless acted upon by a net external force (Inertia).' },
-      { front: 'What is the formula for Kinetic Energy?', back: 'KE = 1/2 × m × v², where m is mass and v is velocity.' },
-      { front: 'What is the formula for Gravitational Potential Energy?', back: 'PE = m × g × h (mass × acceleration due to gravity × height).' },
-      { front: 'State Newton’s Second Law formula', back: 'F = m × a (Force equals mass times acceleration).' },
-      { front: 'What is the standard value of acceleration due to gravity (g) on Earth?', back: 'g ≈ 9.8 m/s² (or approximately 9.81 m/s²).' },
+      { front: 'State Newtonâ€™s First Law of Motion', back: 'An object remains at rest or in uniform motion unless acted upon by a net external force (Inertia).' },
+      { front: 'What is the formula for Kinetic Energy?', back: 'KE = 1/2 Ã— m Ã— vÂ², where m is mass and v is velocity.' },
+      { front: 'What is the formula for Gravitational Potential Energy?', back: 'PE = m Ã— g Ã— h (mass Ã— acceleration due to gravity Ã— height).' },
+      { front: 'State Newtonâ€™s Second Law formula', back: 'F = m Ã— a (Force equals mass times acceleration).' },
+      { front: 'What is the standard value of acceleration due to gravity (g) on Earth?', back: 'g â‰ˆ 9.8 m/sÂ² (or approximately 9.81 m/sÂ²).' },
     ],
   },
   {
     id: 'chemistry_atoms',
     title: 'Chemistry: Structure & Bonds',
     subject: 'chemistry',
-    icon: '🧪',
+    icon: 'ðŸ§ª',
     badgeColor: '#10b981',
     description: 'Ionic vs covalent bonds, atomic subparticles, pH scale, and molar mass.',
     cards: [
       { front: 'What are the three subatomic particles in an atom?', back: 'Protons (positive charge), Neutrons (neutral charge), and Electrons (negative charge).' },
       { front: 'What is the difference between Ionic and Covalent bonds?', back: 'Ionic bonds form by the transfer of electrons between atoms; Covalent bonds form by the sharing of electron pairs.' },
-      { front: 'What is the pH of a neutral solution at 25°C?', back: 'pH = 7. Values < 7 are acidic, and values > 7 are basic/alkaline.' },
-      { front: 'What is Avogadro’s Number?', back: '6.022 × 10²³ particles per mole of a substance.' },
-      { front: 'What is an exothermic reaction?', back: 'A chemical reaction that releases heat energy into its surroundings (ΔH < 0).' },
+      { front: 'What is the pH of a neutral solution at 25Â°C?', back: 'pH = 7. Values < 7 are acidic, and values > 7 are basic/alkaline.' },
+      { front: 'What is Avogadroâ€™s Number?', back: '6.022 Ã— 10Â²Â³ particles per mole of a substance.' },
+      { front: 'What is an exothermic reaction?', back: 'A chemical reaction that releases heat energy into its surroundings (Î”H < 0).' },
     ],
   },
   {
     id: 'biology_genetics',
     title: 'Biology: Cells & DNA',
     subject: 'biology',
-    icon: '🧬',
+    icon: 'ðŸ§¬',
     badgeColor: '#22c55e',
     description: 'Organelles, mitosis vs meiosis, DNA structure, and cellular respiration.',
     cards: [
@@ -194,7 +194,7 @@ function FlashcardsContent() {
           id: `custom_${Date.now()}`,
           title: customTopic ? `${customSubject}: ${customTopic}` : `${customSubject} AI Deck`,
           subject: customSubject.toLowerCase(),
-          icon: customSubject.toLowerCase().includes('python') ? '🐍' : '🃏',
+          icon: customSubject.toLowerCase().includes('python') ? 'ðŸ' : 'ðŸƒ',
           badgeColor: '#8b5cf6',
           description: `AI-generated flashcards on ${customSubject}${customTopic ? ` - ${customTopic}` : ''}.`,
           cards: newCards,
@@ -211,7 +211,7 @@ function FlashcardsContent() {
           id: `custom_${Date.now()}`,
           title: `${customSubject} Study Deck`,
           subject: customSubject.toLowerCase(),
-          icon: '🃏',
+          icon: 'ðŸƒ',
           badgeColor: '#8b5cf6',
           description: `Study flashcards for ${customSubject}.`,
           cards: mockCards,
@@ -228,7 +228,7 @@ function FlashcardsContent() {
         id: `custom_${Date.now()}`,
         title: `${customSubject} Study Deck`,
         subject: customSubject.toLowerCase(),
-        icon: '🃏',
+        icon: 'ðŸƒ',
         badgeColor: '#8b5cf6',
         description: `Study flashcards for ${customSubject}.`,
         cards: mockCards,
@@ -263,7 +263,7 @@ function FlashcardsContent() {
       >
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-            <span style={{ fontSize: '2.2rem' }}>🃏</span>
+            <span style={{ fontSize: '2.2rem' }}>ðŸƒ</span>
             <h1 className="page-title" style={{ margin: 0 }}>Interactive Flashcards</h1>
             <span
               style={{
@@ -291,16 +291,16 @@ function FlashcardsContent() {
             onClick={() => setIsGeneratorOpen(!isGeneratorOpen)}
             className="btn btn-primary btn-sm"
           >
-            ✨ Generate AI Flashcards
+            âœ¨ Generate AI Flashcards
           </button>
           <Link href="/practice" className="btn btn-outline btn-sm">
-            ✏️ Practice Center
+            âœï¸ Practice Center
           </Link>
           <Link href="/coding" className="btn btn-ghost btn-sm">
-            🐍 Python Coding
+            ðŸ Python Coding
           </Link>
           <Link href="/tutor" className="btn btn-ghost btn-sm">
-            🤖 Ask AI Tutor
+            ðŸ¤– Ask Furqan NovaAI
           </Link>
         </div>
       </div>
@@ -310,7 +310,7 @@ function FlashcardsContent() {
         <div className="card animate-fade-in" style={{ padding: '24px', marginBottom: '24px', border: '1.5px solid var(--accent-primary)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ fontSize: '1.4rem' }}>🤖</span>
+              <span style={{ fontSize: '1.4rem' }}>ðŸ¤–</span>
               <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 700 }}>Generate Custom AI Flashcard Deck</h3>
             </div>
             <button
@@ -319,7 +319,7 @@ function FlashcardsContent() {
               className="btn btn-ghost btn-sm"
               style={{ fontSize: '11px' }}
             >
-              ✕ Close
+              âœ• Close
             </button>
           </div>
 
@@ -403,7 +403,7 @@ function FlashcardsContent() {
               className="btn btn-primary"
               style={{ alignSelf: 'flex-start', padding: '10px 22px', fontSize: '13px' }}
             >
-              {isGenerating ? 'Generating Deck with AI...' : 'Create Flashcard Deck 🚀'}
+              {isGenerating ? 'Generating Deck with AI...' : 'Create Flashcard Deck ðŸš€'}
             </button>
           </form>
         </div>
@@ -470,7 +470,7 @@ function FlashcardsContent() {
             </span>
             {isCurrentMastered && (
               <span style={{ color: '#10b981', fontWeight: 700, fontSize: '11px' }}>
-                ✓ Mastered
+                âœ“ Mastered
               </span>
             )}
           </div>
@@ -486,7 +486,7 @@ function FlashcardsContent() {
               style={{ fontSize: '11px', padding: '4px 8px' }}
               title="Shuffle card order"
             >
-              🔀 Shuffle
+              ðŸ”€ Shuffle
             </button>
             <button
               type="button"
@@ -495,7 +495,7 @@ function FlashcardsContent() {
               style={{ fontSize: '11px', padding: '4px 8px' }}
               title="Reset deck session"
             >
-              🔄 Reset
+              ðŸ”„ Reset
             </button>
           </div>
         </div>
@@ -571,7 +571,7 @@ function FlashcardsContent() {
               </div>
 
               <div style={{ fontSize: '12px', color: 'var(--text-tertiary)', fontWeight: 500 }}>
-                🔄 Tap or Click anywhere to reveal answer
+                ðŸ”„ Tap or Click anywhere to reveal answer
               </div>
             </div>
 
@@ -598,7 +598,7 @@ function FlashcardsContent() {
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#10b981' }}>
-                  ✓ Key Takeaway & Answer
+                  âœ“ Key Takeaway & Answer
                 </span>
                 <span style={{ fontSize: '11px', color: 'var(--text-tertiary)' }}>
                   Answer Explanation
@@ -612,7 +612,7 @@ function FlashcardsContent() {
               </div>
 
               <div style={{ fontSize: '12px', color: 'var(--text-tertiary)', fontWeight: 500 }}>
-                🔄 Tap to flip back to question
+                ðŸ”„ Tap to flip back to question
               </div>
             </div>
           </div>
@@ -635,7 +635,7 @@ function FlashcardsContent() {
             className="btn btn-outline btn-sm"
             style={{ padding: '8px 18px' }}
           >
-            ← Previous
+            â† Previous
           </button>
 
           <div style={{ display: 'flex', gap: '10px' }}>
@@ -645,7 +645,7 @@ function FlashcardsContent() {
               className="btn btn-ghost btn-sm"
               style={{ padding: '8px 16px' }}
             >
-              🔄 Flip Card
+              ðŸ”„ Flip Card
             </button>
 
             <button
@@ -661,7 +661,7 @@ function FlashcardsContent() {
                 gap: '6px',
               }}
             >
-              ✓ Mastered (+5 XP)
+              âœ“ Mastered (+5 XP)
             </button>
           </div>
 
@@ -671,7 +671,7 @@ function FlashcardsContent() {
             className="btn btn-outline btn-sm"
             style={{ padding: '8px 18px' }}
           >
-            Next →
+            Next â†’
           </button>
         </div>
       </div>
@@ -686,3 +686,4 @@ export default function FlashcardsPage() {
     </Suspense>
   );
 }
+

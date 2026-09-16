@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -7,25 +7,25 @@ import { store } from '@/lib/store';
 
 const navItems = [
   { label: 'MAIN', type: 'section' },
-  { href: '/', label: 'Dashboard', icon: '📊' },
-  { href: '/tutor', label: 'AI Tutor', icon: '🤖', badge: 'AI' },
-  { href: '/solver', label: 'Question Solver', icon: '🧩' },
+  { href: '/', label: 'Dashboard', icon: 'ðŸ“Š' },
+  { href: '/tutor', label: 'Furqan NovaAI', icon: 'ðŸ¤–', badge: 'AI' },
+  { href: '/solver', label: 'Question Solver', icon: 'ðŸ§©' },
 
   { label: 'LEARN', type: 'section' },
-  { href: '/syllabus', label: 'Inter Syllabus', icon: '🎓', badge: '11-12' },
-  { href: '/subjects', label: 'Subjects', icon: '📚' },
-  { href: '/coding', label: 'Python / Coding', icon: '🐍' },
-  { href: '/practice', label: 'Practice', icon: '✏️' },
+  { href: '/syllabus', label: 'Inter Syllabus', icon: 'ðŸŽ“', badge: '11-12' },
+  { href: '/subjects', label: 'Subjects', icon: 'ðŸ“š' },
+  { href: '/coding', label: 'Python / Coding', icon: 'ðŸ' },
+  { href: '/practice', label: 'Practice', icon: 'âœï¸' },
 
   { label: 'TOOLS', type: 'section' },
-  { href: '/quizzes', label: 'Quizzes', icon: '📝' },
-  { href: '/flashcards', label: 'Flashcards', icon: '🃏' },
-  { href: '/notes', label: 'Notes', icon: '📒' },
-  { href: '/planner', label: 'Study Planner', icon: '📅' },
+  { href: '/quizzes', label: 'Quizzes', icon: 'ðŸ“' },
+  { href: '/flashcards', label: 'Flashcards', icon: 'ðŸƒ' },
+  { href: '/notes', label: 'Notes', icon: 'ðŸ“’' },
+  { href: '/planner', label: 'Study Planner', icon: 'ðŸ“…' },
 
   { label: 'TRACK', type: 'section' },
-  { href: '/progress', label: 'Progress', icon: '📈' },
-  { href: '/settings', label: 'Settings', icon: '⚙️' },
+  { href: '/progress', label: 'Progress', icon: 'ðŸ“ˆ' },
+  { href: '/settings', label: 'Settings', icon: 'âš™ï¸' },
 ];
 
 export default function Sidebar({ isOpen, onClose }) {
@@ -49,7 +49,7 @@ export default function Sidebar({ isOpen, onClose }) {
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
         {/* Logo */}
         <div className="sidebar-logo">
-          <div className="sidebar-logo-icon">🎓</div>
+          <div className="sidebar-logo-icon">ðŸŽ“</div>
           <div>
             <div className="sidebar-logo-text">StudyAI</div>
             <div className="sidebar-logo-badge">AI Powered</div>
@@ -94,7 +94,7 @@ export default function Sidebar({ isOpen, onClose }) {
             </div>
             <div className="sidebar-user-info">
               <div className="sidebar-user-name">{user.name || 'Student'}</div>
-              <div className="sidebar-user-level">Level {user.level || 1} · {user.xp || 0} XP</div>
+              <div className="sidebar-user-level">Level {user.level || 1} Â· {user.xp || 0} XP</div>
               <div className="sidebar-xp-bar">
                 <div className="sidebar-xp-fill" style={{ width: `${xpPercent}%` }} />
               </div>
@@ -105,3 +105,4 @@ export default function Sidebar({ isOpen, onClose }) {
     </>
   );
 }
+

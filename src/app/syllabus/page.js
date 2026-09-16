@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -39,13 +39,13 @@ export default function SyllabusPage() {
       {/* Page Header */}
       <div style={{ marginBottom: '28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-          <span style={{ fontSize: '2rem' }}>🎓</span>
+          <span style={{ fontSize: '2rem' }}>ðŸŽ“</span>
           <div>
             <h1 className="page-title" style={{ margin: 0, fontSize: '28px', fontWeight: 800 }}>
-              Intermediate / Class 11–12 Syllabus
+              Intermediate / Class 11â€“12 Syllabus
             </h1>
             <p className="page-subtitle" style={{ margin: 0, color: 'var(--text-secondary, #5a5f7a)' }}>
-              Comprehensive curriculum for MPC, BiPC, MEC, and CEC streams with instant AI Tutor integration.
+              Comprehensive curriculum for MPC, BiPC, MEC, and CEC streams with instant Furqan NovaAI integration.
             </p>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function SyllabusPage() {
         {/* Step 1: Year Selection */}
         <div style={{ marginBottom: '20px' }}>
           <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-tertiary, #8a8fa6)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '10px' }}>
-            📅 Academic Year
+            ðŸ“… Academic Year
           </div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             {SYLLABUS_YEARS.map((y) => {
@@ -112,7 +112,7 @@ export default function SyllabusPage() {
         {/* Step 2: Stream Selection (MPC, BiPC, MEC, CEC) */}
         <div>
           <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-tertiary, #8a8fa6)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '10px' }}>
-            🎯 Stream Selection
+            ðŸŽ¯ Stream Selection
           </div>
           <div
             style={{
@@ -177,14 +177,14 @@ export default function SyllabusPage() {
             Current View: {currentYearObj.label}
           </div>
           <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-primary, #1a1d2e)' }}>
-            {currentStreamObj.name} — {currentStreamObj.fullName}
+            {currentStreamObj.name} â€” {currentStreamObj.fullName}
           </div>
         </div>
 
         {/* Quick Search filter */}
         <input
           type="text"
-          placeholder="🔍 Search chapters or topics..."
+          placeholder="ðŸ” Search chapters or topics..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{
@@ -242,7 +242,7 @@ export default function SyllabusPage() {
                       {subject.name}
                     </h2>
                     <p style={{ margin: 0, fontSize: '12px', color: 'var(--text-secondary, #5a5f7a)' }}>
-                      {chapters.length} Chapters • {chapters.reduce((acc, c) => acc + c.topics.length, 0)} Core Topics
+                      {chapters.length} Chapters â€¢ {chapters.reduce((acc, c) => acc + c.topics.length, 0)} Core Topics
                     </p>
                   </div>
                 </div>
@@ -264,7 +264,7 @@ export default function SyllabusPage() {
                   }}
                 >
                   <span>Ask {subject.name} Tutor</span>
-                  <span>🚀</span>
+                  <span>ðŸš€</span>
                 </Link>
               </div>
 
@@ -305,7 +305,7 @@ export default function SyllabusPage() {
                             <div style={{ flex: 1 }}>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <span style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text-primary, #1a1d2e)' }}>
-                                  📖 {chapter.name}
+                                  ðŸ“– {chapter.name}
                                 </span>
                                 <span
                                   style={{
@@ -326,7 +326,7 @@ export default function SyllabusPage() {
                             </div>
 
                             <span style={{ fontSize: '14px', color: 'var(--text-tertiary, #8a8fa6)', marginLeft: '12px' }}>
-                              {isExpanded ? '▲' : '▼'}
+                              {isExpanded ? 'â–²' : 'â–¼'}
                             </span>
                           </div>
 
@@ -358,7 +358,7 @@ export default function SyllabusPage() {
                                     }}
                                   >
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                      <span style={{ color: 'var(--accent-primary, #6366f1)', fontSize: '14px' }}>📌</span>
+                                      <span style={{ color: 'var(--accent-primary, #6366f1)', fontSize: '14px' }}>ðŸ“Œ</span>
                                       <span style={{ fontWeight: 600, fontSize: '13px', color: 'var(--text-primary, #1a1d2e)' }}>
                                         {topicName}
                                       </span>
@@ -380,7 +380,7 @@ export default function SyllabusPage() {
                                           cursor: 'pointer',
                                         }}
                                       >
-                                        💡 Simple
+                                        ðŸ’¡ Simple
                                       </button>
 
                                       <button
@@ -397,7 +397,7 @@ export default function SyllabusPage() {
                                           cursor: 'pointer',
                                         }}
                                       >
-                                        🔘 MCQs
+                                        ðŸ”˜ MCQs
                                       </button>
 
                                       <button
@@ -414,7 +414,7 @@ export default function SyllabusPage() {
                                           cursor: 'pointer',
                                         }}
                                       >
-                                        🧩 Solve
+                                        ðŸ§© Solve
                                       </button>
 
                                       <button
@@ -431,7 +431,7 @@ export default function SyllabusPage() {
                                           cursor: 'pointer',
                                         }}
                                       >
-                                        Tutor →
+                                        Tutor â†’
                                       </button>
                                     </div>
                                   </div>
@@ -452,3 +452,4 @@ export default function SyllabusPage() {
     </div>
   );
 }
+

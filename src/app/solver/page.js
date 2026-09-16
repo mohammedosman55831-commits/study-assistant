@@ -1,14 +1,14 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 
 const EXAMPLE_QUERIES = [
-  { label: 'cos(90°) + sin(90°)', type: 'trig', query: 'cos(90°) + sin(90°)' },
-  { label: 'sin(30°)', type: 'trig', query: 'sin(30°)' },
-  { label: 'cos(60°)', type: 'trig', query: 'cos(60°)' },
-  { label: 'tan(45°)', type: 'trig', query: 'tan(45°)' },
-  { label: '2sin(30°) + cos(60°)', type: 'trig', query: '2sin(30°) + cos(60°)' },
-  { label: 'sin⁻¹(0.5)', type: 'trig', query: 'sin⁻¹(0.5)' },
+  { label: 'cos(90Â°) + sin(90Â°)', type: 'trig', query: 'cos(90Â°) + sin(90Â°)' },
+  { label: 'sin(30Â°)', type: 'trig', query: 'sin(30Â°)' },
+  { label: 'cos(60Â°)', type: 'trig', query: 'cos(60Â°)' },
+  { label: 'tan(45Â°)', type: 'trig', query: 'tan(45Â°)' },
+  { label: '2sin(30Â°) + cos(60Â°)', type: 'trig', query: '2sin(30Â°) + cos(60Â°)' },
+  { label: 'sinâ»Â¹(0.5)', type: 'trig', query: 'sinâ»Â¹(0.5)' },
   { label: '25% of 80', type: 'math', query: '25% of 80' },
   { label: 'x + 5 = 12', type: 'algebra', query: 'x + 5 = 12' },
 ];
@@ -62,11 +62,11 @@ export default function SolverPage() {
         setProblemType('arithmetic');
       } else if (data.content.includes('PROBLEM TYPE: Algebra')) {
         setProblemType('algebra');
-      } else if (data.content.includes('AI Tutor')) {
+      } else if (data.content.includes('Furqan NovaAI')) {
         setProblemType('tutor');
       }
     } catch (error) {
-      setAnswer('❌ Sorry, something went wrong. Please try again.');
+      setAnswer('âŒ Sorry, something went wrong. Please try again.');
       console.error(error);
     } finally {
       setLoading(false);
@@ -88,13 +88,13 @@ export default function SolverPage() {
   function getCategoryBadge(type) {
     switch (type) {
       case 'trigonometry':
-        return { label: '📐 Trigonometry', bg: '#eff6ff', color: '#2563eb', border: '#bfdbfe' };
+        return { label: 'ðŸ“ Trigonometry', bg: '#eff6ff', color: '#2563eb', border: '#bfdbfe' };
       case 'arithmetic':
-        return { label: '🔢 Arithmetic', bg: '#ecfdf5', color: '#059669', border: '#a7f3d0' };
+        return { label: 'ðŸ”¢ Arithmetic', bg: '#ecfdf5', color: '#059669', border: '#a7f3d0' };
       case 'algebra':
-        return { label: '🧮 Algebra', bg: '#fdf4ff', color: '#9333ea', border: '#f5d0fe' };
+        return { label: 'ðŸ§® Algebra', bg: '#fdf4ff', color: '#9333ea', border: '#f5d0fe' };
       case 'tutor':
-        return { label: '🤖 AI Tutor Explanation', bg: '#fffbeb', color: '#d97706', border: '#fde68a' };
+        return { label: 'ðŸ¤– Furqan NovaAI Explanation', bg: '#fffbeb', color: '#d97706', border: '#fde68a' };
       default:
         return null;
     }
@@ -120,7 +120,7 @@ export default function SolverPage() {
         {/* Header */}
         <div style={{ marginBottom: '28px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-            <span style={{ fontSize: '2rem' }}>🧠</span>
+            <span style={{ fontSize: '2rem' }}>ðŸ§ </span>
             <h1 style={{ color: '#0f172a', margin: 0, fontSize: '1.875rem', fontWeight: '700' }}>
               Question Solver
             </h1>
@@ -156,7 +156,7 @@ export default function SolverPage() {
               letterSpacing: '0.05em',
             }}
           >
-            ⚡ Quick Examples (Click to Solve):
+            âš¡ Quick Examples (Click to Solve):
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {EXAMPLE_QUERIES.map((item, idx) => (
@@ -220,7 +220,7 @@ export default function SolverPage() {
               id="solver-input"
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
-              placeholder="e.g. cos(90°) + sin(90°), sin(30°), 2sin(30°) + cos(60°), arcsin(0.5), 25% of 80, or x + 5 = 12..."
+              placeholder="e.g. cos(90Â°) + sin(90Â°), sin(30Â°), 2sin(30Â°) + cos(60Â°), arcsin(0.5), 25% of 80, or x + 5 = 12..."
               rows={4}
               style={{
                 width: '100%',
@@ -248,7 +248,7 @@ export default function SolverPage() {
               }}
             >
               <div style={{ fontSize: '0.8125rem', color: '#94a3b8' }}>
-                Supports degrees (e.g. <code>90°</code> or <code>90</code>) & radians (e.g. <code>pi/2 rad</code>)
+                Supports degrees (e.g. <code>90Â°</code> or <code>90</code>) & radians (e.g. <code>pi/2 rad</code>)
               </div>
 
               <div style={{ display: 'flex', gap: '10px' }}>
@@ -295,7 +295,7 @@ export default function SolverPage() {
                     transition: 'opacity 0.2s',
                   }}
                 >
-                  {loading ? '🤔 Calculating...' : '🚀 Solve Step-by-Step'}
+                  {loading ? 'ðŸ¤” Calculating...' : 'ðŸš€ Solve Step-by-Step'}
                 </button>
               </div>
             </div>
@@ -362,7 +362,7 @@ export default function SolverPage() {
                   cursor: 'pointer',
                 }}
               >
-                {copied ? '✅ Copied!' : '📋 Copy Solution'}
+                {copied ? 'âœ… Copied!' : 'ðŸ“‹ Copy Solution'}
               </button>
             </div>
 

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -17,7 +17,7 @@ const PYTHON_CURRICULUM = [
     title: 'Hello Python',
     category: 'Beginner',
     difficulty: 'Easy',
-    icon: '👋',
+    icon: 'ðŸ‘‹',
     description: 'Learn the print() function, writing comments, and running your very first Python program.',
     initialCode: `# Your first Python program\nprint("Hello, World!")\nprint("Welcome to Python 3.11!")\n# Comments begin with # and are ignored by Python`,
     challenge: {
@@ -39,7 +39,7 @@ const PYTHON_CURRICULUM = [
     title: 'Variables',
     category: 'Beginner',
     difficulty: 'Easy',
-    icon: '📦',
+    icon: 'ðŸ“¦',
     description: 'Store and name values in memory using meaningful variable identifiers.',
     initialCode: `# Creating and updating variables\nstudent_name = "Alex"\nage = 16\ngpa = 3.85\n\nprint("Student:", student_name)\nprint("Current Age:", age)\nprint("Next Year Age:", age + 1)\nprint("GPA:", gpa)`,
     challenge: {
@@ -62,7 +62,7 @@ const PYTHON_CURRICULUM = [
     title: 'Data Types',
     category: 'Beginner',
     difficulty: 'Easy',
-    icon: '🏷️',
+    icon: 'ðŸ·ï¸',
     description: 'Understand integers (int), floating points (float), text (str), and booleans (bool).',
     initialCode: `# Fundamental Data Types\nx = 42              # int\npi = 3.14159        # float\nlanguage = "Python" # str\nis_fun = True       # bool\n\nprint(x, "is an integer")\nprint(pi, "is a float")\nprint(language, "is a string")\nprint("Is coding fun?", is_fun)`,
     challenge: {
@@ -84,7 +84,7 @@ const PYTHON_CURRICULUM = [
     title: 'Input and Output',
     category: 'Beginner',
     difficulty: 'Easy',
-    icon: '💬',
+    icon: 'ðŸ’¬',
     description: 'Format outputs cleanly using sep, end, and formatted f-strings.',
     initialCode: `# Output formatting\nname = "Priya"\nmarks = 96\n\n# Using f-strings (formatted strings)\nprint(f"Student {name} scored {marks}%!")\n\n# Custom separators and endings\nprint("2026", "09", "11", sep="-")\nprint("Loading", end="... Done!\\n")`,
     challenge: {
@@ -106,7 +106,7 @@ const PYTHON_CURRICULUM = [
     title: 'Numbers and Arithmetic',
     category: 'Beginner',
     difficulty: 'Easy',
-    icon: '➗',
+    icon: 'âž—',
     description: 'Perform math calculations with +, -, *, /, // (floor div), % (modulo), and ** (power).',
     initialCode: `# Arithmetic Operators\na = 17\nb = 5\n\nprint("Addition:", a + b)\nprint("Multiplication:", a * b)\nprint("Normal Division:", a / b)\nprint("Floor Division (integer):", a // b)\nprint("Remainder (modulo):", a % b)\nprint("Power (2 ** 4):", 2 ** 4)`,
     challenge: {
@@ -128,7 +128,7 @@ const PYTHON_CURRICULUM = [
     title: 'Strings',
     category: 'Beginner',
     difficulty: 'Easy',
-    icon: '🔤',
+    icon: 'ðŸ”¤',
     description: 'Slice, concatenate, repeat, and index strings in Python.',
     initialCode: `# String Operations\ntext = "Python Programming"\n\nprint("Length:", len(text))\nprint("First character:", text[0])\nprint("Slice [0:6]:", text[0:6])\nprint("Slice [7:]:", text[7:])\nprint("Repeat:", "Go! " * 3)`,
     challenge: {
@@ -150,7 +150,7 @@ const PYTHON_CURRICULUM = [
     title: 'Conditional Statements',
     category: 'Beginner',
     difficulty: 'Medium',
-    icon: '🔀',
+    icon: 'ðŸ”€',
     description: 'Branch your code logic using if, elif, else, and comparison operators.',
     initialCode: `# If-Elif-Else Branching\nscore = 88\n\nif score >= 90:\n    print("Grade: A+ (Outstanding!)")\nelif score >= 75:\n    print("Grade: A (Distinction)")\nelif score >= 50:\n    print("Grade: B (Pass)")\nelse:\n    print("Grade: C (Needs Improvement)")`,
     challenge: {
@@ -172,7 +172,7 @@ const PYTHON_CURRICULUM = [
     title: 'Loops',
     category: 'Beginner',
     difficulty: 'Medium',
-    icon: '🔁',
+    icon: 'ðŸ”',
     description: 'Repeat tasks effortlessly using for loops with range() and while loops.',
     initialCode: `# For Loop with range\nprint("Counting from 1 to 5:")\nfor i in range(1, 6):\n    print("Step:", i)\n\n# Accumulator Pattern\ntotal = 0\nfor n in range(1, 11):\n    total += n\nprint("Sum from 1 to 10:", total)`,
     challenge: {
@@ -194,7 +194,7 @@ const PYTHON_CURRICULUM = [
     title: 'Lists',
     category: 'Beginner',
     difficulty: 'Medium',
-    icon: '📋',
+    icon: 'ðŸ“‹',
     description: 'Store ordered mutable sequences. Add, remove, sort, and slice items.',
     initialCode: `# Python Lists\ncolors = ["Red", "Green", "Blue"]\nprint("Initial list:", colors)\n\n# Adding and modifying\ncolors.append("Yellow")\nprint("After append:", colors)\nprint("First color:", colors[0])\nprint("Total count:", len(colors))`,
     challenge: {
@@ -216,7 +216,7 @@ const PYTHON_CURRICULUM = [
     title: 'Tuples',
     category: 'Beginner',
     difficulty: 'Medium',
-    icon: '🔒',
+    icon: 'ðŸ”’',
     description: 'Work with immutable sequences that cannot be changed after creation.',
     initialCode: `# Tuples: Immutable ordered pairs\npoint = (10, 25)\nrgb = (255, 128, 0)\n\nprint("Point coordinates:", point)\nprint("X coordinate:", point[0])\nprint("Y coordinate:", point[1])\nprint("Tuple length:", len(point))`,
     challenge: {
@@ -238,7 +238,7 @@ const PYTHON_CURRICULUM = [
     title: 'Dictionaries',
     category: 'Beginner',
     difficulty: 'Medium',
-    icon: '📖',
+    icon: 'ðŸ“–',
     description: 'Store key-value pairs for fast lookup and structured record representation.',
     initialCode: `# Dictionaries (Key-Value mappings)\nstudent = {\n    "name": "Kavya",\n    "grade": "11th",\n    "marks": 92,\n    "passed": True\n}\n\nprint("Student Name:", student["name"])\nprint("Student Grade:", student["grade"])\nprint("Marks:", student["marks"])`,
     challenge: {
@@ -260,7 +260,7 @@ const PYTHON_CURRICULUM = [
     title: 'Sets',
     category: 'Beginner',
     difficulty: 'Medium',
-    icon: '⭕',
+    icon: 'â­•',
     description: 'Store unordered collections of unique elements, automatically eliminating duplicates.',
     initialCode: `# Sets: Unique elements only\nnumbers = [1, 2, 2, 3, 4, 4, 5]\nunique_numbers = [1, 2, 3, 4, 5]\n\nprint("Raw numbers:", numbers)\nprint("Unique elements:", unique_numbers)\nprint("Total unique count:", len(unique_numbers))`,
     challenge: {
@@ -282,7 +282,7 @@ const PYTHON_CURRICULUM = [
     title: 'Functions',
     category: 'Beginner',
     difficulty: 'Intermediate',
-    icon: '⚡',
+    icon: 'âš¡',
     description: 'Package reusable logic into functions using the def keyword and return values.',
     initialCode: `# Reusable Functions\ndef calculate_area(width, height):\n    return width * height\n\ndef greet(user):\n    return f"Welcome back, {user}!"\n\nprint(greet("Farhan"))\narea = calculate_area(10, 5)\nprint("Calculated Area:", area)`,
     challenge: {
@@ -306,7 +306,7 @@ const PYTHON_CURRICULUM = [
     title: 'List Comprehensions',
     category: 'Intermediate',
     difficulty: 'Intermediate',
-    icon: '🪄',
+    icon: 'ðŸª„',
     description: 'Construct lists concisely and elegantly in a single readable line of code.',
     initialCode: `# Traditional vs List Comprehension\n# Create squares of numbers 1 through 5\nsquares = []\nfor x in range(1, 6):\n    squares.append(x * x)\nprint("Squares (loop):", squares)\n\n# Pythonic List Comprehension syntax:\n# [x * x for x in range(1, 6)]\nprint("Squares (comprehension):", squares)`,
     challenge: {
@@ -328,7 +328,7 @@ const PYTHON_CURRICULUM = [
     title: 'String Methods',
     category: 'Intermediate',
     difficulty: 'Intermediate',
-    icon: '✂️',
+    icon: 'âœ‚ï¸',
     description: 'Transform strings using .upper(), .lower(), .replace(), .strip(), and .split().',
     initialCode: `# Useful String Methods\nmessage = "  learning python is fun!  "\n\nprint("Original:", repr(message))\nprint("Cleaned (strip):", repr(message.strip()))\nprint("Uppercase:", message.upper().strip())\nprint("Replace:", message.replace("fun", "awesome").strip())`,
     challenge: {
@@ -350,7 +350,7 @@ const PYTHON_CURRICULUM = [
     title: 'File Handling',
     category: 'Intermediate',
     difficulty: 'Intermediate',
-    icon: '📁',
+    icon: 'ðŸ“',
     description: 'Read and write data using open(), read(), write(), and context managers.',
     initialCode: `# Python File I/O Pattern\nfilename = "notes.txt"\ncontent = "StudyAI: Daily Python Practice Log\\nTopic: File Handling"\n\nprint("Writing to file:", filename)\nprint("File content:")\nprint(content)\nprint("File closed safely with 'with' block.")`,
     challenge: {
@@ -372,7 +372,7 @@ const PYTHON_CURRICULUM = [
     title: 'Exception Handling',
     category: 'Intermediate',
     difficulty: 'Intermediate',
-    icon: '🛡️',
+    icon: 'ðŸ›¡ï¸',
     description: 'Anticipate and manage runtime errors safely with try, except, else, and finally.',
     initialCode: `# Handling Errors with Try / Except\ndef safe_divide(a, b):\n    if b == 0:\n        return "Error: Cannot divide by zero!"\n    return a / b\n\nprint("10 / 2 =", safe_divide(10, 2))\nprint("10 / 0 =", safe_divide(10, 0))`,
     challenge: {
@@ -394,8 +394,8 @@ const PYTHON_CURRICULUM = [
     title: 'Modules and Imports',
     category: 'Intermediate',
     difficulty: 'Intermediate',
-    icon: '🧩',
-    description: 'Use Python’s standard library modules like math, random, datetime, and sys.',
+    icon: 'ðŸ§©',
+    description: 'Use Pythonâ€™s standard library modules like math, random, datetime, and sys.',
     initialCode: `# Using Python Modules\n# Simulated math library methods\ndef sqrt(x): return x ** 0.5\ndef power(x, y): return x ** y\npi = 3.1415926535\n\nprint("Square root of 144:", sqrt(144))\nprint("Value of Pi:", pi)\nprint("2 to the power 8:", power(2, 8))`,
     challenge: {
       task: 'Calculate the hypotenuse of a right-angled triangle with sides a = 3 and b = 4 using (a**2 + b**2)**0.5.',
@@ -416,7 +416,7 @@ const PYTHON_CURRICULUM = [
     title: 'Object-Oriented Programming',
     category: 'Intermediate',
     difficulty: 'Hard',
-    icon: '🏛️',
+    icon: 'ðŸ›ï¸',
     description: 'Bundle state and behavior using classes, objects, attributes, and methods.',
     initialCode: `# Object-Oriented Programming Pattern\ndef create_student(name, grade):\n    return {"name": name, "grade": grade, "xp": 100}\n\ndef describe_student(st):\n    return f"Student: {st['name']} | Grade: {st['grade']} | XP: {st['xp']}"\n\ns1 = create_student("Zaid", "12th")\nprint(describe_student(s1))`,
     challenge: {
@@ -438,7 +438,7 @@ const PYTHON_CURRICULUM = [
     title: 'JSON & Data Exchange',
     category: 'Intermediate',
     difficulty: 'Intermediate',
-    icon: '🔄',
+    icon: 'ðŸ”„',
     description: 'Parse, serialize, and exchange data seamlessly between Python and JSON.',
     initialCode: `# Working with JSON Data\nuser_record = {\n    "user_id": 101,\n    "username": "coder_99",\n    "skills": ["Python", "SQL", "Git"],\n    "active": True\n}\n\nprint("User Record:", user_record)\nprint("Username:", user_record["username"])\nprint("First Skill:", user_record["skills"][0])`,
     challenge: {
@@ -460,7 +460,7 @@ const PYTHON_CURRICULUM = [
     title: 'Debugging Techniques',
     category: 'Intermediate',
     difficulty: 'Intermediate',
-    icon: '🔍',
+    icon: 'ðŸ”',
     description: 'Identify and eliminate common Python bugs: SyntaxError, NameError, and IndexError.',
     initialCode: `# Common Python Bugs & How to Fix Them\n# 1. Off-by-one / IndexError: check list boundaries\nitems = [10, 20, 30]\nprint("Valid last item (index 2):", items[2])\n\n# 2. Type error: converting strings before math\nnum_str = "50"\nnum_int = int(num_str)\nprint("Correct sum:", num_int + 10)`,
     challenge: {
@@ -482,7 +482,7 @@ const PYTHON_CURRICULUM = [
     title: 'Basic Algorithms',
     category: 'Intermediate',
     difficulty: 'Hard',
-    icon: '🧠',
+    icon: 'ðŸ§ ',
     description: 'Implement fundamental algorithms: linear search, reversal, and palindrome validation.',
     initialCode: `# Algorithm: Palindrome Checker\ndef is_palindrome(word):\n    # Compare with reverse\n    return word == word[::-1]\n\ntest1 = "radar"\ntest2 = "python"\n\nprint(f"Is '{test1}' palindrome?", is_palindrome(test1))\nprint(f"Is '{test2}' palindrome?", is_palindrome(test2))`,
     challenge: {
@@ -504,7 +504,7 @@ const PYTHON_CURRICULUM = [
     title: 'Virtual Environments & Pip',
     category: 'Intermediate',
     difficulty: 'Medium',
-    icon: '🌐',
+    icon: 'ðŸŒ',
     description: 'Isolate project dependencies cleanly with venv and pip package management.',
     initialCode: `# Virtual Environments & Pip\n# Terminal commands to create and activate:\nprint("1. Create environment: python -m venv .venv")\nprint("2. Activate (Windows): .venv\\\\Scripts\\\\activate")\nprint("3. Install packages: pip install numpy pandas")\nprint("4. Save dependencies: pip freeze > requirements.txt")`,
     challenge: {
@@ -526,9 +526,9 @@ const PYTHON_CURRICULUM = [
     title: 'Mini Projects Gateway',
     category: 'Intermediate',
     difficulty: 'Hard',
-    icon: '🚀',
+    icon: 'ðŸš€',
     description: 'Synthesize everything you have learned by building complete interactive mini projects!',
-    initialCode: `# Mini Projects Hub\n# Explore complete Python programs in the Projects Tab:\n# 1. Calculator\n# 2. Number Guessing Game\n# 3. Quiz Program\n# 4. To-Do List\n# 5. Unit Converter\n# 6. Expense Tracker\n# 7. Text Analyzer\n\nprint("Welcome to Python Mini Projects!")\nprint("Click the '🚀 Mini Projects' tab above to test complete apps.")`,
+    initialCode: `# Mini Projects Hub\n# Explore complete Python programs in the Projects Tab:\n# 1. Calculator\n# 2. Number Guessing Game\n# 3. Quiz Program\n# 4. To-Do List\n# 5. Unit Converter\n# 6. Expense Tracker\n# 7. Text Analyzer\n\nprint("Welcome to Python Mini Projects!")\nprint("Click the 'ðŸš€ Mini Projects' tab above to test complete apps.")`,
     challenge: {
       task: 'Switch to the "Mini Projects" tab and complete your first full Python application!',
       hint: 'Select Calculator or Number Guessing Game to begin.',
@@ -551,7 +551,7 @@ const MINI_PROJECTS = [
   {
     id: 'calculator',
     title: 'Command-Line Calculator',
-    icon: '🧮',
+    icon: 'ðŸ§®',
     goal: 'Build an interactive arithmetic calculator that can perform addition, subtraction, multiplication, and division.',
     concepts: ['Functions', 'Conditionals', 'Operators', 'Return values'],
     steps: [
@@ -565,7 +565,7 @@ const MINI_PROJECTS = [
   {
     id: 'guessing_game',
     title: 'Number Guessing Game',
-    icon: '🎲',
+    icon: 'ðŸŽ²',
     goal: 'Simulate a guessing game where the player tries to guess a secret number with Higher/Lower feedback.',
     concepts: ['Loops', 'Conditionals', 'Comparison operators', 'Break/Exit'],
     steps: [
@@ -574,12 +574,12 @@ const MINI_PROJECTS = [
       '3. Provide feedback: Too High, Too Low, or Correct!',
     ],
     hints: 'Use if guess == secret: print("Correct!") elif guess < secret: ...',
-    starterCode: `# Mini Project 2: Number Guessing Game\nsecret_number = 42\nguesses = [15, 60, 38, 42]\n\nprint("Secret number game started!")\nfor attempt, guess in enumerate(guesses, 1):\n    print(f"Attempt {attempt}: Guessed {guess}")\n    if guess < secret_number:\n        print("  -> Too Low! Try higher.")\n    elif guess > secret_number:\n        print("  -> Too High! Try lower.")\n    else:\n        print("  🎉 BINGO! You guessed the secret number!")\n        break`,
+    starterCode: `# Mini Project 2: Number Guessing Game\nsecret_number = 42\nguesses = [15, 60, 38, 42]\n\nprint("Secret number game started!")\nfor attempt, guess in enumerate(guesses, 1):\n    print(f"Attempt {attempt}: Guessed {guess}")\n    if guess < secret_number:\n        print("  -> Too Low! Try higher.")\n    elif guess > secret_number:\n        print("  -> Too High! Try lower.")\n    else:\n        print("  ðŸŽ‰ BINGO! You guessed the secret number!")\n        break`,
   },
   {
     id: 'quiz_program',
     title: 'Interactive Quiz Program',
-    icon: '📝',
+    icon: 'ðŸ“',
     goal: 'Present questions to the user, evaluate answers, calculate percentage score, and display final results.',
     concepts: ['Lists of Dictionaries', 'Loops', 'Score tracking', 'f-strings'],
     steps: [
@@ -588,12 +588,12 @@ const MINI_PROJECTS = [
       '3. Calculate score and display percentage.',
     ],
     hints: 'Keep a score counter and increment it whenever answer == q["correct"].',
-    starterCode: `# Mini Project 3: Quiz Program\nquestions = [\n    {"q": "What is the capital of France?", "ans": "Paris"},\n    {"q": "What is 7 * 8?", "ans": "56"},\n    {"q": "Which language uses indentation for blocks?", "ans": "Python"}\n]\n\nuser_answers = ["Paris", "56", "Python"]\nscore = 0\n\nfor i, item in enumerate(questions):\n    user_ans = user_answers[i]\n    print(f"Q{i+1}: {item['q']}")\n    print(f"Your answer: {user_ans}")\n    if user_ans.lower() == item['ans'].lower():\n        print("✓ Correct! (+1 pt)")\n        score += 1\n    else:\n        print(f"✗ Wrong! Correct answer: {item['ans']}")\n\npercent = (score / len(questions)) * 100\nprint(f"\\nFinal Score: {score}/{len(questions)} ({percent:.0f}%)")`,
+    starterCode: `# Mini Project 3: Quiz Program\nquestions = [\n    {"q": "What is the capital of France?", "ans": "Paris"},\n    {"q": "What is 7 * 8?", "ans": "56"},\n    {"q": "Which language uses indentation for blocks?", "ans": "Python"}\n]\n\nuser_answers = ["Paris", "56", "Python"]\nscore = 0\n\nfor i, item in enumerate(questions):\n    user_ans = user_answers[i]\n    print(f"Q{i+1}: {item['q']}")\n    print(f"Your answer: {user_ans}")\n    if user_ans.lower() == item['ans'].lower():\n        print("âœ“ Correct! (+1 pt)")\n        score += 1\n    else:\n        print(f"âœ— Wrong! Correct answer: {item['ans']}")\n\npercent = (score / len(questions)) * 100\nprint(f"\\nFinal Score: {score}/{len(questions)} ({percent:.0f}%)")`,
   },
   {
     id: 'todo_list',
     title: 'To-Do List Manager',
-    icon: '✅',
+    icon: 'âœ…',
     goal: 'Create a task manager that allows adding tasks, viewing pending tasks, and marking items complete.',
     concepts: ['Lists', 'String methods', 'Enumeration', 'Functions'],
     steps: [
@@ -602,12 +602,12 @@ const MINI_PROJECTS = [
       '3. Display the updated task list.',
     ],
     hints: 'Use list.append() to add and list indexing to update statuses.',
-    starterCode: `# Mini Project 4: To-Do List Manager\ntodo_list = []\n\ndef add_task(title):\n    todo_list.append({"task": title, "done": False})\n    print(f"Added: '{title}'")\n\ndef complete_task(index):\n    if 0 <= index < len(todo_list):\n        todo_list[index]["done"] = True\n        print(f"Completed: '{todo_list[index]['task']}'")\n\ndef show_tasks():\n    print("\\nCurrent To-Do List:")\n    for i, t in enumerate(todo_list):\n        status = "✓ DONE" if t["done"] else "[ ] PENDING"\n        print(f"{i+1}. {status} - {t['task']}")\n\nadd_task("Review Python Functions")\nadd_task("Finish Physics Numerical Problems")\nadd_task("Push project to Git")\ncomplete_task(0)\nshow_tasks()`,
+    starterCode: `# Mini Project 4: To-Do List Manager\ntodo_list = []\n\ndef add_task(title):\n    todo_list.append({"task": title, "done": False})\n    print(f"Added: '{title}'")\n\ndef complete_task(index):\n    if 0 <= index < len(todo_list):\n        todo_list[index]["done"] = True\n        print(f"Completed: '{todo_list[index]['task']}'")\n\ndef show_tasks():\n    print("\\nCurrent To-Do List:")\n    for i, t in enumerate(todo_list):\n        status = "âœ“ DONE" if t["done"] else "[ ] PENDING"\n        print(f"{i+1}. {status} - {t['task']}")\n\nadd_task("Review Python Functions")\nadd_task("Finish Physics Numerical Problems")\nadd_task("Push project to Git")\ncomplete_task(0)\nshow_tasks()`,
   },
   {
     id: 'unit_converter',
     title: 'Multi-Unit Converter',
-    icon: '⚖️',
+    icon: 'âš–ï¸',
     goal: 'Convert between distance (km to miles), temperature (Celsius to Fahrenheit), and weight (kg to pounds).',
     concepts: ['Formulas', 'Math operators', 'Formatting decimals', 'Modular code'],
     steps: [
@@ -616,12 +616,12 @@ const MINI_PROJECTS = [
       '3. Implement kg_to_pounds: kg * 2.20462.',
     ],
     hints: 'Use standard floating point conversion constants.',
-    starterCode: `# Mini Project 5: Multi-Unit Converter\ndef km_to_miles(km):\n    return km * 0.621371\n\ndef celsius_to_fahrenheit(c):\n    return (c * 9/5) + 32\n\ndef kg_to_pounds(kg):\n    return kg * 2.20462\n\nprint("=== Unit Conversion Results ===")\nprint(f"10 km = {km_to_miles(10):.2f} miles")\nprint(f"25°C = {celsius_to_fahrenheit(25):.1f}°F")\nprint(f"65 kg = {kg_to_pounds(65):.2f} lbs")`,
+    starterCode: `# Mini Project 5: Multi-Unit Converter\ndef km_to_miles(km):\n    return km * 0.621371\n\ndef celsius_to_fahrenheit(c):\n    return (c * 9/5) + 32\n\ndef kg_to_pounds(kg):\n    return kg * 2.20462\n\nprint("=== Unit Conversion Results ===")\nprint(f"10 km = {km_to_miles(10):.2f} miles")\nprint(f"25Â°C = {celsius_to_fahrenheit(25):.1f}Â°F")\nprint(f"65 kg = {kg_to_pounds(65):.2f} lbs")`,
   },
   {
     id: 'expense_tracker',
     title: 'Simple Expense Tracker',
-    icon: '💰',
+    icon: 'ðŸ’°',
     goal: 'Log daily expenses by category, calculate total spend, and identify average daily expenses.',
     concepts: ['Dictionaries', 'Accumulators', 'Min/Max', 'Percentage calculations'],
     steps: [
@@ -630,12 +630,12 @@ const MINI_PROJECTS = [
       '3. Find the highest expense category.',
     ],
     hints: 'Iterate over dictionary values using sum(expenses.values()).',
-    starterCode: `# Mini Project 6: Simple Expense Tracker\nexpenses = {\n    "Books & Stationery": 450,\n    "Internet & Tech": 800,\n    "Snacks & Cafeteria": 350,\n    "Transport": 300\n}\n\ntotal = sum(expenses.values())\navg = total / len(expenses)\n\nprint("=== Monthly Student Expenses ===")\nfor category, amount in expenses.items():\n    pct = (amount / total) * 100\n    print(f"- {category}: ₹{amount} ({pct:.1f}%)")\n\nprint("---------------------------------")\nprint(f"Total Spent: ₹{total}")\nprint(f"Average Category Spend: ₹{avg:.2f}")`,
+    starterCode: `# Mini Project 6: Simple Expense Tracker\nexpenses = {\n    "Books & Stationery": 450,\n    "Internet & Tech": 800,\n    "Snacks & Cafeteria": 350,\n    "Transport": 300\n}\n\ntotal = sum(expenses.values())\navg = total / len(expenses)\n\nprint("=== Monthly Student Expenses ===")\nfor category, amount in expenses.items():\n    pct = (amount / total) * 100\n    print(f"- {category}: â‚¹{amount} ({pct:.1f}%)")\n\nprint("---------------------------------")\nprint(f"Total Spent: â‚¹{total}")\nprint(f"Average Category Spend: â‚¹{avg:.2f}")`,
   },
   {
     id: 'text_analyzer',
     title: 'Text & Word Analyzer',
-    icon: '📊',
+    icon: 'ðŸ“Š',
     goal: 'Analyze a paragraph of text: count words, characters, sentences, and determine vocabulary density.',
     concepts: ['String methods', 'Lists', 'Dictionary counters', 'Statistics'],
     steps: [
@@ -674,7 +674,7 @@ export default function PythonCodingPage() {
   const [chatMessages, setChatMessages] = useState([
     {
       role: 'assistant',
-      content: `👋 Hi! I am your **Python AI Learning Assistant**.\n\nYou can ask me any question about Python concepts, ask for code explanations, debug errors, request practice questions, or ask for hints without revealing solutions!\n\nTry clicking one of the suggested questions below or type your own.`,
+      content: `ðŸ‘‹ Hi! I am your **Python AI Learning Assistant**.\n\nYou can ask me any question about Python concepts, ask for code explanations, debug errors, request practice questions, or ask for hints without revealing solutions!\n\nTry clicking one of the suggested questions below or type your own.`,
     },
   ]);
   const [chatInput, setChatInput] = useState('');
@@ -731,12 +731,12 @@ export default function PythonCodingPage() {
   const handleRunCode = async () => {
     setIsRunning(true);
     setStatusMessage('Preparing Python runtime...');
-    setOutput(['⏳ Initializing Python 3.12 WebAssembly runtime...']);
+    setOutput(['â³ Initializing Python 3.12 WebAssembly runtime...']);
 
     try {
       const { outputs, isError } = await runPythonCode(code, (status) => {
         setStatusMessage(status);
-        setOutput([`⏳ ${status}`]);
+        setOutput([`â³ ${status}`]);
       });
 
       setOutput(outputs);
@@ -749,7 +749,7 @@ export default function PythonCodingPage() {
         setUser(store.getUser());
       }
     } catch (err) {
-      setOutput([`❌ Execution Error: ${err.message || String(err)}`]);
+      setOutput([`âŒ Execution Error: ${err.message || String(err)}`]);
     } finally {
       setIsRunning(false);
       setStatusMessage('');
@@ -786,7 +786,7 @@ export default function PythonCodingPage() {
     setPracticeAnswer(optIdx);
     const isCorrect = optIdx === selectedTopic.practice?.correct;
     if (isCorrect) {
-      setPracticeFeedback({ status: 'correct', text: '🎉 Correct! Well done.' });
+      setPracticeFeedback({ status: 'correct', text: 'ðŸŽ‰ Correct! Well done.' });
       store.addXP(10);
       setUser(store.getUser());
     } else {
@@ -871,7 +871,7 @@ export default function PythonCodingPage() {
         >
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-              <span style={{ fontSize: '2.5rem' }}>🐍</span>
+              <span style={{ fontSize: '2.5rem' }}>ðŸ</span>
               <div>
                 <h1 className="page-title" style={{ margin: 0, fontSize: '26px' }}>Python Learning & Coding Hub</h1>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
@@ -888,14 +888,14 @@ export default function PythonCodingPage() {
                     Level: {selectedTopic.category} Track
                   </span>
                   <span style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>
-                    Current: <strong>Topic {selectedTopic.num} — {selectedTopic.title}</strong>
+                    Current: <strong>Topic {selectedTopic.num} â€” {selectedTopic.title}</strong>
                   </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Quick Action Shortcuts (Python Quizzes, Practice, AI Tutor, Continue) */}
+          {/* Quick Action Shortcuts (Python Quizzes, Practice, Furqan NovaAI, Continue) */}
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
             <button
               type="button"
@@ -903,15 +903,15 @@ export default function PythonCodingPage() {
               className="btn btn-primary btn-sm"
               style={{ padding: '8px 18px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px' }}
             >
-              ▶ Continue Learning
+              â–¶ Continue Learning
             </button>
 
             <Link href="/quizzes?subject=python" className="btn btn-outline btn-sm">
-              📝 Python Quizzes
+              ðŸ“ Python Quizzes
             </Link>
 
             <Link href="/practice" className="btn btn-ghost btn-sm">
-              ✏️ Practice Center
+              âœï¸ Practice Center
             </Link>
 
             <button
@@ -920,7 +920,7 @@ export default function PythonCodingPage() {
               className="btn btn-ghost btn-sm"
               style={{ color: 'var(--accent-primary)', fontWeight: 600 }}
             >
-              🤖 Ask Python AI
+              ðŸ¤– Ask Python AI
             </button>
           </div>
         </div>
@@ -964,7 +964,7 @@ export default function PythonCodingPage() {
               Total XP Earned
             </div>
             <div style={{ fontSize: '18px', fontWeight: 800, color: '#f59e0b', marginTop: '2px' }}>
-              ⚡ {user?.xp || 0} XP
+              âš¡ {user?.xp || 0} XP
             </div>
             <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginTop: '4px' }}>
               Level {user?.level || 1} Developer
@@ -976,7 +976,7 @@ export default function PythonCodingPage() {
               Mini Projects Built
             </div>
             <div style={{ fontSize: '18px', fontWeight: 800, color: '#8b5cf6', marginTop: '2px' }}>
-              🛠️ {completedProjects.length} / 7
+              ðŸ› ï¸ {completedProjects.length} / 7
             </div>
             <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginTop: '4px' }}>
               Hands-on portfolio apps
@@ -992,7 +992,7 @@ export default function PythonCodingPage() {
           <div className="card" style={{ padding: '16px', maxHeight: '820px', overflowY: 'auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase' }}>
-                📚 24-Topic Curriculum
+                ðŸ“š 24-Topic Curriculum
               </div>
               <span style={{ fontSize: '11px', color: 'var(--accent-primary)', fontWeight: 600 }}>
                 {completedTopics.length}/24 Done
@@ -1001,7 +1001,7 @@ export default function PythonCodingPage() {
 
             {/* Beginner Progression */}
             <div style={{ fontSize: '11px', fontWeight: 700, color: '#10b981', margin: '8px 0 6px 4px', textTransform: 'uppercase' }}>
-              🌱 Beginner Fundamentals (1–13)
+              ðŸŒ± Beginner Fundamentals (1â€“13)
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '16px' }}>
               {PYTHON_CURRICULUM.filter((t) => t.category === 'Beginner').map((topic) => {
@@ -1034,7 +1034,7 @@ export default function PythonCodingPage() {
                         <span style={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                           {topic.num}. {topic.title}
                         </span>
-                        {isDone && <span style={{ color: '#10b981', fontSize: '12px', fontWeight: 700 }}>✓</span>}
+                        {isDone && <span style={{ color: '#10b981', fontSize: '12px', fontWeight: 700 }}>âœ“</span>}
                       </div>
                     </div>
                   </button>
@@ -1044,7 +1044,7 @@ export default function PythonCodingPage() {
 
             {/* Intermediate Progression */}
             <div style={{ fontSize: '11px', fontWeight: 700, color: '#6366f1', margin: '8px 0 6px 4px', textTransform: 'uppercase' }}>
-              🚀 Intermediate & Algorithms (14–24)
+              ðŸš€ Intermediate & Algorithms (14â€“24)
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               {PYTHON_CURRICULUM.filter((t) => t.category === 'Intermediate').map((topic) => {
@@ -1077,7 +1077,7 @@ export default function PythonCodingPage() {
                         <span style={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                           {topic.num}. {topic.title}
                         </span>
-                        {isDone && <span style={{ color: '#10b981', fontSize: '12px', fontWeight: 700 }}>✓</span>}
+                        {isDone && <span style={{ color: '#10b981', fontSize: '12px', fontWeight: 700 }}>âœ“</span>}
                       </div>
                     </div>
                   </button>
@@ -1100,10 +1100,10 @@ export default function PythonCodingPage() {
             }}
           >
             {[
-              { id: 'editor', label: '💻 Interactive Code Editor', icon: '⚡' },
-              { id: 'practice', label: '🎯 Topic Practice & Challenges', icon: '📝' },
-              { id: 'projects', label: '🚀 Mini Projects Studio (7)', icon: '🛠️' },
-              { id: 'ai', label: '🤖 Ask Python AI Assistant', icon: '💬' },
+              { id: 'editor', label: 'ðŸ’» Interactive Code Editor', icon: 'âš¡' },
+              { id: 'practice', label: 'ðŸŽ¯ Topic Practice & Challenges', icon: 'ðŸ“' },
+              { id: 'projects', label: 'ðŸš€ Mini Projects Studio (7)', icon: 'ðŸ› ï¸' },
+              { id: 'ai', label: 'ðŸ¤– Ask Python AI Assistant', icon: 'ðŸ’¬' },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -1176,7 +1176,7 @@ export default function PythonCodingPage() {
                 borderColor: completedTopics.includes(selectedTopic.id) ? '#10b981' : undefined,
               }}
             >
-              {completedTopics.includes(selectedTopic.id) ? 'Completed ✓ (+15 XP)' : 'Mark Topic Complete (+15 XP)'}
+              {completedTopics.includes(selectedTopic.id) ? 'Completed âœ“ (+15 XP)' : 'Mark Topic Complete (+15 XP)'}
             </button>
           </div>
 
@@ -1213,7 +1213,7 @@ export default function PythonCodingPage() {
                       <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#10b981' }} />
                     </div>
                     <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
-                      main.py — {selectedTopic.title}
+                      main.py â€” {selectedTopic.title}
                     </span>
                   </div>
 
@@ -1224,7 +1224,7 @@ export default function PythonCodingPage() {
                       className="btn btn-ghost btn-sm"
                       style={{ fontSize: '11px', padding: '5px 10px' }}
                     >
-                      {copied ? 'Copied! ✓' : '📋 Copy'}
+                      {copied ? 'Copied! âœ“' : 'ðŸ“‹ Copy'}
                     </button>
                     <button
                       type="button"
@@ -1233,7 +1233,7 @@ export default function PythonCodingPage() {
                       style={{ fontSize: '11px', padding: '5px 10px' }}
                       title="Reset code to original snippet"
                     >
-                      🔄 Reset
+                      ðŸ”„ Reset
                     </button>
                     <button
                       type="button"
@@ -1244,7 +1244,7 @@ export default function PythonCodingPage() {
                       className="btn btn-outline btn-sm"
                       style={{ fontSize: '11px', padding: '5px 10px' }}
                     >
-                      🤖 Explain Code
+                      ðŸ¤– Explain Code
                     </button>
                     <button
                       type="button"
@@ -1261,7 +1261,7 @@ export default function PythonCodingPage() {
                         gap: '6px',
                       }}
                     >
-                      {isRunning ? (statusMessage || 'Running...') : '▶ Run Python Code'}
+                      {isRunning ? (statusMessage || 'Running...') : 'â–¶ Run Python Code'}
                     </button>
                   </div>
                 </div>
@@ -1339,7 +1339,7 @@ export default function PythonCodingPage() {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span>💻 Output Terminal</span>
+                    <span>ðŸ’» Output Terminal</span>
                     <span
                       style={{
                         fontSize: '10px',
@@ -1385,14 +1385,14 @@ export default function PythonCodingPage() {
                 >
                   {output.length === 0 ? (
                     <span style={{ color: '#6e7681' }}>
-                      Click &ldquo;▶ Run Python Code&rdquo; above to execute the simulation and view real-time terminal output...
+                      Click &ldquo;â–¶ Run Python Code&rdquo; above to execute the simulation and view real-time terminal output...
                     </span>
                   ) : (
                     output.map((line, idx) => (
                       <div
                         key={idx}
                         style={{
-                          color: line.startsWith('❌') ? '#f85149' : line.startsWith('⚠️') ? '#f59e0b' : '#7ee787',
+                          color: line.startsWith('âŒ') ? '#f85149' : line.startsWith('âš ï¸') ? '#f59e0b' : '#7ee787',
                           whiteSpace: 'pre-wrap',
                           wordBreak: 'break-all',
                         }}
@@ -1418,7 +1418,7 @@ export default function PythonCodingPage() {
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                  <span style={{ fontSize: '1.3rem' }}>🎯</span>
+                  <span style={{ fontSize: '1.3rem' }}>ðŸŽ¯</span>
                   <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 700 }}>
                     Coding Challenge: {selectedTopic.title}
                   </h3>
@@ -1434,7 +1434,7 @@ export default function PythonCodingPage() {
                     onClick={() => setShowHint(!showHint)}
                     style={{ fontSize: '11px' }}
                   >
-                    {showHint ? 'Hide Hint' : '💡 Show Hint'}
+                    {showHint ? 'Hide Hint' : 'ðŸ’¡ Show Hint'}
                   </button>
                   <button
                     type="button"
@@ -1442,7 +1442,7 @@ export default function PythonCodingPage() {
                     onClick={() => setShowSolution(!showSolution)}
                     style={{ fontSize: '11px' }}
                   >
-                    {showSolution ? 'Hide Solution' : '🔓 Reveal Solution'}
+                    {showSolution ? 'Hide Solution' : 'ðŸ”“ Reveal Solution'}
                   </button>
                   <button
                     type="button"
@@ -1453,7 +1453,7 @@ export default function PythonCodingPage() {
                     }}
                     style={{ fontSize: '11px', marginLeft: 'auto' }}
                   >
-                    Load Solution into Editor ⚡
+                    Load Solution into Editor âš¡
                   </button>
                 </div>
 
@@ -1495,7 +1495,7 @@ export default function PythonCodingPage() {
               {selectedTopic.practice && (
                 <div className="card" style={{ padding: '20px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                    <span style={{ fontSize: '1.3rem' }}>❓</span>
+                    <span style={{ fontSize: '1.3rem' }}>â“</span>
                     <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 700 }}>
                       Concept Check: Predict the Output
                     </h3>
@@ -1596,7 +1596,7 @@ export default function PythonCodingPage() {
                           {proj.title}
                         </div>
                         <div style={{ fontSize: '10px', color: isDone ? '#10b981' : 'var(--text-tertiary)' }}>
-                          {isDone ? 'Completed ✓' : 'Ready to build'}
+                          {isDone ? 'Completed âœ“' : 'Ready to build'}
                         </div>
                       </div>
                     </button>
@@ -1628,7 +1628,7 @@ export default function PythonCodingPage() {
                         borderColor: completedProjects.includes(selectedProject.id) ? '#10b981' : undefined,
                       }}
                     >
-                      {completedProjects.includes(selectedProject.id) ? 'Project Done ✓ (+25 XP)' : 'Mark Project Done (+25 XP)'}
+                      {completedProjects.includes(selectedProject.id) ? 'Project Done âœ“ (+25 XP)' : 'Mark Project Done (+25 XP)'}
                     </button>
                     <button
                       type="button"
@@ -1638,7 +1638,7 @@ export default function PythonCodingPage() {
                       }}
                       className="btn btn-outline btn-sm"
                     >
-                      Load in Editor & Run 🚀
+                      Load in Editor & Run ðŸš€
                     </button>
                   </div>
                 </div>
@@ -1709,7 +1709,7 @@ export default function PythonCodingPage() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ fontSize: '1.6rem' }}>🤖</span>
+                    <span style={{ fontSize: '1.6rem' }}>ðŸ¤–</span>
                     <h3 style={{ margin: 0, fontSize: '17px', fontWeight: 700 }}>
                       Ask Python AI Learning Assistant
                     </h3>
@@ -1725,14 +1725,14 @@ export default function PythonCodingPage() {
                     setChatMessages([
                       {
                         role: 'assistant',
-                        content: `👋 Chat cleared! What would you like to learn or debug in Python today?`,
+                        content: `ðŸ‘‹ Chat cleared! What would you like to learn or debug in Python today?`,
                       },
                     ])
                   }
                   className="btn btn-ghost btn-sm"
                   style={{ fontSize: '11px' }}
                 >
-                  🗑️ Clear Chat
+                  ðŸ—‘ï¸ Clear Chat
                 </button>
               </div>
 
@@ -1766,7 +1766,7 @@ export default function PythonCodingPage() {
                       transition: 'all 0.15s ease',
                     }}
                   >
-                    💬 {prompt}
+                    ðŸ’¬ {prompt}
                   </button>
                 ))}
               </div>
@@ -1807,7 +1807,7 @@ export default function PythonCodingPage() {
                           fontWeight: 600,
                         }}
                       >
-                        {isUser ? 'You' : 'Python AI Tutor'}
+                        {isUser ? 'You' : 'Furqan NovaAI'}
                       </div>
                       <div
                         style={{
@@ -1832,7 +1832,7 @@ export default function PythonCodingPage() {
                 {isAiLoading && (
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                     <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginBottom: '3px' }}>
-                      Python AI Tutor
+                      Furqan NovaAI
                     </div>
                     <div
                       style={{
@@ -1847,7 +1847,7 @@ export default function PythonCodingPage() {
                         gap: '8px',
                       }}
                     >
-                      <span className="animate-spin">⏳</span> Thinking and analyzing Python concept...
+                      <span className="animate-spin">â³</span> Thinking and analyzing Python concept...
                     </div>
                   </div>
                 )}
@@ -1885,7 +1885,7 @@ export default function PythonCodingPage() {
                   className="btn btn-primary"
                   style={{ padding: '0 20px', fontSize: '13px', fontWeight: 600 }}
                 >
-                  Send 🚀
+                  Send ðŸš€
                 </button>
               </form>
             </div>
@@ -1895,3 +1895,4 @@ export default function PythonCodingPage() {
     </div>
   );
 }
+

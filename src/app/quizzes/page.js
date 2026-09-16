@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
@@ -12,7 +12,7 @@ const PRESET_QUIZZES = [
     title: 'Python Programming Essentials',
     subject: 'programming',
     subjectLabel: 'Python',
-    icon: '🐍',
+    icon: 'ðŸ',
     badgeColor: '#f59e0b',
     difficulty: 'beginner',
     questionCount: 5,
@@ -23,7 +23,7 @@ const PRESET_QUIZZES = [
     title: 'Python Lists, Tuples & Dicts',
     subject: 'programming',
     subjectLabel: 'Python',
-    icon: '📋',
+    icon: 'ðŸ“‹',
     badgeColor: '#f59e0b',
     difficulty: 'intermediate',
     questionCount: 5,
@@ -34,7 +34,7 @@ const PRESET_QUIZZES = [
     title: 'Algebra & Equations',
     subject: 'math',
     subjectLabel: 'Mathematics',
-    icon: '📐',
+    icon: 'ðŸ“',
     badgeColor: '#6366f1',
     difficulty: 'intermediate',
     questionCount: 5,
@@ -45,18 +45,18 @@ const PRESET_QUIZZES = [
     title: 'Physics: Forces & Laws of Motion',
     subject: 'physics',
     subjectLabel: 'Physics',
-    icon: '⚛️',
+    icon: 'âš›ï¸',
     badgeColor: '#3b82f6',
     difficulty: 'intermediate',
     questionCount: 5,
-    description: 'Newton’s three laws, gravity, friction, and kinetic energy calculations.',
+    description: 'Newtonâ€™s three laws, gravity, friction, and kinetic energy calculations.',
   },
   {
     id: 'chemistry_atoms',
     title: 'Chemistry: Atomic Structure & Bonds',
     subject: 'chemistry',
     subjectLabel: 'Chemistry',
-    icon: '🧪',
+    icon: 'ðŸ§ª',
     badgeColor: '#10b981',
     difficulty: 'intermediate',
     questionCount: 5,
@@ -67,7 +67,7 @@ const PRESET_QUIZZES = [
     title: 'Biology: Cell Structure & Genetics',
     subject: 'biology',
     subjectLabel: 'Biology',
-    icon: '🧬',
+    icon: 'ðŸ§¬',
     badgeColor: '#22c55e',
     difficulty: 'beginner',
     questionCount: 5,
@@ -153,7 +153,7 @@ function QuizzesContent() {
       title: quizTitle,
       subject: customSubject.toLowerCase(),
       subjectLabel: customSubject,
-      icon: customSubject.toLowerCase().includes('python') ? '🐍' : '🎯',
+      icon: customSubject.toLowerCase().includes('python') ? 'ðŸ' : 'ðŸŽ¯',
       badgeColor: '#8b5cf6',
       difficulty: customDifficulty,
       questionCount: customCount,
@@ -258,7 +258,7 @@ function QuizzesContent() {
       >
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-            <span style={{ fontSize: '2.2rem' }}>📝</span>
+            <span style={{ fontSize: '2.2rem' }}>ðŸ“</span>
             <h1 className="page-title" style={{ margin: 0 }}>Quizzes & Knowledge Checks</h1>
             <span
               style={{
@@ -282,13 +282,13 @@ function QuizzesContent() {
         {/* Quick Nav Links */}
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           <Link href="/coding" className="btn btn-outline btn-sm">
-            🐍 Python Coding Hub
+            ðŸ Python Coding Hub
           </Link>
           <Link href="/practice" className="btn btn-ghost btn-sm">
-            ✏️ Practice Center
+            âœï¸ Practice Center
           </Link>
           <Link href="/tutor" className="btn btn-ghost btn-sm">
-            🤖 Ask AI Tutor
+            ðŸ¤– Ask Furqan NovaAI
           </Link>
         </div>
       </div>
@@ -320,7 +320,7 @@ function QuizzesContent() {
               transition: 'all 0.15s ease',
             }}
           >
-            📚 Standard Topic Quizzes
+            ðŸ“š Standard Topic Quizzes
           </button>
           <button
             type="button"
@@ -337,7 +337,7 @@ function QuizzesContent() {
               transition: 'all 0.15s ease',
             }}
           >
-            ✨ Custom AI Quiz Generator
+            âœ¨ Custom AI Quiz Generator
           </button>
           <button
             type="button"
@@ -354,7 +354,7 @@ function QuizzesContent() {
               transition: 'all 0.15s ease',
             }}
           >
-            📊 Past Results ({pastResults.length})
+            ðŸ“Š Past Results ({pastResults.length})
           </button>
         </div>
       )}
@@ -380,14 +380,14 @@ function QuizzesContent() {
                 className="btn btn-ghost btn-sm"
                 style={{ fontSize: '12px' }}
               >
-                ← Exit Quiz
+                â† Exit Quiz
               </button>
               <div>
                 <h2 style={{ margin: 0, fontSize: '18px', fontWeight: 700 }}>
                   {activeQuiz.title}
                 </h2>
                 <div style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>
-                  Question {currentIdx + 1} of {questions.length} · {activeQuiz.difficulty}
+                  Question {currentIdx + 1} of {questions.length} Â· {activeQuiz.difficulty}
                 </div>
               </div>
             </div>
@@ -547,10 +547,10 @@ function QuizzesContent() {
                             </span>
                             <span style={{ flex: 1 }}>{opt}</span>
                             {isSubmitted && optIdx === q.correct && (
-                              <span style={{ color: '#10b981', fontWeight: 700 }}>✓ Correct</span>
+                              <span style={{ color: '#10b981', fontWeight: 700 }}>âœ“ Correct</span>
                             )}
                             {isSubmitted && isSelected && optIdx !== q.correct && (
-                              <span style={{ color: '#ef4444', fontWeight: 700 }}>✗ Incorrect</span>
+                              <span style={{ color: '#ef4444', fontWeight: 700 }}>âœ— Incorrect</span>
                             )}
                           </button>
                         );
@@ -582,7 +582,7 @@ function QuizzesContent() {
                         disabled={currentIdx === 0}
                         className="btn btn-ghost btn-sm"
                       >
-                        ← Previous
+                        â† Previous
                       </button>
 
                       <div style={{ display: 'flex', gap: '10px' }}>
@@ -592,7 +592,7 @@ function QuizzesContent() {
                             onClick={() => setCurrentIdx((p) => Math.min(questions.length - 1, p + 1))}
                             className="btn btn-outline btn-sm"
                           >
-                            Next →
+                            Next â†’
                           </button>
                         ) : !isSubmitted ? (
                           <button
@@ -601,7 +601,7 @@ function QuizzesContent() {
                             className="btn btn-primary btn-sm"
                             style={{ padding: '8px 20px', background: '#10b981', borderColor: '#10b981' }}
                           >
-                            Submit Quiz ✓
+                            Submit Quiz âœ“
                           </button>
                         ) : null}
                       </div>
@@ -637,11 +637,11 @@ function QuizzesContent() {
               </span>
               {[
                 { id: 'all', label: 'All Subjects' },
-                { id: 'programming', label: '🐍 Python' },
-                { id: 'math', label: '📐 Mathematics' },
-                { id: 'physics', label: '⚛️ Physics' },
-                { id: 'chemistry', label: '🧪 Chemistry' },
-                { id: 'biology', label: '🧬 Biology' },
+                { id: 'programming', label: 'ðŸ Python' },
+                { id: 'math', label: 'ðŸ“ Mathematics' },
+                { id: 'physics', label: 'âš›ï¸ Physics' },
+                { id: 'chemistry', label: 'ðŸ§ª Chemistry' },
+                { id: 'biology', label: 'ðŸ§¬ Biology' },
               ].map((cat) => (
                 <button
                   key={cat.id}
@@ -699,7 +699,7 @@ function QuizzesContent() {
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '14px', borderTop: '1px solid var(--border-light)' }}>
                     <span style={{ fontSize: '11px', color: 'var(--text-tertiary)', fontWeight: 600 }}>
-                      ⚡ {quiz.questionCount} Questions · {quiz.difficulty}
+                      âš¡ {quiz.questionCount} Questions Â· {quiz.difficulty}
                     </span>
                     <button
                       type="button"
@@ -707,7 +707,7 @@ function QuizzesContent() {
                       className="btn btn-primary btn-sm"
                       style={{ fontSize: '12px', padding: '6px 14px' }}
                     >
-                      Start Quiz →
+                      Start Quiz â†’
                     </button>
                   </div>
                 </div>
@@ -721,7 +721,7 @@ function QuizzesContent() {
       {!activeQuiz && activeTab === 'custom' && (
         <div className="card" style={{ padding: '28px', maxWidth: '720px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-            <span style={{ fontSize: '1.8rem' }}>✨</span>
+            <span style={{ fontSize: '1.8rem' }}>âœ¨</span>
             <div>
               <h2 style={{ margin: 0, fontSize: '18px', fontWeight: 700 }}>
                 Generate Custom AI Quiz
@@ -834,7 +834,7 @@ function QuizzesContent() {
               className="btn btn-primary"
               style={{ marginTop: '10px', padding: '12px 20px', fontSize: '14px', fontWeight: 600 }}
             >
-              🚀 Generate and Start Quiz
+              ðŸš€ Generate and Start Quiz
             </button>
           </form>
         </div>
@@ -844,12 +844,12 @@ function QuizzesContent() {
       {!activeQuiz && activeTab === 'history' && (
         <div className="card" style={{ padding: '24px' }}>
           <h2 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: 700 }}>
-            📊 Past Quiz Results
+            ðŸ“Š Past Quiz Results
           </h2>
 
           {pastResults.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '40px 0', color: 'var(--text-secondary)' }}>
-              <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '10px' }}>🎯</span>
+              <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '10px' }}>ðŸŽ¯</span>
               <p style={{ margin: 0, fontSize: '14px' }}>
                 You haven&apos;t completed any quizzes yet! Choose a quiz from the presets to test yourself.
               </p>
@@ -876,7 +876,7 @@ function QuizzesContent() {
                       {res.topic || res.subject}
                     </div>
                     <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginTop: '2px' }}>
-                      {res.date ? new Date(res.date).toLocaleDateString() : 'Recent'} · {res.subject}
+                      {res.date ? new Date(res.date).toLocaleDateString() : 'Recent'} Â· {res.subject}
                     </div>
                   </div>
 
@@ -911,3 +911,4 @@ export default function QuizzesPage() {
     </Suspense>
   );
 }
+

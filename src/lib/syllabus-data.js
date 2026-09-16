@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    INTERMEDIATE / CLASS 11-12 SYLLABUS DATA STRUCTURE
    Modular, extensible dataset for MPC, BiPC, MEC, CEC streams
    ============================================================ */
@@ -13,7 +13,7 @@ export const SYLLABUS_STREAMS = [
     id: 'mpc',
     name: 'MPC',
     fullName: 'Mathematics, Physics, Chemistry',
-    icon: '📐⚛️🧪',
+    icon: 'ðŸ“âš›ï¸ðŸ§ª',
     color: '#6366f1',
     description: 'Engineering & Physical Sciences Stream',
     subjectIds: ['mathematics', 'physics', 'chemistry'],
@@ -22,7 +22,7 @@ export const SYLLABUS_STREAMS = [
     id: 'bipc',
     name: 'BiPC',
     fullName: 'Biology, Physics, Chemistry',
-    icon: '🧬⚛️🧪',
+    icon: 'ðŸ§¬âš›ï¸ðŸ§ª',
     color: '#10b981',
     description: 'Medical & Life Sciences Stream',
     subjectIds: ['biology', 'physics', 'chemistry'],
@@ -31,7 +31,7 @@ export const SYLLABUS_STREAMS = [
     id: 'mec',
     name: 'MEC',
     fullName: 'Mathematics, Economics, Commerce',
-    icon: '📐📊💼',
+    icon: 'ðŸ“ðŸ“ŠðŸ’¼',
     color: '#f59e0b',
     description: 'Commerce, Economics & Quantitative Stream',
     subjectIds: ['mathematics', 'economics', 'commerce'],
@@ -40,7 +40,7 @@ export const SYLLABUS_STREAMS = [
     id: 'cec',
     name: 'CEC',
     fullName: 'Civics, Economics, Commerce',
-    icon: '🏛️📊💼',
+    icon: 'ðŸ›ï¸ðŸ“ŠðŸ’¼',
     color: '#ec4899',
     description: 'Social Sciences, Public Admin & Business Stream',
     subjectIds: ['civics', 'economics', 'commerce'],
@@ -51,7 +51,7 @@ export const SYLLABUS_SUBJECTS = {
   mathematics: {
     id: 'mathematics',
     name: 'Mathematics',
-    icon: '📐',
+    icon: 'ðŸ“',
     color: '#6366f1',
     description: 'Algebra, Calculus, Coordinate Geometry, Vectors, Trigonometry & Matrices',
     chapters: {
@@ -100,12 +100,12 @@ export const SYLLABUS_SUBJECTS = {
         {
           id: 'matrices_determinants',
           name: 'Matrices and Determinants',
-          description: 'Matrix Operations, Types, Determinants, Inverses and Cramer’s Rule',
+          description: 'Matrix Operations, Types, Determinants, Inverses and Cramerâ€™s Rule',
           topics: [
             'Types of Matrices and Operations',
             'Determinants and Properties',
             'Adjoint and Inverse of a Matrix',
-            'Solving Linear Equations (Cramer’s Rule, Matrix Inversion)',
+            'Solving Linear Equations (Cramerâ€™s Rule, Matrix Inversion)',
             'Rank of a Matrix and Consistency',
           ],
         },
@@ -168,7 +168,7 @@ export const SYLLABUS_SUBJECTS = {
   physics: {
     id: 'physics',
     name: 'Physics',
-    icon: '⚛️',
+    icon: 'âš›ï¸',
     color: '#3b82f6',
     description: 'Mechanics, Waves, Thermodynamics, Electromagnetism, Optics & Modern Physics',
     chapters: {
@@ -191,9 +191,9 @@ export const SYLLABUS_SUBJECTS = {
           name: 'Properties of Matter',
           description: 'Elasticity, Fluid Mechanics, Viscosity, Surface Tension & Thermal Properties',
           topics: [
-            'Mechanical Properties of Solids (Stress, Strain, Hooke’s Law)',
-            'Mechanical Properties of Fluids (Pascal’s Law, Bernoulli’s Theorem)',
-            'Viscosity, Reynolds Number and Stokes’ Law',
+            'Mechanical Properties of Solids (Stress, Strain, Hookeâ€™s Law)',
+            'Mechanical Properties of Fluids (Pascalâ€™s Law, Bernoulliâ€™s Theorem)',
+            'Viscosity, Reynolds Number and Stokesâ€™ Law',
             'Surface Tension and Capillarity',
             'Thermal Properties of Matter and Heat Transfer',
           ],
@@ -230,9 +230,9 @@ export const SYLLABUS_SUBJECTS = {
           name: 'Electrostatics',
           description: 'Electric Charges, Fields, Gauss Law, Potential & Capacitance',
           topics: [
-            'Electric Charges and Coulomb’s Law',
+            'Electric Charges and Coulombâ€™s Law',
             'Electric Field, Field Lines and Electric Dipole',
-            'Gauss’s Law and its Applications',
+            'Gaussâ€™s Law and its Applications',
             'Electrostatic Potential and Equipotential Surfaces',
             'Capacitance, Dielectrics and Energy Stored in Capacitor',
           ],
@@ -240,34 +240,34 @@ export const SYLLABUS_SUBJECTS = {
         {
           id: 'current_electricity',
           name: 'Current Electricity',
-          description: 'Ohm’s Law, Drift Velocity, Kirchhoff’s Laws, Potentiometer & Wheatstone Bridge',
+          description: 'Ohmâ€™s Law, Drift Velocity, Kirchhoffâ€™s Laws, Potentiometer & Wheatstone Bridge',
           topics: [
-            'Electric Current, Drift Velocity and Ohm’s Law',
+            'Electric Current, Drift Velocity and Ohmâ€™s Law',
             'Resistivity, Temperature Dependence and Combination of Resistors',
             'EMF, Internal Resistance and Cells in Series/Parallel',
-            'Kirchhoff’s Rules and Wheatstone Bridge',
+            'Kirchhoffâ€™s Rules and Wheatstone Bridge',
             'Meter Bridge and Potentiometer',
           ],
         },
         {
           id: 'magnetism',
           name: 'Magnetism',
-          description: 'Biot-Savart Law, Ampere’s Law, Magnetic Dipole & Earth’s Magnetism',
+          description: 'Biot-Savart Law, Ampereâ€™s Law, Magnetic Dipole & Earthâ€™s Magnetism',
           topics: [
             'Biot-Savart Law and Magnetic Field on Axis of Circular Loop',
-            'Ampere’s Circuital Law and Solenoids',
+            'Ampereâ€™s Circuital Law and Solenoids',
             'Force on Moving Charge (Lorentz Force) and Current-Carrying Conductor',
             'Moving Coil Galvanometer and Conversion to Ammeter/Voltmeter',
-            'Bar Magnet, Magnetic Dipole and Earth’s Magnetic Field',
+            'Bar Magnet, Magnetic Dipole and Earthâ€™s Magnetic Field',
             'Dia-, Para-, and Ferromagnetism',
           ],
         },
         {
           id: 'emi_ac',
           name: 'Electromagnetic Induction & AC',
-          description: 'Faraday’s Laws, Lenz’s Law, Self/Mutual Inductance, AC Circuits & Transformers',
+          description: 'Faradayâ€™s Laws, Lenzâ€™s Law, Self/Mutual Inductance, AC Circuits & Transformers',
           topics: [
-            'Faraday’s Law of Electromagnetic Induction and Lenz’s Law',
+            'Faradayâ€™s Law of Electromagnetic Induction and Lenzâ€™s Law',
             'Motional EMF and Eddy Currents',
             'Self-Inductance and Mutual Inductance',
             'Alternating Current and LCR Series Circuits',
@@ -280,11 +280,11 @@ export const SYLLABUS_SUBJECTS = {
           name: 'Optics',
           description: 'Ray Optics, Lenses, Optical Instruments, Wave Optics, Interference & Diffraction',
           topics: [
-            'Reflection and Refraction of Light (Snell’s Law, Total Internal Reflection)',
-            'Refraction at Spherical Surfaces, Lens Maker’s Formula and Prisms',
+            'Reflection and Refraction of Light (Snellâ€™s Law, Total Internal Reflection)',
+            'Refraction at Spherical Surfaces, Lens Makerâ€™s Formula and Prisms',
             'Optical Instruments (Microscopes and Telescopes)',
-            'Huygens’ Principle and Wavefronts',
-            'Interference of Light and Young’s Double Slit Experiment',
+            'Huygensâ€™ Principle and Wavefronts',
+            'Interference of Light and Youngâ€™s Double Slit Experiment',
             'Diffraction and Polarization of Light',
           ],
         },
@@ -293,7 +293,7 @@ export const SYLLABUS_SUBJECTS = {
           name: 'Modern Physics',
           description: 'Photoelectric Effect, Dual Nature, Atomic Models, Nuclear Physics & Radioactivity',
           topics: [
-            'Dual Nature of Radiation and Photoelectric Effect (Einstein’s Equation)',
+            'Dual Nature of Radiation and Photoelectric Effect (Einsteinâ€™s Equation)',
             'de Broglie Wavelength and Davisson-Germer Experiment',
             'Rutherford and Bohr Models of Hydrogen Atom',
             'Atomic Spectra and Energy Levels',
@@ -321,7 +321,7 @@ export const SYLLABUS_SUBJECTS = {
   chemistry: {
     id: 'chemistry',
     name: 'Chemistry',
-    icon: '🧪',
+    icon: 'ðŸ§ª',
     color: '#10b981',
     description: 'Physical, Inorganic, Organic Chemistry, Bonding, Thermodynamics & Coordination',
     chapters: {
@@ -329,14 +329,14 @@ export const SYLLABUS_SUBJECTS = {
         {
           id: 'atomic_structure',
           name: 'Atomic Structure',
-          description: 'Bohr’s Model, Quantum Mechanics, Quantum Numbers & Electronic Configuration',
+          description: 'Bohrâ€™s Model, Quantum Mechanics, Quantum Numbers & Electronic Configuration',
           topics: [
             'Subatomic Particles and Thomson/Rutherford Models',
-            'Bohr’s Model of Hydrogen Atom and Line Spectrum',
+            'Bohrâ€™s Model of Hydrogen Atom and Line Spectrum',
             'Dual Nature of Matter (de Broglie) and Heisenberg Uncertainty Principle',
             'Quantum Mechanical Model and Quantum Numbers (n, l, m, s)',
             'Shapes of Orbitals (s, p, d) and Node Concepts',
-            'Aufbau Principle, Pauli Exclusion Principle and Hund’s Rule',
+            'Aufbau Principle, Pauli Exclusion Principle and Hundâ€™s Rule',
           ],
         },
         {
@@ -345,7 +345,7 @@ export const SYLLABUS_SUBJECTS = {
           description: 'Ionic Bonding, Covalent Bonding, VSEPR Theory, Hybridization & Molecular Orbitals',
           topics: [
             'Octet Rule, Ionic Bond and Lattice Enthalpy',
-            'Covalent Bond, Fajan’s Rules and Dipole Moment',
+            'Covalent Bond, Fajanâ€™s Rules and Dipole Moment',
             'VSEPR Theory and Molecular Geometry',
             'Valence Bond Theory and Hybridization (sp, sp2, sp3, sp3d, sp3d2)',
             'Molecular Orbital Theory (MOT) and Bond Order',
@@ -359,9 +359,9 @@ export const SYLLABUS_SUBJECTS = {
           topics: [
             'Gas Laws, Ideal Gas Equation and Kinetic Molecular Theory',
             'Deviation from Ideal Behavior and Van der Waals Equation',
-            'First Law of Thermodynamics, Enthalpy (ΔH) and Hess’s Law',
-            'Second Law of Thermodynamics, Entropy (ΔS) and Gibbs Energy (ΔG)',
-            'Law of Chemical Equilibrium and Le Chatelier’s Principle',
+            'First Law of Thermodynamics, Enthalpy (Î”H) and Hessâ€™s Law',
+            'Second Law of Thermodynamics, Entropy (Î”S) and Gibbs Energy (Î”G)',
+            'Law of Chemical Equilibrium and Le Chatelierâ€™s Principle',
             'Ionic Equilibrium: pH, Buffer Solutions and Solubility Product (Ksp)',
           ],
         },
@@ -396,12 +396,12 @@ export const SYLLABUS_SUBJECTS = {
         {
           id: 'electrochemistry',
           name: 'Electrochemistry',
-          description: 'Galvanic Cells, Nernst Equation, Conductance, Kohlrausch’s Law & Batteries',
+          description: 'Galvanic Cells, Nernst Equation, Conductance, Kohlrauschâ€™s Law & Batteries',
           topics: [
             'Electrochemical Cells and Standard Electrode Potential',
             'Nernst Equation and Equilibrium Constant / Gibbs Energy Relation',
-            'Conductance in Electrolytic Solutions and Kohlrausch’s Law',
-            'Electrolysis and Faraday’s Laws of Electrolysis',
+            'Conductance in Electrolytic Solutions and Kohlrauschâ€™s Law',
+            'Electrolysis and Faradayâ€™s Laws of Electrolysis',
             'Batteries (Primary & Secondary), Fuel Cells and Corrosion',
           ],
         },
@@ -421,10 +421,10 @@ export const SYLLABUS_SUBJECTS = {
         {
           id: 'coordination_compounds',
           name: 'Coordination Compounds & d-Block',
-          description: 'd & f Block Elements, Werner’s Theory, IUPAC Nomenclature, VBT & Crystal Field Theory',
+          description: 'd & f Block Elements, Wernerâ€™s Theory, IUPAC Nomenclature, VBT & Crystal Field Theory',
           topics: [
             'General Properties of Transition Elements (d-Block) and Lanthanoids/Actinoids',
-            'Werner’s Theory of Coordination Compounds',
+            'Wernerâ€™s Theory of Coordination Compounds',
             'Ligands, Coordination Number and IUPAC Nomenclature',
             'Isomerism in Coordination Compounds (Geometric, Optical, Structural)',
             'Valence Bond Theory (VBT) and Inner/Outer Orbital Complexes',
@@ -463,7 +463,7 @@ export const SYLLABUS_SUBJECTS = {
   biology: {
     id: 'biology',
     name: 'Biology',
-    icon: '🧬',
+    icon: 'ðŸ§¬',
     color: '#22c55e',
     description: 'Cell Biology, Plant & Human Physiology, Genetics, Evolution, Ecology & Biotechnology',
     chapters: {
@@ -551,7 +551,7 @@ export const SYLLABUS_SUBJECTS = {
           name: 'Genetics & Molecular Inheritance',
           description: 'Mendelian Principles, Chromosomal Theory, DNA Structure, Replication & Gene Expression',
           topics: [
-            'Mendel’s Laws of Inheritance: Monohybrid and Dihybrid Crosses',
+            'Mendelâ€™s Laws of Inheritance: Monohybrid and Dihybrid Crosses',
             'Incomplete Dominance, Codominance and Multiple Alleles (ABO Blood Groups)',
             'Chromosomal Theory of Inheritance, Linkage and Recombination',
             'Sex Determination and Sex-Linked Genetic Disorders (Hemophilia, Color Blindness)',
@@ -608,7 +608,7 @@ export const SYLLABUS_SUBJECTS = {
   economics: {
     id: 'economics',
     name: 'Economics',
-    icon: '📊',
+    icon: 'ðŸ“Š',
     color: '#06b6d4',
     description: 'Microeconomics, Macroeconomics, National Income, Public Finance & Indian Economy',
     chapters: {
@@ -723,7 +723,7 @@ export const SYLLABUS_SUBJECTS = {
   commerce: {
     id: 'commerce',
     name: 'Commerce',
-    icon: '💼',
+    icon: 'ðŸ’¼',
     color: '#8b5cf6',
     description: 'Business Organisation, Accounting, Financial Accounting, Management, Marketing & Entrepreneurship',
     chapters: {
@@ -789,7 +789,7 @@ export const SYLLABUS_SUBJECTS = {
           description: 'Principles of Management, Planning, Organising, Staffing, Directing & Controlling',
           topics: [
             'Management: Concept, Objectives, Importance and Nature (Science, Art, Profession)',
-            'Principles of Management: Henri Fayol’s 14 Principles and F.W. Taylor’s Scientific Management',
+            'Principles of Management: Henri Fayolâ€™s 14 Principles and F.W. Taylorâ€™s Scientific Management',
             'Functions of Management: Planning, Organizing, Staffing, Directing, Controlling',
             'Planning: Meaning, Importance, Types of Plans and Planning Process',
             'Organizing: Organizational Structure (Functional vs Divisional), Delegation and Decentralization',
@@ -847,7 +847,7 @@ export const SYLLABUS_SUBJECTS = {
   civics: {
     id: 'civics',
     name: 'Civics & Political Science',
-    icon: '🏛️',
+    icon: 'ðŸ›ï¸',
     color: '#ec4899',
     description: 'Constitution, Fundamental Rights, Legislature, Executive, Judiciary, Federalism & Democracy',
     chapters: {
@@ -859,7 +859,7 @@ export const SYLLABUS_SUBJECTS = {
           topics: [
             'Nature, Scope and Significance of Political Science',
             'State: Definition, Essential Elements (Population, Territory, Government, Sovereignty)',
-            'Sovereignty: Meaning, Attributes, Types (Internal, External, Legal, Political, Popular) and Austin’s Theory',
+            'Sovereignty: Meaning, Attributes, Types (Internal, External, Legal, Political, Popular) and Austinâ€™s Theory',
             'Nation, Nationality and Nationalism',
             'Law: Meaning, Sources, Classification and Rule of Law',
             'Liberty and Equality: Concepts, Types and Relationship between Liberty and Equality',
@@ -965,19 +965,19 @@ export const SYLLABUS_SUBJECTS = {
 // ============================================================
 
 export const SYLLABUS_ACTIONS = [
-  { id: 'explain', label: 'Explain Topic', icon: '📖', promptPrefix: 'Explain the topic comprehensively: ' },
-  { id: 'simple', label: 'Simple Explanation', icon: '💡', promptPrefix: 'Explain this topic in very simple, easy-to-understand terms with everyday analogies: ' },
-  { id: 'detailed', label: 'Detailed Explanation', icon: '🧠', promptPrefix: 'Provide a deep, rigorous, and detailed explanation including formulas, derivations, and mechanisms: ' },
-  { id: 'questions', label: 'Ask Questions', icon: '❓', promptPrefix: 'Ask me 3 conceptual questions to test my understanding of: ' },
-  { id: 'solve', label: 'Solve Problems', icon: '🧩', promptPrefix: 'Show a typical Intermediate level problem and its step-by-step solution for: ' },
-  { id: 'step_by_step', label: 'Step-by-Step Solutions', icon: '🪜', promptPrefix: 'Provide step-by-step solutions to important numerical/theoretical questions in: ' },
-  { id: 'practice', label: 'Practice Questions', icon: '📝', promptPrefix: 'Generate 5 practice questions with varied difficulty levels for: ' },
-  { id: 'mcqs', label: 'Generate MCQs', icon: '🔘', promptPrefix: 'Generate 5 multiple choice questions (MCQs) with 4 options, correct answer, and explanations for: ' },
-  { id: 'quiz', label: 'Generate Quiz', icon: '🎯', promptPrefix: 'Create an interactive quiz with diverse question types for: ' },
-  { id: 'hints', label: 'Give Hints', icon: '🔍', promptPrefix: 'Give me strategic hints and key memory cues to remember important concepts in: ' },
-  { id: 'summarize', label: 'Summarize Chapter', icon: '📑', promptPrefix: 'Provide a concise, high-yield summary highlighting all key definitions, formulas, and concepts for: ' },
-  { id: 'revision', label: 'Revision Mode', icon: '🔄', promptPrefix: 'Activate rapid revision mode with bullet points, essential formulas, and core takeaways for: ' },
-  { id: 'exam_prep', label: 'Exam Preparation', icon: '🏆', promptPrefix: 'Provide high-probability Intermediate Board exam questions, marking guidelines, common mistakes to avoid, and model answers for: ' },
+  { id: 'explain', label: 'Explain Topic', icon: 'ðŸ“–', promptPrefix: 'Explain the topic comprehensively: ' },
+  { id: 'simple', label: 'Simple Explanation', icon: 'ðŸ’¡', promptPrefix: 'Explain this topic in very simple, easy-to-understand terms with everyday analogies: ' },
+  { id: 'detailed', label: 'Detailed Explanation', icon: 'ðŸ§ ', promptPrefix: 'Provide a deep, rigorous, and detailed explanation including formulas, derivations, and mechanisms: ' },
+  { id: 'questions', label: 'Ask Questions', icon: 'â“', promptPrefix: 'Ask me 3 conceptual questions to test my understanding of: ' },
+  { id: 'solve', label: 'Solve Problems', icon: 'ðŸ§©', promptPrefix: 'Show a typical Intermediate level problem and its step-by-step solution for: ' },
+  { id: 'step_by_step', label: 'Step-by-Step Solutions', icon: 'ðŸªœ', promptPrefix: 'Provide step-by-step solutions to important numerical/theoretical questions in: ' },
+  { id: 'practice', label: 'Practice Questions', icon: 'ðŸ“', promptPrefix: 'Generate 5 practice questions with varied difficulty levels for: ' },
+  { id: 'mcqs', label: 'Generate MCQs', icon: 'ðŸ”˜', promptPrefix: 'Generate 5 multiple choice questions (MCQs) with 4 options, correct answer, and explanations for: ' },
+  { id: 'quiz', label: 'Generate Quiz', icon: 'ðŸŽ¯', promptPrefix: 'Create an interactive quiz with diverse question types for: ' },
+  { id: 'hints', label: 'Give Hints', icon: 'ðŸ”', promptPrefix: 'Give me strategic hints and key memory cues to remember important concepts in: ' },
+  { id: 'summarize', label: 'Summarize Chapter', icon: 'ðŸ“‘', promptPrefix: 'Provide a concise, high-yield summary highlighting all key definitions, formulas, and concepts for: ' },
+  { id: 'revision', label: 'Revision Mode', icon: 'ðŸ”„', promptPrefix: 'Activate rapid revision mode with bullet points, essential formulas, and core takeaways for: ' },
+  { id: 'exam_prep', label: 'Exam Preparation', icon: 'ðŸ†', promptPrefix: 'Provide high-probability Intermediate Board exam questions, marking guidelines, common mistakes to avoid, and model answers for: ' },
 ];
 
 // ============================================================
@@ -1026,7 +1026,7 @@ export function getTopicsForChapter(subjectId, yearId, chapterId) {
 }
 
 /**
- * Build a structured prompt message and system context for AI Tutor
+ * Build a structured prompt message and system context for Furqan NovaAI
  */
 export function buildSyllabusPrompt({ streamId, yearId, subjectId, chapterId, topicName, actionId, userQuery }) {
   const stream = getStreamById(streamId);
@@ -1056,3 +1056,4 @@ export function buildSyllabusPrompt({ streamId, yearId, subjectId, chapterId, to
     },
   };
 }
+

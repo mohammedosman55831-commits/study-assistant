@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -47,10 +47,10 @@ export default function DashboardPage() {
   const maxMinutes = Math.max(...(stats?.dailyMinutes || [1]), 1);
 
   const quickActions = [
-    { label: 'Inter Syllabus', href: '/syllabus', icon: '🎓', color: '#6366f1' },
-    { label: 'Ask AI Tutor', href: '/tutor', icon: '🤖', color: '#3b82f6' },
-    { label: 'Question Solver', href: '/solver', icon: '🧩', color: '#10b981' },
-    { label: 'Take a Quiz', href: '/quizzes', icon: '📝', color: '#8b5cf6' },
+    { label: 'Inter Syllabus', href: '/syllabus', icon: 'ðŸŽ“', color: '#6366f1' },
+    { label: 'Ask Furqan NovaAI', href: '/tutor', icon: 'ðŸ¤–', color: '#3b82f6' },
+    { label: 'Question Solver', href: '/solver', icon: 'ðŸ§©', color: '#10b981' },
+    { label: 'Take a Quiz', href: '/quizzes', icon: 'ðŸ“', color: '#8b5cf6' },
   ];
 
   return (
@@ -58,22 +58,22 @@ export default function DashboardPage() {
       {/* Header */}
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div>
-          <h1 className="page-title">{getGreeting()}, {user.name} 👋</h1>
+          <h1 className="page-title">{getGreeting()}, {user.name} ðŸ‘‹</h1>
           <p className="page-subtitle">
             {user.streak > 0
-              ? `🔥 ${user.streak} day study streak! Keep it going!`
+              ? `ðŸ”¥ ${user.streak} day study streak! Keep it going!`
               : "Ready to start learning today? Let's go!"}
           </p>
         </div>
         <button className="btn btn-ghost" onClick={toggleTheme} title="Toggle theme">
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+          {theme === 'light' ? 'ðŸŒ™ Dark' : 'â˜€ï¸ Light'}
         </button>
       </div>
 
       {/* Stats */}
       <div className="grid grid-4" style={{ marginBottom: 'var(--space-8)' }}>
         <div className="stat-card">
-          <div className="stat-icon" style={{ background: 'rgba(99, 102, 241, 0.1)' }}>🔥</div>
+          <div className="stat-icon" style={{ background: 'rgba(99, 102, 241, 0.1)' }}>ðŸ”¥</div>
           <div>
             <div className="stat-value">{user.streak || 0}</div>
             <div className="stat-label">Day Streak</div>
@@ -81,7 +81,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="stat-card">
-          <div className="stat-icon" style={{ background: 'rgba(59, 130, 246, 0.1)' }}>⏱️</div>
+          <div className="stat-icon" style={{ background: 'rgba(59, 130, 246, 0.1)' }}>â±ï¸</div>
           <div>
             <div className="stat-value">{formatDuration(stats?.totalMinutes || 0)}</div>
             <div className="stat-label">This Week</div>
@@ -89,7 +89,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="stat-card">
-          <div className="stat-icon" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>🎯</div>
+          <div className="stat-icon" style={{ background: 'rgba(16, 185, 129, 0.1)' }}>ðŸŽ¯</div>
           <div>
             <div className="stat-value">{avgScore}%</div>
             <div className="stat-label">Quiz Average</div>
@@ -97,7 +97,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="stat-card">
-          <div className="stat-icon" style={{ background: 'rgba(139, 92, 246, 0.1)' }}>📚</div>
+          <div className="stat-icon" style={{ background: 'rgba(139, 92, 246, 0.1)' }}>ðŸ“š</div>
           <div>
             <div className="stat-value">{completedTopics}</div>
             <div className="stat-label">Topics Done</div>
@@ -108,7 +108,7 @@ export default function DashboardPage() {
       <div className="grid grid-2" style={{ marginBottom: 'var(--space-8)' }}>
         {/* Quick Actions */}
         <div className="card">
-          <h2 className="card-title" style={{ marginBottom: 'var(--space-4)' }}>⚡ Quick Actions</h2>
+          <h2 className="card-title" style={{ marginBottom: 'var(--space-4)' }}>âš¡ Quick Actions</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--space-3)' }}>
             {quickActions.map(action => (
               <Link key={action.href} href={action.href} style={{ textDecoration: 'none' }}>
@@ -126,7 +126,7 @@ export default function DashboardPage() {
 
         {/* Weekly Activity Chart */}
         <div className="card">
-          <h2 className="card-title" style={{ marginBottom: 'var(--space-4)' }}>📊 Weekly Study Time</h2>
+          <h2 className="card-title" style={{ marginBottom: 'var(--space-4)' }}>ðŸ“Š Weekly Study Time</h2>
           <div className="chart-bar">
             {(stats?.dailyMinutes || [0,0,0,0,0,0,0]).map((minutes, idx) => (
               <div
@@ -150,8 +150,8 @@ export default function DashboardPage() {
         {/* Subject Progress */}
         <div className="card">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)' }}>
-            <h2 className="card-title" style={{ marginBottom: 0 }}>📚 Your Subjects</h2>
-            <Link href="/subjects" className="btn btn-ghost btn-sm">View All →</Link>
+            <h2 className="card-title" style={{ marginBottom: 0 }}>ðŸ“š Your Subjects</h2>
+            <Link href="/subjects" className="btn btn-ghost btn-sm">View All â†’</Link>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
             {subjects.map(subject => (
@@ -177,7 +177,7 @@ export default function DashboardPage() {
 
         {/* Achievements & XP */}
         <div className="card">
-          <h2 className="card-title" style={{ marginBottom: 'var(--space-2)' }}>🏆 Level & Achievements</h2>
+          <h2 className="card-title" style={{ marginBottom: 'var(--space-2)' }}>ðŸ† Level & Achievements</h2>
           <div style={{ marginBottom: 'var(--space-4)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 'var(--space-1)' }}>
               <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Level {user.level}</span>
@@ -202,12 +202,12 @@ export default function DashboardPage() {
             </div>
           ) : (
             <div style={{ textAlign: 'center', padding: 'var(--space-4)', color: 'var(--text-secondary)' }}>
-              <p style={{ fontSize: 'var(--text-sm)' }}>Start learning to unlock achievements! 🎯</p>
+              <p style={{ fontSize: 'var(--text-sm)' }}>Start learning to unlock achievements! ðŸŽ¯</p>
             </div>
           )}
 
           <Link href="/progress" style={{ display: 'block', marginTop: 'var(--space-4)' }}>
-            <button className="btn btn-outline w-full">View All Progress →</button>
+            <button className="btn btn-outline w-full">View All Progress â†’</button>
           </Link>
         </div>
       </div>
@@ -216,22 +216,22 @@ export default function DashboardPage() {
       <div className="card" style={{ marginTop: 'var(--space-8)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)', flexWrap: 'wrap', gap: '8px' }}>
           <div>
-            <h2 className="card-title" style={{ marginBottom: '2px' }}>🎓 Intermediate / Class 11–12 Syllabus</h2>
+            <h2 className="card-title" style={{ marginBottom: '2px' }}>ðŸŽ“ Intermediate / Class 11â€“12 Syllabus</h2>
             <p style={{ margin: 0, fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>
-              Choose your stream for tailored notes, step-by-step problem solver, and AI tutor support.
+              Choose your stream for tailored notes, step-by-step problem solver, and Furqan NovaAI support.
             </p>
           </div>
           <Link href="/syllabus" className="btn btn-outline btn-sm">
-            Full Syllabus Tree →
+            Full Syllabus Tree â†’
           </Link>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 'var(--space-3)' }}>
           {[
-            { id: 'mpc', name: 'MPC', full: 'Maths, Physics, Chemistry', icon: '📐⚛️🧪', color: '#6366f1' },
-            { id: 'bipc', name: 'BiPC', full: 'Biology, Physics, Chemistry', icon: '🧬⚛️🧪', color: '#10b981' },
-            { id: 'mec', name: 'MEC', full: 'Maths, Economics, Commerce', icon: '📐📊💼', color: '#f59e0b' },
-            { id: 'cec', name: 'CEC', full: 'Civics, Economics, Commerce', icon: '🏛️📊💼', color: '#ec4899' },
+            { id: 'mpc', name: 'MPC', full: 'Maths, Physics, Chemistry', icon: 'ðŸ“âš›ï¸ðŸ§ª', color: '#6366f1' },
+            { id: 'bipc', name: 'BiPC', full: 'Biology, Physics, Chemistry', icon: 'ðŸ§¬âš›ï¸ðŸ§ª', color: '#10b981' },
+            { id: 'mec', name: 'MEC', full: 'Maths, Economics, Commerce', icon: 'ðŸ“ðŸ“ŠðŸ’¼', color: '#f59e0b' },
+            { id: 'cec', name: 'CEC', full: 'Civics, Economics, Commerce', icon: 'ðŸ›ï¸ðŸ“ŠðŸ’¼', color: '#ec4899' },
           ].map((st) => (
             <Link key={st.id} href={`/syllabus?stream=${st.id}`} style={{ textDecoration: 'none' }}>
               <div
@@ -249,7 +249,7 @@ export default function DashboardPage() {
                 </div>
                 <div style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--text-primary)' }}>{st.full}</div>
                 <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginTop: '4px' }}>
-                  1st & 2nd Year • All Chapters
+                  1st & 2nd Year â€¢ All Chapters
                 </div>
               </div>
             </Link>
@@ -265,18 +265,18 @@ export default function DashboardPage() {
         border: 'none',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
-          <span style={{ fontSize: '2rem' }}>💡</span>
+          <span style={{ fontSize: '2rem' }}>ðŸ’¡</span>
           <div style={{ flex: 1 }}>
             <h3 style={{ fontWeight: 700, marginBottom: 'var(--space-1)' }}>AI Recommendation</h3>
             <p style={{ opacity: 0.9, fontSize: 'var(--text-sm)' }}>
               {completedTopics > 0
                 ? "Your progress is looking great! Try a quiz to test your knowledge, or explore a new subject."
-                : "Welcome! Start by exploring a subject or asking the AI Tutor a question. Every learning journey begins with curiosity! 🚀"}
+                : "Welcome! Start by exploring a subject or asking the Furqan NovaAI a question. Every learning journey begins with curiosity! ðŸš€"}
             </p>
           </div>
           <Link href="/tutor">
             <button className="btn" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
-              Start Learning →
+              Start Learning â†’
             </button>
           </Link>
         </div>
@@ -284,3 +284,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+

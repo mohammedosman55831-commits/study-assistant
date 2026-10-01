@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -239,7 +239,7 @@ function FormattedMessage({ content }) {
             color: 'var(--text-primary, #172033)',
           }}
         >
-          <span style={{ color: 'var(--accent-primary, #6366f1)', fontWeight: 700 }}>â€¢</span>
+          <span style={{ color: 'var(--accent-primary, #6366f1)', fontWeight: 700 }}>•</span>
           <div>{formatInlineText(line.trim().slice(2))}</div>
         </div>
       );
@@ -431,7 +431,7 @@ function TutorContent() {
   const initialWelcomeMessage = {
     role: 'assistant',
     content:
-      "ðŸ‘‹ Hi! I'm your Furqan NovaAI. Select your Stream, Year, Subject, and Topic above, or ask me any question directly! Try clicking one of the quick suggestions below.",
+      "👋 Hi! I'm your Intermediate AI Tutor. Select your Stream, Year, Subject, and Topic above, or ask me any question directly! Try clicking one of the quick suggestions below.",
   };
 
   const [messages, setMessages] = useState([initialWelcomeMessage]);
@@ -572,7 +572,7 @@ function TutorContent() {
         ...updatedMessages,
         {
           role: 'assistant',
-          content: `âŒ ${error.message}`,
+          content: `❌ ${error.message}`,
         },
       ]);
     } finally {
@@ -690,14 +690,14 @@ function TutorContent() {
                 boxShadow: 'var(--shadow-accent, 0 4px 12px rgba(99,102,241,0.25))',
               }}
             >
-              ðŸ¤–
+              🤖
             </div>
             <div>
               <h1 style={{ margin: 0, fontSize: '22px', fontWeight: 800 }}>
-                Furqan NovaAI
+                Intermediate AI Tutor
               </h1>
               <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-secondary, #5a5f7a)' }}>
-                MPC â€¢ BiPC â€¢ MEC â€¢ CEC (1st & 2nd Year)
+                MPC • BiPC • MEC • CEC (1st & 2nd Year)
               </p>
             </div>
           </div>
@@ -715,7 +715,7 @@ function TutorContent() {
               }}
               title="Start a new conversation and clear chat history"
             >
-              ðŸ—‘ï¸ New Chat
+              🗑️ New Chat
             </button>
 
             <button
@@ -732,7 +732,7 @@ function TutorContent() {
                 cursor: 'pointer',
               }}
             >
-              ðŸ“š {showSyllabusSelector ? 'Hide Syllabus Drawer' : 'Change Stream & Topic'}
+              📚 {showSyllabusSelector ? 'Hide Syllabus Drawer' : 'Change Stream & Topic'}
             </button>
 
             <select
@@ -750,11 +750,11 @@ function TutorContent() {
                 outline: 'none',
               }}
             >
-              <option value="standard">ðŸ“š Standard Mode</option>
-              <option value="beginner">ðŸŒ± Simple / Beginner</option>
-              <option value="deep">ðŸ§  Deep Learning</option>
-              <option value="exam">ðŸŽ¯ Exam Mode</option>
-              <option value="socratic">ðŸ’¡ Socratic Mode</option>
+              <option value="standard">📚 Standard Mode</option>
+              <option value="beginner">🌱 Simple / Beginner</option>
+              <option value="deep">🧠 Deep Learning</option>
+              <option value="exam">🎯 Exam Mode</option>
+              <option value="socratic">💡 Socratic Mode</option>
             </select>
           </div>
         </div>
@@ -805,7 +805,7 @@ function TutorContent() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ fontWeight: 700, color: 'var(--accent-primary, #6366f1)' }}>Context:</span>
               <span style={{ fontWeight: 600 }}>
-                {activeYearObj?.shortLabel} â€¢ {activeStreamObj?.name} â€¢ {activeSubjectObj?.name} â†’ {activeChapterObj?.name}
+                {activeYearObj?.shortLabel} • {activeStreamObj?.name} • {activeSubjectObj?.name} → {activeChapterObj?.name}
               </span>
             </div>
             <div style={{ display: 'flex', gap: '6px' }}>
@@ -825,7 +825,7 @@ function TutorContent() {
                   color: 'var(--accent-primary, #6366f1)',
                 }}
               >
-                âš¡ Try: Newton&apos;s Laws in Simple Terms
+                ⚡ Try: Newton&apos;s Laws in Simple Terms
               </button>
             </div>
           </div>
@@ -872,7 +872,7 @@ function TutorContent() {
                       gap: '6px',
                     }}
                   >
-                    <span>{isUser ? 'ðŸ‘¤ You' : 'ðŸ¤– Furqan NovaAI'}</span>
+                    <span>{isUser ? '👤 You' : '🤖 AI Tutor'}</span>
                   </div>
 
                   {/* Message Bubble Card */}
@@ -927,7 +927,7 @@ function TutorContent() {
                           }}
                           title="Copy explanation to clipboard"
                         >
-                          {isCopied ? 'âœ“ Copied!' : 'ðŸ“‹ Copy'}
+                          {isCopied ? '✓ Copied!' : '📋 Copy'}
                         </button>
 
                         <button
@@ -949,7 +949,7 @@ function TutorContent() {
                           }}
                           title={isSpeaking ? 'Stop voice narration' : 'Listen to this explanation'}
                         >
-                          {isSpeaking ? 'â¹ï¸ Stop' : 'ðŸ”Š Listen'}
+                          {isSpeaking ? '⏹️ Stop' : '🔊 Listen'}
                         </button>
                       </div>
                     )}
@@ -961,7 +961,7 @@ function TutorContent() {
             {loading && (
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-tertiary, #8a8fa6)', marginBottom: '4px' }}>
-                  ðŸ¤– Furqan NovaAI
+                  🤖 AI Tutor
                 </div>
                 <div
                   style={{
@@ -977,7 +977,7 @@ function TutorContent() {
                     gap: '8px',
                   }}
                 >
-                  <span className="animate-spin">â³</span> Thinking and preparing step-by-step syllabus answer...
+                  <span className="animate-spin">⏳</span> Thinking and preparing step-by-step syllabus answer...
                 </div>
               </div>
             )}
@@ -1007,23 +1007,23 @@ function TutorContent() {
             >
               {[
                 {
-                  label: 'ðŸ’¡ Explain this more simply',
+                  label: '💡 Explain this more simply',
                   prompt: 'Make that simpler and explain in easier words.',
                 },
                 {
-                  label: 'ðŸ“š Give another example',
+                  label: '📚 Give another example',
                   prompt: 'Give me another real-world example of this concept.',
                 },
                 {
-                  label: 'ðŸ§ª Quiz me on this',
+                  label: '🧪 Quiz me on this',
                   prompt: 'Quiz me on this concept with a practice question.',
                 },
                 {
-                  label: 'ðŸŽ¯ Show an exam tip',
+                  label: '🎯 Show an exam tip',
                   prompt: `What are the most common exam questions and tips for ${topic || 'this topic'}?`,
                 },
                 {
-                  label: 'âš–ï¸ Compare related concepts',
+                  label: '⚖️ Compare related concepts',
                   prompt: `What is the difference and comparison for key concepts in ${topic || 'this topic'}?`,
                 },
               ].map((action) => (
@@ -1099,7 +1099,7 @@ function TutorContent() {
                 boxShadow: 'var(--shadow-accent, 0 4px 12px rgba(99,102,241,0.25))',
               }}
             >
-              {loading ? 'Thinking...' : 'Send ðŸš€'}
+              {loading ? 'Thinking...' : 'Send 🚀'}
             </button>
           </form>
         </div>
@@ -1113,7 +1113,7 @@ export default function TutorPage() {
     <Suspense
       fallback={
         <div style={{ padding: '40px', textAlign: 'center' }}>
-          Loading Furqan NovaAI...
+          Loading Intermediate AI Tutor...
         </div>
       }
     >

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
@@ -25,10 +25,10 @@ const GENERAL_MCQ_QUESTIONS = [
     category: 'Mathematics',
     topic: 'Trigonometry',
     difficulty: 'Intermediate',
-    question: 'What is the exact value of sin(90Â°) + cos(0Â°)?',
+    question: 'What is the exact value of sin(90°) + cos(0°)?',
     options: ['0', '1', '2', '0.5'],
     correct: 2,
-    explanation: 'sin(90Â°) = 1 and cos(0Â°) = 1. Therefore, 1 + 1 = 2.',
+    explanation: 'sin(90°) = 1 and cos(0°) = 1. Therefore, 1 + 1 = 2.',
   },
   {
     id: 'm3',
@@ -36,9 +36,9 @@ const GENERAL_MCQ_QUESTIONS = [
     topic: 'Physics: Laws of Motion',
     difficulty: 'Intermediate',
     question: 'Which law of motion states that for every action there is an equal and opposite reaction?',
-    options: ['Newtonâ€™s 1st Law', 'Newtonâ€™s 2nd Law', 'Newtonâ€™s 3rd Law', 'Law of Gravitation'],
+    options: ['Newton’s 1st Law', 'Newton’s 2nd Law', 'Newton’s 3rd Law', 'Law of Gravitation'],
     correct: 2,
-    explanation: 'Newtonâ€™s Third Law states that every action force has an equal and opposite reaction force.',
+    explanation: 'Newton’s Third Law states that every action force has an equal and opposite reaction force.',
   },
   {
     id: 'm4',
@@ -189,35 +189,35 @@ const DEBUGGING_CHALLENGES = [
 const STEP_BY_STEP_PROBLEMS = [
   {
     id: 'sb1',
-    title: 'Solving Quadratic Equation: xÂ² - 5x + 6 = 0',
+    title: 'Solving Quadratic Equation: x² - 5x + 6 = 0',
     category: 'Mathematics',
     difficulty: 'Intermediate',
     steps: [
       {
         stepNum: 1,
         title: 'Step 1: Identify coefficients a, b, and c',
-        instruction: 'For axÂ² + bx + c = 0, what are the values of a, b, c?',
+        instruction: 'For ax² + bx + c = 0, what are the values of a, b, c?',
         options: ['a=1, b=-5, c=6', 'a=1, b=5, c=6', 'a=0, b=-5, c=6', 'a=1, b=-5, c=-6'],
         correct: 0,
-        hint: 'Compare xÂ² - 5x + 6 with axÂ² + bx + c.',
+        hint: 'Compare x² - 5x + 6 with ax² + bx + c.',
         explanation: 'Here a = 1, b = -5, and c = 6.',
       },
       {
         stepNum: 2,
-        title: 'Step 2: Calculate Discriminant D = bÂ² - 4ac',
-        instruction: 'What is D = (-5)Â² - 4(1)(6)?',
+        title: 'Step 2: Calculate Discriminant D = b² - 4ac',
+        instruction: 'What is D = (-5)² - 4(1)(6)?',
         options: ['D = 25 - 24 = 1', 'D = 25 + 24 = 49', 'D = -25 - 24 = -49', 'D = 0'],
         correct: 0,
-        hint: '(-5)Â² is 25 and 4 Ã— 1 Ã— 6 is 24.',
+        hint: '(-5)² is 25 and 4 × 1 × 6 is 24.',
         explanation: 'D = 25 - 24 = 1. Since D > 0, there are two distinct real roots.',
       },
       {
         stepNum: 3,
-        title: 'Step 3: Apply Quadratic Formula x = (-b Â± âˆšD) / 2a',
-        instruction: 'What are the two roots xâ‚ and xâ‚‚?',
+        title: 'Step 3: Apply Quadratic Formula x = (-b ± √D) / 2a',
+        instruction: 'What are the two roots x₁ and x₂?',
         options: ['x = 2 and x = 3', 'x = -2 and x = -3', 'x = 1 and x = 6', 'x = 5 and x = 1'],
         correct: 0,
-        hint: 'x = (5 Â± âˆš1) / 2 = (5 Â± 1) / 2.',
+        hint: 'x = (5 ± √1) / 2 = (5 ± 1) / 2.',
         explanation: '(5 + 1)/2 = 3 and (5 - 1)/2 = 2. Roots are x = 2 and x = 3.',
       },
     ],
@@ -358,7 +358,7 @@ function PracticeContent() {
         >
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-              <span style={{ fontSize: '2.5rem' }}>ðŸŽ¯</span>
+              <span style={{ fontSize: '2.5rem' }}>🎯</span>
               <div>
                 <h1 className="page-title" style={{ margin: 0, fontSize: '26px' }}>Practice & Problem Solving Center</h1>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
@@ -372,10 +372,10 @@ function PracticeContent() {
                       borderRadius: '9999px',
                     }}
                   >
-                    6 Practice Modes Â· Validated Learning
+                    6 Practice Modes · Validated Learning
                   </span>
                   <span style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>
-                    Streak: <strong style={{ color: '#f59e0b' }}>ðŸ”¥ {user?.streak || 0} Days</strong>
+                    Streak: <strong style={{ color: '#f59e0b' }}>🔥 {user?.streak || 0} Days</strong>
                   </span>
                 </div>
               </div>
@@ -385,16 +385,16 @@ function PracticeContent() {
           {/* Quick Shortcuts */}
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
             <Link href="/coding" className="btn btn-primary btn-sm" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              ðŸ Python Coding Hub
+              🐍 Python Coding Hub
             </Link>
             <Link href="/quizzes" className="btn btn-outline btn-sm">
-              ðŸ“ Quizzes
+              📝 Quizzes
             </Link>
             <Link href="/flashcards" className="btn btn-ghost btn-sm">
-              ðŸƒ Flashcards
+              🃏 Flashcards
             </Link>
             <Link href="/tutor" className="btn btn-ghost btn-sm">
-              ðŸ¤– Ask Furqan NovaAI
+              🤖 Ask AI Tutor
             </Link>
           </div>
         </div>
@@ -423,7 +423,7 @@ function PracticeContent() {
               Total Study XP
             </div>
             <div style={{ fontSize: '18px', fontWeight: 800, color: '#f59e0b', marginTop: '2px' }}>
-              âš¡ {user?.xp || 0} XP
+              ⚡ {user?.xp || 0} XP
             </div>
           </div>
 
@@ -441,7 +441,7 @@ function PracticeContent() {
               Practice Track
             </div>
             <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginTop: '2px' }}>
-              {selectedCategory} Â· {selectedDifficulty}
+              {selectedCategory} · {selectedDifficulty}
             </div>
           </div>
         </div>
@@ -460,11 +460,11 @@ function PracticeContent() {
         }}
       >
         {[
-          { id: 'mcq', label: 'ðŸ”˜ Multiple Choice (MCQ)', icon: 'ðŸ“' },
-          { id: 'completion', label: 'ðŸ§© Code Completion', icon: 'âš¡' },
-          { id: 'predict', label: 'ðŸ”® Predict the Output', icon: 'ðŸ”' },
-          { id: 'debug', label: 'ðŸž Debugging Challenge', icon: 'ðŸ› ï¸' },
-          { id: 'step_by_step', label: 'ðŸªœ Step-by-Step Problem', icon: 'ðŸ“' },
+          { id: 'mcq', label: '🔘 Multiple Choice (MCQ)', icon: '📝' },
+          { id: 'completion', label: '🧩 Code Completion', icon: '⚡' },
+          { id: 'predict', label: '🔮 Predict the Output', icon: '🔍' },
+          { id: 'debug', label: '🐞 Debugging Challenge', icon: '🛠️' },
+          { id: 'step_by_step', label: '🪜 Step-by-Step Problem', icon: '📐' },
         ].map((m) => (
           <button
             key={m.id}
@@ -581,7 +581,7 @@ function PracticeContent() {
                     borderRadius: '6px',
                   }}
                 >
-                  {activeQuestion.category} Â· {activeQuestion.topic || activeQuestion.difficulty}
+                  {activeQuestion.category} · {activeQuestion.topic || activeQuestion.difficulty}
                 </span>
                 <span style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>
                   Question {activeQuestionIdx + 1} of {filteredQuestions.length}
@@ -590,7 +590,7 @@ function PracticeContent() {
 
               {completedExercises.includes(activeQuestion.id) && (
                 <span style={{ color: '#10b981', fontSize: '12px', fontWeight: 700 }}>
-                  âœ“ Mastered (+15 XP)
+                  ✓ Mastered (+15 XP)
                 </span>
               )}
             </div>
@@ -682,10 +682,10 @@ function PracticeContent() {
                       {option}
                     </span>
                     {isAnswerChecked && optIdx === activeQuestion.correct && (
-                      <span style={{ color: '#10b981', fontWeight: 700 }}>âœ“ Correct</span>
+                      <span style={{ color: '#10b981', fontWeight: 700 }}>✓ Correct</span>
                     )}
                     {isAnswerChecked && isSelected && optIdx !== activeQuestion.correct && (
-                      <span style={{ color: '#ef4444', fontWeight: 700 }}>âœ— Incorrect</span>
+                      <span style={{ color: '#ef4444', fontWeight: 700 }}>✗ Incorrect</span>
                     )}
                   </button>
                 );
@@ -706,7 +706,7 @@ function PracticeContent() {
                 }}
               >
                 <strong style={{ color: selectedAnswers[activeQuestionIdx] === activeQuestion.correct ? '#059669' : '#dc2626' }}>
-                  {selectedAnswers[activeQuestionIdx] === activeQuestion.correct ? 'ðŸŽ‰ Correct Answer!' : 'âŒ Incorrect.'}
+                  {selectedAnswers[activeQuestionIdx] === activeQuestion.correct ? '🎉 Correct Answer!' : '❌ Incorrect.'}
                 </strong>
                 <div style={{ marginTop: '4px', color: 'var(--text-primary)' }}>
                   <strong>Explanation:</strong> {activeQuestion.explanation}
@@ -747,7 +747,7 @@ function PracticeContent() {
                   className="btn btn-ghost btn-sm"
                   style={{ fontSize: '12px' }}
                 >
-                  {showHint ? 'Hide Hint' : 'ðŸ’¡ Need a Hint?'}
+                  {showHint ? 'Hide Hint' : '💡 Need a Hint?'}
                 </button>
                 {isAnswerChecked && (
                   <button
@@ -756,7 +756,7 @@ function PracticeContent() {
                     className="btn btn-outline btn-sm"
                     style={{ fontSize: '12px' }}
                   >
-                    ðŸ”„ Retry
+                    🔄 Retry
                   </button>
                 )}
               </div>
@@ -770,7 +770,7 @@ function PracticeContent() {
                     className="btn btn-primary btn-sm"
                     style={{ padding: '8px 20px', fontSize: '13px' }}
                   >
-                    Verify Answer âœ“
+                    Verify Answer ✓
                   </button>
                 ) : (
                   <button
@@ -779,7 +779,7 @@ function PracticeContent() {
                     className="btn btn-primary btn-sm"
                     style={{ padding: '8px 20px', fontSize: '13px' }}
                   >
-                    Next Question â†’
+                    Next Question →
                   </button>
                 )}
               </div>
@@ -875,7 +875,7 @@ function PracticeContent() {
                       fontSize: '13px',
                     }}
                   >
-                    <strong>{isStepCorrect ? 'âœ“ Step Solved Correctly!' : 'âœ— Step Incorrect.'}</strong>
+                    <strong>{isStepCorrect ? '✓ Step Solved Correctly!' : '✗ Step Incorrect.'}</strong>
                     <p style={{ margin: '4px 0 0 0', color: 'var(--text-secondary)' }}>
                       {currentStep.explanation}
                     </p>
@@ -892,7 +892,7 @@ function PracticeContent() {
                     disabled={stepIndex === 0}
                     className="btn btn-ghost btn-sm"
                   >
-                    â† Previous Step
+                    ← Previous Step
                   </button>
 
                   {!isAnswerChecked ? (
@@ -902,7 +902,7 @@ function PracticeContent() {
                       disabled={selectedAnswers[`step_${stepIndex}`] === undefined}
                       className="btn btn-primary btn-sm"
                     >
-                      Verify Step âœ“
+                      Verify Step ✓
                     </button>
                   ) : stepIndex < STEP_BY_STEP_PROBLEMS[0].steps.length - 1 ? (
                     <button
@@ -913,11 +913,11 @@ function PracticeContent() {
                       }}
                       className="btn btn-primary btn-sm"
                     >
-                      Next Step â†’
+                      Next Step →
                     </button>
                   ) : (
                     <span style={{ color: '#10b981', fontWeight: 700, fontSize: '13px' }}>
-                      ðŸŽ‰ Entire Problem Solved! (+25 XP)
+                      🎉 Entire Problem Solved! (+25 XP)
                     </span>
                   )}
                 </div>
@@ -937,4 +937,3 @@ export default function PracticePage() {
     </Suspense>
   );
 }
-
